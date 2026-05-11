@@ -1,6 +1,58 @@
+import { useEffect, useRef, useState } from "react";
+import ABOUT_BG from "../assets/main/aboutbg.svg";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+
+function useCountUp(target, duration = 1800) {
+  const ref = useRef(null);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        obs.disconnect();
+        let start = null;
+        const step = (ts) => {
+          if (!start) start = ts;
+          const progress = Math.min((ts - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+          setCount(Math.round(eased * target));
+          if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      },
+      { threshold: 0.5 },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [target, duration]);
+
+  return { ref, count };
+}
+
+function StatCard({ value, label }) {
+  const match = value.match(/^(\d+)([+%]?)$/);
+  const num = match ? parseInt(match[1], 10) : 0;
+  const suffix = match ? match[2] : "";
+  const { ref, count } = useCountUp(num);
+
+  return (
+    <div
+      ref={ref}
+      className="rounded-2xl border border-[#bde1ce] bg-white px-5 py-4"
+    >
+      <p className="text-5xl font-bold text-[#0d5c65] sm:text-6xl">
+        {count}
+        {suffix}
+      </p>
+      <p className="mt-1 text-sm text-[#5d666d]">{label}</p>
+    </div>
+  );
+}
 
 const values = [
   [
@@ -36,8 +88,15 @@ function AboutPage() {
     <>
       <Header currentPage="about" />
       <main className="bg-[#f5f6f3] text-[#1e252a]">
-        <section className="relative overflow-hidden bg-[#050707] px-4 py-20 text-white sm:px-8 sm:py-24">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(104,59,24,0.55),rgba(5,7,7,0.95)_66%)]" />
+        <section
+          className="relative flex min-h-screen items-center overflow-hidden bg-[#050707] px-4 py-24 text-white sm:px-8"
+          style={{
+            backgroundImage: `url(${ABOUT_BG})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/72" />
           <div className="relative mx-auto max-w-7xl text-center">
             <h1 className="font-display text-4xl sm:text-6xl">
               About BSY Legal
@@ -46,14 +105,13 @@ function AboutPage() {
               A full-service Nigerian law firm built on trust, excellence, and a
               deep-rooted commitment to African identity.
             </p>
-            <div className="mx-auto mt-10 h-60 max-w-2xl rounded-[999px] border border-white/20 bg-[linear-gradient(180deg,rgba(137,78,35,0.65),rgba(54,30,11,0.2))]" />
-            <div className="pointer-events-none absolute left-4 top-[62%] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block md:left-20">
+            <div className="pointer-events-none absolute -left-[10vw] top-[32vh] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block md:left-20">
               Over 23 Cases Handled
             </div>
-            <div className="pointer-events-none absolute right-4 top-[42%] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block md:right-20">
+            <div className="pointer-events-none absolute right-4 top-[50vh] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block md:right-20">
               35+ Attorneys
             </div>
-            <div className="pointer-events-none absolute bottom-6 right-[18%] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block">
+            <div className="pointer-events-none absolute -bottom-[10vh] -right-[15%] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block">
               Established Since 1967
             </div>
             <div className="mt-6 grid gap-3 md:hidden">
@@ -184,15 +242,7 @@ function AboutPage() {
               ["50+", "Corporate Clients"],
               ["98%", "Client Satisfaction"],
             ].map(([value, label]) => (
-              <div
-                key={value}
-                className="rounded-2xl border border-[#bde1ce] bg-white px-5 py-4"
-              >
-                <p className="text-5xl font-bold text-[#0d5c65] sm:text-6xl">
-                  {value}
-                </p>
-                <p className="mt-1 text-sm text-[#5d666d]">{label}</p>
-              </div>
+              <StatCard key={value} value={value} label={label} />
             ))}
           </div>
         </section>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import LEGAL_BG from "../assets/main/legalbg.svg";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -110,8 +111,15 @@ function ServicesPage() {
     <>
       <Header currentPage="services" />
       <main className="bg-[#f3f4f1] text-[#1e252a]">
-        <section className="relative overflow-hidden bg-[#06090c] px-4 py-20 text-white sm:px-8 sm:py-28">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(65,47,28,0.45),rgba(6,9,12,0.93)_68%)]" />
+        <section
+          className="relative flex min-h-screen items-center overflow-hidden bg-[#06090c] px-4 py-24 text-white sm:px-8"
+          style={{
+            backgroundImage: `url(${LEGAL_BG})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/70" />
           <div className="relative mx-auto max-w-7xl text-center">
             <h1 className="font-display text-5xl sm:text-7xl">
               Our Legal Services
@@ -120,7 +128,6 @@ function ServicesPage() {
               Comprehensive, strategic legal solutions tailored to individuals,
               businesses, and institutions across diverse sectors.
             </p>
-            <div className="mx-auto mt-10 h-44 w-full max-w-5xl rounded-sm border border-white/15 bg-[linear-gradient(135deg,#1a2635,#4f3b28)]" />
           </div>
         </section>
 

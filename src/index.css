@@ -35,3 +35,71 @@ body {
 .animate-marquee-left-slow {
   animation: marquee-left 36s linear infinite;
 }
+
+/* ── Cinematic hero reveal ─────────────────────────────────────────── */
+@keyframes hero-line-expand {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes hero-line-up {
+  from { transform: scaleX(1) translateY(0);     }
+  to   { transform: scaleX(1) translateY(-55vh); }
+}
+
+@keyframes hero-line-down {
+  from { transform: scaleX(1) translateY(0);    }
+  to   { transform: scaleX(1) translateY(55vh); }
+}
+
+@keyframes hero-reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.hero-line-top,
+.hero-line-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
+  transform-origin: center center;
+}
+
+.hero-line-top {
+  animation:
+    hero-line-expand 0.8s linear              0.1s  both,
+    hero-line-up     1s   ease-out            0.95s forwards;
+}
+
+.hero-line-bottom {
+  animation:
+    hero-line-expand 0.8s linear              0.1s  both,
+    hero-line-down   1s   ease-out            0.95s forwards;
+}
+
+.hero-reveal-1 { animation: hero-reveal 0.8s ease-out 1.20s both; }
+.hero-reveal-2 { animation: hero-reveal 0.8s ease-out 1.42s both; }
+.hero-reveal-3 { animation: hero-reveal 0.8s ease-out 1.64s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-line-top,
+  .hero-line-bottom { display: none !important; }
+
+  .hero-reveal-1,
+  .hero-reveal-2,
+  .hero-reveal-3 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Parallax reveal: skip scale/opacity entrance, show image immediately */
+  .parallax-image-enter {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}

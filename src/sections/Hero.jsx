@@ -1,6 +1,9 @@
 import { useState } from "react";
-import homebg from "../assets/main/homebg.svg";
+import HERO_BG from "../assets/main/homebg.svg";
 import Button from "../components/Button";
+
+// const HERO_BG =
+//   "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=80";
 
 function Hero() {
   const [showCookie, setShowCookie] = useState(true);
@@ -8,25 +11,38 @@ function Hero() {
   return (
     <section
       id="home"
-      className={`relative min-h-[90vh] overflow-hidden bg-[url(${homebg})] bg-cover bg-center`}
+      className="relative min-h-screen overflow-hidden bg-[#0d1c24]"
+      style={{
+        backgroundImage: `url(${HERO_BG})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
       aria-label="Hero section"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,#0d2637,#1f3d4b,#123244)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(196,165,106,0.15)_0px,rgba(196,165,106,0.15)_2px,transparent_2px,transparent_36px)] opacity-35" />
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/65" />
+
+      {/* Cinematic reveal lines — anchored at vertical centre */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-0 right-0"
+        style={{ top: "50%", zIndex: 10 }}
+      >
+        <div className="hero-line-top" />
+        <div className="hero-line-bottom" />
+      </div>
 
       <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-24 text-center sm:px-8 md:pt-30">
         <div className="mx-auto max-w-5xl border-y border-white/25 py-14 sm:py-18">
-          <h1 className="font-display text-5xl font-semibold leading-[1.05] text-white sm:text-6xl md:text-[78px]">
+          <h1 className="hero-reveal-1 font-display text-5xl font-semibold leading-[1.05] text-white sm:text-6xl md:text-[78px]">
             Legal Excellence Rooted in
             <br />
             African Heritage
           </h1>
-          <p className="mx-auto mt-5 max-w-3xl text-base text-white/85 sm:text-2xl">
+          <p className="hero-reveal-2 mx-auto mt-5 max-w-3xl text-base text-white/85 sm:text-2xl">
             Providing world-class legal counsel with integrity, precision, and a
             deep respect for African identity.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="hero-reveal-3 mt-8 flex flex-wrap items-center justify-center gap-3">
             <Button as="a" href="/services" variant="primary">
               Explore Our Services
             </Button>

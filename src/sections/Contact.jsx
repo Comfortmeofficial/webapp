@@ -19,12 +19,6 @@ const articles = [
     excerpt:
       "How employers and employees can approach disputes while staying compliant with labour laws.",
   },
-  {
-    date: "MARCH 12, 2026",
-    title: "Key Legal Considerations for Business Expansion",
-    excerpt:
-      "A practical overview of the legal factors businesses should consider when scaling operations.",
-  },
 ];
 
 function Contact() {

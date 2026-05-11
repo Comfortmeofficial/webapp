@@ -1,0 +1,14 @@
+#create the .gitignore file to ignore the node_modules folder and any log files
+node_modules/
+logs/*.log
+*.log
+# Ignore the .env file which contains sensitive information
+.env
+# Ignore the dist folder which contains the compiled code
+dist/   
+# Ignore the coverage folder which contains the test coverage reports
+coverage/
+# Ignore the .vscode folder which contains the Visual Studio Code settings
+.vscode/    
+# Ignore the .idea folder which contains the IntelliJ IDEA settings
+.idea/

@@ -1,3 +1,5 @@
+import LOGO from "../assets/main/BSY LEGAL 1.svg";
+
 const heritageItems = [
   {
     title: "Queen Idia",
@@ -23,8 +25,9 @@ function Footer() {
     <footer className="bg-[#f5f6f3] text-[#2f363c]">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-8 md:grid-cols-4">
         <div>
-          <div className="mb-3 h-16 w-32 rounded-md border border-[#dfe1df] bg-white" />
-          <p className="text-sm text-[#5f686f]">BSY LEGAL</p>
+          <a href="/">
+            <img src={LOGO} alt="BSY Legal" className="mb-3 h-10 w-auto" />
+          </a>
         </div>
         <div>
           <h3 className="mb-3 text-sm font-semibold">Quick Links</h3>
