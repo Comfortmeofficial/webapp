@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import LEGAL_BG from "../assets/main/legalbg.svg";
+import BACKGROUND from "../assets/sections/background.jpg";
+import PARTNER_BG from "../assets/sections/cards/partner.jpg";
+import WOMAN_IMAGE from "../assets/sections/woman_law.svg";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -110,97 +113,121 @@ function ServicesPage() {
   return (
     <>
       <Header currentPage="services" />
-      <main className="bg-[#f3f4f1] text-[#1e252a]">
-        <section
-          className="relative flex min-h-screen items-center overflow-hidden bg-[#06090c] px-4 py-24 text-white sm:px-8"
-          style={{
-            backgroundImage: `url(${LEGAL_BG})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="absolute inset-0 bg-black/70" />
-          <div className="relative mx-auto max-w-7xl text-center">
-            <h1 className="font-display text-5xl sm:text-7xl">
-              Our Legal Services
-            </h1>
-            <p className="mx-auto mt-4 max-w-4xl text-base font-medium leading-8 text-white/90 sm:text-2xl">
-              Comprehensive, strategic legal solutions tailored to individuals,
-              businesses, and institutions across diverse sectors.
-            </p>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-[90vw] px-4 py-14 sm:px-8">
-          <div className="rounded-sm border border-[#e8ebea] bg-[#f6f7f5] px-6 py-10 text-center sm:px-14">
-            <p className="mx-auto max-w-5xl font-display text-2xl leading-[1.6] text-[#285963] sm:text-5xl">
-              At BSY Legal, we provide a full spectrum of legal services
-              designed to meet the evolving needs of our clients. Our
-              multidisciplinary expertise allows us to deliver tailored
-              solutions with precision, efficiency, and a deep understanding of
-              legal frameworks.
-            </p>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-[90vw] px-4 pb-20 sm:px-8">
-          <div className="rounded-sm border border-[#eceeec] bg-white p-4 sm:p-6">
-            <div className="mb-6 flex flex-wrap gap-4 border-b border-[#eef0ef] pb-4 text-sm sm:text-base">
-              {serviceTabs.map((tab) => (
-                <button
-                  key={tab}
-                  type="button"
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-2 py-1 font-medium transition ${
-                    activeTab === tab
-                      ? "text-[#215861]"
-                      : "text-[#343c42] hover:text-[#215861]"
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))}
+      <section
+        className="relative flex min-h-screen items-center overflow-hidden bg-[#06090c] px-4 py-24 text-white sm:px-8"
+        style={{
+          backgroundImage: `url(${LEGAL_BG})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="relative mx-auto max-w-7xl text-center">
+          <h1 className="font-display text-5xl sm:text-7xl">
+            Our Legal Services
+          </h1>
+          <p className="mx-auto mt-4 max-w-4xl text-base font-medium leading-8 text-white/90 sm:text-2xl">
+            Comprehensive, strategic legal solutions tailored to individuals,
+            businesses, and institutions across diverse sectors.
+          </p>
+        </div>
+      </section>
+      <div
+        className="flex h-[] items-center justify-center "
+        style={{
+          backgroundImage: `url(${BACKGROUND})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <main className="bg-[#f3f4f1] text-[#1e252a]">
+          <section className="mx-auto w-[95vw] px-4 py-14 sm:px-8">
+            <div className="rounded-sm border border-[#e8ebea] bg-[#f6f7f5] px-6 py-10 text-center sm:px-14">
+              <p className="mx-auto max-w-5xl font-display text-2xl leading-[1.6] text-[#285963] sm:text-5xl">
+                At BSY Legal, we provide a full spectrum of legal services
+                designed to meet the evolving needs of our clients. Our
+                multidisciplinary expertise allows us to deliver tailored
+                solutions with precision, efficiency, and a deep understanding
+                of legal frameworks.
+              </p>
             </div>
+          </section>
 
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {filteredServices.map((service) => (
-                <article
-                  key={service.title}
-                  className="rounded-lg border border-[#f0f1f1] bg-[#f8f9f8] p-5"
-                >
-                  <h3 className="text-3xl font-semibold leading-tight text-[#1e252a]">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 text-lg leading-8 text-[#5c656d]">
-                    {service.short}
-                  </p>
+          <section
+            className="relative mx-auto max-w-[90vw] px-4 pb-20 sm:px-8"
+            style={{
+              backgroundImage: `url(${WOMAN_IMAGE})`,
+              backgroundPosition: "left center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "contain",
+              backgroundAttachment: "scroll",
+            }}
+          >
+            <div className="rounded-sm border border-[#eceeec] bg-white p-4 sm:p-6">
+              <div className="mb-6 flex flex-wrap gap-4 border-b border-[#eef0ef] pb-4 text-sm sm:text-base">
+                {serviceTabs.map((tab) => (
                   <button
+                    key={tab}
                     type="button"
-                    onClick={() => setActiveService(service)}
-                    className="mt-5 text-sm font-medium text-[#1e252a] hover:text-[#215861]"
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-2 py-1 font-medium transition ${
+                      activeTab === tab
+                        ? "text-[#215861]"
+                        : "text-[#343c42] hover:text-[#215861]"
+                    }`}
                   >
-                    Learn More →
+                    {tab}
                   </button>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+                ))}
+              </div>
 
-        <section className="mx-auto max-w-[90vw] px-4 pb-24 sm:px-8">
-          <div className="rounded-2xl bg-[linear-gradient(90deg,#3d2f2b,#4c3a43,#2b2f3f)] px-8 py-14 text-center text-white">
-            <h3 className="font-display text-4xl sm:text-6xl">
-              Partner With a Firm You Can Trust
-            </h3>
-            <p className="mt-3 text-lg text-white/85">
-              Let us provide the legal clarity and representation you need
-            </p>
-            <Button as="a" href="#" variant="accent" className="mt-6">
-              Book a Consultation
-            </Button>
-          </div>
-        </section>
-      </main>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {filteredServices.map((service) => (
+                  <article
+                    key={service.title}
+                    className="rounded-lg border border-[#f0f1f1] bg-[#f8f9f8] p-5"
+                  >
+                    <h3 className="text-3xl font-semibold leading-tight text-[#1e252a]">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 text-lg leading-8 text-[#5c656d]">
+                      {service.short}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setActiveService(service)}
+                      className="mt-5 text-sm font-medium text-[#1e252a] hover:text-[#215861]"
+                    >
+                      Learn More →
+                    </button>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="mx-auto max-w-[90vw] px-4 pb-24 sm:px-8">
+            <div
+              className="rounded-2xl px-8 py-14 text-center text-white"
+              style={{
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${PARTNER_BG})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <h3 className="font-display text-4xl sm:text-6xl">
+                Partner With a Firm You Can Trust
+              </h3>
+              <p className="mt-3 text-lg text-white/85">
+                Let us provide the legal clarity and representation you need
+              </p>
+              <Button as="a" href="#" variant="accent" className="mt-6">
+                Book a Consultation
+              </Button>
+            </div>
+          </section>
+        </main>
+      </div>
       <Footer />
 
       {activeService && (

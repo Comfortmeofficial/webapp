@@ -1,3 +1,6 @@
+import BACKGROUND2 from "../assets/sections/trusted-by-clients.svg";
+import BACKGROUND from "../assets/sections/trusted-slider.svg";
+
 const testimonials = [
   {
     quote:
@@ -20,24 +23,29 @@ const testimonials = [
 ];
 
 function Testimonials() {
-  const marqueeItems = [...testimonials, ...testimonials];
+  const marqueeItems = [...testimonials, ...testimonials, ...testimonials];
 
   return (
-    <section id="testimonials" className="bg-[#f5f6f3] py-20">
-      <div className="mx-auto  max-w-[90vw] overflow-hidden  flex relative">
+    <section id="testimonials" className="bg-[#f5f6f3] py-20 h-[]">
+      <div className="mx-auto   overflow-hidden  flex relative">
         <div className="flex absolute inset-0">
-          <div className="flex relative w-[40vw] ">
+          <div className="flex relative w-[40vw] h-[80vh] drop-shadow-gray-950 ">
             <div
-              className="bg-blue-400  text-white p-10 
-          [clip-path:polygon(0_0,100%_0,80%_100%,0_100%)] absolute inset-0 z-10"
+              className="flex shadow-xl shadow-black-900  text-white p-10 
+          [clip-path:polygon(0_0,100%_0,70%_100%,0_100%)] absolute inset-0 z-10"
+              style={{
+                backgroundImage: `url(${BACKGROUND})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             ></div>
             <div
-              className="bg-red-400  text-white p-10 
-          [clip-path:polygon(0_0,95%_0,75%_100%,0_100%)] absolute inset-0 z-20"
+              className="bg-[#e6cd91]/95  text-white p-10 
+          [clip-path:polygon(0_0,95%_0,65%_100%,0_100%)] absolute inset-0 z-20"
             ></div>
             <div
               className="bg-[#18535B] text-white p-10 
-          [clip-path:polygon(0_0,90%_0,70%_100%,0_100%)] absolute inset-0 z-30"
+          [clip-path:polygon(0_0,90%_0,60%_100%,0_100%)] absolute inset-0 z-30"
             >
               <p className="text-xs text-[#9cd4d8]">Testimonials</p>
               <h2 className="font-display mt-3 text-5xl leading-tight">
@@ -52,7 +60,14 @@ function Testimonials() {
             </div>
           </div>
         </div>
-        <div className="ml-[20vw] overflow-hidden bg-[repeating-linear-gradient(90deg,#2a1a10_0px,#2a1a10_42px,#6f5b35_42px,#6f5b35_62px,#9f7b3d_62px,#9f7b3d_82px,#4b3726_82px,#4b3726_126px)] py-14 max-w-[70vw]">
+        <div
+          className=" overflow-hidden  py-45 max-w-full"
+          style={{
+            backgroundImage: `url(${BACKGROUND2})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="animate-marquee-left flex w-max gap-5 pl-4 md:pl-8">
             {marqueeItems.map((item, index) => (
               <article

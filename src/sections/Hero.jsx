@@ -19,7 +19,7 @@ function Hero() {
       }}
       aria-label="Hero section"
     >
-      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 bg-black/20" />
 
       {/* Cinematic reveal lines — anchored at vertical centre */}
       <div

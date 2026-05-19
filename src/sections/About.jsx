@@ -1,6 +1,18 @@
+import WOMAN_IMAGE from "../assets/sections/woman_law.svg";
+
 function About() {
   return (
-    <section id="about" className="bg-[#f5f6f3] py-24 text-[#1e252a]">
+    <section
+      id="about"
+      className="relative bg-[#f5f6f3] py-24 text-[#1e252a]"
+      style={{
+        backgroundImage: `url(${WOMAN_IMAGE})`,
+        backgroundPosition: "left center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain",
+        backgroundAttachment: "scroll",
+      }}
+    >
       <div className="mx-auto max-w-[90vw] px-4 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <div className="pt-8">
@@ -37,6 +49,13 @@ function About() {
                 key={title}
                 className="rounded-xl border border-[#ececec] bg-[#f1f2f2] p-6"
               >
+                <svg
+                  className="h-14 w-14 text-[#5d656d]"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                </svg>
                 <h3 className="text-lg font-medium text-[#4d545a]">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-[#7b8288]">
                   Providing legal support and strategic guidance tailored to

@@ -1,34 +1,29 @@
+import EFCC from "../assets/sections/trusted-logo/efcc.svg";
+import FIRS from "../assets/sections/trusted-logo/firs.svg";
+import GOV from "../assets/sections/trusted-logo/gov.svg";
+import NBA from "../assets/sections/trusted-logo/nba.svg";
+import TCLP from "../assets/sections/trusted-logo/tclp.svg";
 import Button from "../components/Button";
+import { INSIGHT_ARTICLES } from "../data/insights";
 
-const articles = [
-  {
-    date: "MARCH 12, 2026",
-    title: "Key Legal Considerations for Business Expansion",
-    excerpt:
-      "A practical overview of the legal factors businesses should consider when scaling operations.",
-  },
-  {
-    date: "FEBRUARY 28, 2026",
-    title: "Understanding Property Due Diligence in Nigeria",
-    excerpt:
-      "Essential checks and legal steps to ensure secure and compliant property transactions.",
-  },
-  {
-    date: "FEBRUARY 10, 2026",
-    title: "Navigating Workplace Disputes: A Legal Perspective",
-    excerpt:
-      "How employers and employees can approach disputes while staying compliant with labour laws.",
-  },
-];
+const logoItems = [EFCC, NBA, FIRS, GOV, TCLP];
+
+const articles = INSIGHT_ARTICLES.slice(0, 4).map((article) => ({
+  date: article.date,
+  title: article.title,
+  excerpt: article.excerpt,
+  image: article.image,
+  slug: article.slug,
+}));
 
 function Contact() {
-  const logoItems = Array.from({ length: 7 });
-  const marqueeLogos = [...logoItems, ...logoItems];
+  // const logoItems = Array.from({ length: 7 });
+  const marqueeLogos = [...logoItems, ...logoItems, ...logoItems, ...logoItems];
 
   return (
     <section id="contact" className="bg-[#f5f6f3] py-20">
-      <div className="mx-auto max-w-[90vw] px-4 sm:px-8">
-        <div>
+      <div className="mx-auto max-w-full  sm:px-8">
+        <div className="mx-15 max-w-2xl ">
           <p className="text-xs text-[#80aa36]">Articles & Insights</p>
           <div className="mt-3 flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -44,7 +39,7 @@ function Contact() {
             </div>
             <Button
               as="a"
-              href="#"
+              href="/insights"
               variant="secondary"
               className="rounded-sm px-4 py-2 text-xs"
             >
@@ -53,12 +48,13 @@ function Contact() {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 mx-15 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {articles.map((article) => (
             <article key={`${article.title}-${article.date}`} className="p-1">
-              <div
-                className="h-44 w-full border border-[#d5d7d8] bg-[linear-gradient(135deg,#4b3828,#b08b5a)]"
-                aria-label="Article image placeholder"
+              <img
+                src={article.image}
+                alt={article.title}
+                className="h-44 w-full border border-[#d5d7d8] object-cover"
               />
               <p className="mt-3 text-[11px] tracking-wide text-[#9ca2a8]">
                 {article.date}
@@ -71,7 +67,7 @@ function Contact() {
                 {article.excerpt}
               </p>
               <a
-                href="#"
+                href={`/insights/${article.slug}`}
                 className="mt-5 inline-block text-xs font-medium text-[#1f262c]"
               >
                 Continue Reading →
@@ -80,7 +76,7 @@ function Contact() {
           ))}
         </div>
 
-        <div className="mt-20 rounded-md bg-[#eef2ef] px-6 py-14 text-center">
+        <div className="mt-20 w-[90vw] h-[70vh] rounded-md bg-[#eef2ef] px-2  text-center flex flex-col items-center justify-center mx-auto">
           <p className="text-xs text-[#80aa36]">Recognized & Affiliated With</p>
           <h3 className="font-display mt-3 text-5xl text-[#12181d]">
             Trusted. Recognized. Connected.
@@ -89,13 +85,14 @@ function Contact() {
             We maintain strong professional ties and uphold the highest
             standards within the legal industry.
           </p>
-          <div className="mx-auto mt-10 max-w-6xl overflow-hidden">
+          <div className="mx-auto mt-20 max-w-full overflow-hidden">
             <div className="animate-marquee-left-slow flex w-max items-center gap-10">
               {marqueeLogos.map((_, index) => (
-                <div
+                <img
                   key={index}
-                  className="h-20 w-20 shrink-0 rounded-full border border-[#d8dcda] bg-white"
-                  aria-label="Affiliation logo placeholder"
+                  src={logoItems[index % logoItems.length]}
+                  alt={`Trusted Logo ${index + 1}`}
+                  className="h-24 w-auto object-contain opacity-80"
                 />
               ))}
             </div>

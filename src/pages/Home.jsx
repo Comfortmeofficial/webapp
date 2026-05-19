@@ -1,23 +1,38 @@
-import Header from "../components/Header";
+import BACKGROUND from "../assets/sections/background.jpg";
 import Footer from "../components/Footer";
-import Hero from "../sections/Hero";
+import Header from "../components/Header";
 import About from "../sections/About";
+import Contact from "../sections/Contact";
+import Hero from "../sections/Hero";
 import ParallaxReveal from "../sections/ParallaxReveal";
 import Testimonials from "../sections/Testimonials";
-import Contact from "../sections/Contact";
 
 function Home() {
   return (
     <>
       <Header currentPage="home" />
-      <main>
-        <Hero />
-        <About />
-        <ParallaxReveal>
+      <Hero />
+      <div
+        className="flex h-[] items-center justify-center "
+        style={{
+          backgroundImage: `url(${BACKGROUND})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <main className="w-[95vw]">
+          <About />
+          {/* <ParallaxReveal> */}
           <Testimonials />
-        </ParallaxReveal>
-        <Contact />
-      </main>
+          {/* </ParallaxReveal> */}
+          <Contact />
+        </main>
+        <img
+          src={BACKGROUND}
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-cover opacity-20 -z-10"
+        />
+      </div>
       <Footer />
     </>
   );

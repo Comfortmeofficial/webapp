@@ -3,6 +3,8 @@ export const TEAM_MEMBERS = [
     slug: "adewale-ogunleye",
     name: "Adewale Ogunleye",
     role: "Senior Partner",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
     specialties: "Corporate Law + Banking & Finance + Tax Advisory",
     email: "adewaleogunleye@gmail.com",
     phone: "+234 706 6734 788",
@@ -11,13 +13,19 @@ export const TEAM_MEMBERS = [
       "His practice focuses on advising corporate clients, financial institutions, and high-net-worth individuals on a wide range of matters, including corporate structuring, regulatory compliance, commercial transactions, and high-value negotiations.",
       "Over the course of his career, he has successfully advised on multi-million-naira transactions, represented clients in high-stakes disputes, and provided ongoing legal counsel to businesses operating across diverse sectors.",
     ],
-    qualifications: ["LL.B, University of Lagos", "BL, Nigerian Law School", "LL.M"],
+    qualifications: [
+      "LL.B, University of Lagos",
+      "BL, Nigerian Law School",
+      "LL.M",
+    ],
     admissions: ["Nigerian Bar Association", "Any additional jurisdictions"],
   },
   {
     slug: "mark-gallogly",
     name: "Mark Gallogly",
     role: "Managing Partner",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
     specialties: "Corporate Law + Litigation + Governance",
     email: "mark.gallogly@bsylegal.com",
     phone: "+234 700 111 2222",
@@ -31,10 +39,14 @@ export const TEAM_MEMBERS = [
     slug: "jody-greenstone-miller",
     name: "Jody Greenstone Miller",
     role: "Partner",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
     specialties: "Corporate Law + Talent + Regulatory Advisory",
     email: "jody.miller@bsylegal.com",
     phone: "+234 700 111 3333",
-    bio: ["Jody supports growth-stage and multinational clients on corporate structuring and compliance strategy."],
+    bio: [
+      "Jody supports growth-stage and multinational clients on corporate structuring and compliance strategy.",
+    ],
     qualifications: ["LL.B", "BL"],
     admissions: ["Nigerian Bar Association"],
   },
@@ -42,12 +54,15 @@ export const TEAM_MEMBERS = [
     slug: "rachel-more-oshodi",
     name: "Rachel More-Oshodi",
     role: "Managing Director",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
     specialties: "Infrastructure + Finance + Tax Advisory",
     email: "rachel.oshodi@bsylegal.com",
     phone: "+234 700 111 4444",
-    bio: ["Rachel brings extensive experience in infrastructure investment, finance documentation, and cross-border compliance."],
+    bio: [
+      "Rachel brings extensive experience in infrastructure investment, finance documentation, and cross-border compliance.",
+    ],
     qualifications: ["LL.B", "BL"],
     admissions: ["Nigerian Bar Association"],
   },
 ];
-
