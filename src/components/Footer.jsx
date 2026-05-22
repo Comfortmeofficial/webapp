@@ -1,6 +1,6 @@
 import LOGO from "../assets/main/BSY LEGAL 1.svg";
 import FOOTER_BG from "../assets/sections/footer.jpg";
-import FacebookIcon from "../assets/sections/footer/social-icons/facebook.svg";
+import FacebookIcon from "../assets/sections/footer/social-icons/Facebook.svg";
 import InstagramIcon from "../assets/sections/footer/social-icons/instagram.svg";
 import TwitterIcon from "../assets/sections/footer/social-icons/x.svg";
 import NEFERTITI from "../assets/sections/footer/nefertiti.png";
