@@ -1,8 +1,8 @@
 const insightImages = [
   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
   "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1552075549-f32f6c566360?w=500&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1567427185267-dc6a45db361a?w=500&h=300&fit=crop",
+  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
 ];
 
 export const INSIGHT_ARTICLES = Array.from({ length: 12 }).map((_, index) => {

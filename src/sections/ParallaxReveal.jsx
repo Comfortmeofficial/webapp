@@ -53,8 +53,9 @@ function ParallaxReveal({
     <section
       ref={wrapperRef}
       className="relative"
+      
       style={{
-        height: `calc(${height} + 100vh)`,
+        height: `calc(${height} + 70vh)`,
       }}
     >
       {/* ================================= */}
@@ -70,11 +71,11 @@ function ParallaxReveal({
         <img
           src={image}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover will-change-transform"
+          className="absolute inset-0 h-full w-full -mt-20  object-cover will-change-transform -z-10"
           style={{
             transform: `
               scale(${revealed ? 1 : 1.08})
-              translateY(${scrollY * 0.06}px)
+              translateY(${scrollY * 0.0}px)
             `,
             opacity: revealed ? 1 : 0,
             transition:
@@ -84,7 +85,7 @@ function ParallaxReveal({
 
         {/* Overlay */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 h-[40vh] w-full"
           style={{
             background: `
               linear-gradient(
@@ -99,7 +100,7 @@ function ParallaxReveal({
         />
 
         {/* Hero Content */}
-        <div
+        {/* <div
           className="absolute inset-0 flex items-center justify-center px-6"
           style={{
             opacity: revealed ? 1 : 0,
@@ -108,7 +109,7 @@ function ParallaxReveal({
           }}
         >
           <div className="mx-auto max-w-5xl text-center text-white">
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.35em] text-white/60">
+            {/* <p className="mb-6 text-xs font-semibold uppercase tracking-[0.35em] text-white/60">
               {eyebrow}
             </p>
 
@@ -122,17 +123,17 @@ function ParallaxReveal({
 
             <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-white/80 sm:text-lg">
               {description}
-            </p>
+            </p> */}
 
-            <div
+            {/* <div
               className="mx-auto mt-8 h-px bg-white/30"
               style={{
                 width: revealed ? "180px" : "0px",
                 transition: "width 1s ease 1s",
               }}
-            />
-          </div>
-        </div>
+            /> */}
+          {/* </div>
+        </div> */} 
       </div>
 
       {/* ================================= */}
@@ -146,13 +147,13 @@ function ParallaxReveal({
       >
         <div
           className="
-            min-h-[65vh]
+            min-h-[30vh]
+            px-4 py-16 sm:px-8
             overflow-hidden
-            rounded-t-[3rem]
             bg-[#f5f6f3]
           "
           style={{
-            boxShadow: "0 -40px 80px rgba(0,0,0,0.45)",
+            // boxShadow: "0 -40px 80px rgba(0,0,0,0.45)",
           }}
         >
           {children}

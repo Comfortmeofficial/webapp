@@ -23,11 +23,11 @@ function InsightArticlePage({ slug }) {
           backgroundPosition: "center",
         }}
       >
-        <main className="bg-[#f4f5f2] px-4 py-12 text-[#1f252b] sm:px-8">
+        <main className="bg-[#f4f5f2] px-4 py-22 text-[#1f252b] w-[98vw] sm:px-8">
           <div
-            className="mx-auto max-w-5xl"
+            className="mx-auto w-[95vw]"
             style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url(${TOP_BG})`,
+              backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(${TOP_BG})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundAttachment: "fixed",

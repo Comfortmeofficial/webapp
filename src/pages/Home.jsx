@@ -13,14 +13,14 @@ function Home() {
       <Header currentPage="home" />
       <Hero />
       <div
-        className="flex h-[] items-center justify-center "
+        className="flex flex-col items-center justify-center"
         style={{
           backgroundImage: `url(${BACKGROUND})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <main className="w-[95vw]">
+        <main className="w-full max-w-full sm:w-[98vw]">
           <About />
           {/* <ParallaxReveal> */}
           <Testimonials />

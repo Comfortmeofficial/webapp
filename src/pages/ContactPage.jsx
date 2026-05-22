@@ -1,3 +1,5 @@
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
 import BACKGROUND from "../assets/sections/background.jpg";
 import TOP_BG from "../assets/sections/topbackground.png";
 import CONTACT_BG from "../assets/sections/contact-us.svg";
@@ -5,7 +7,42 @@ import WOMAN_IMAGE from "../assets/sections/woman_law.svg";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
+const SERVICE_ID = "service_vnffu3b";
+const TEMPLATE_ID = "template_4v039wg";
+const PUBLIC_KEY = "eeTupei1lQv4J14Z0";
+
+const INITIAL_FORM = {
+  from_name: "",
+  from_email: "",
+  phone: "",
+  subject: "",
+  contact_method: "",
+  message: "",
+};
+
 function ContactPage() {
+  const formRef = useRef(null);
+  const [form, setForm] = useState(INITIAL_FORM);
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+
+  function handleChange(e) {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
+        publicKey: PUBLIC_KEY,
+      });
+      setStatus("success");
+      setForm(INITIAL_FORM);
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <>
       <Header currentPage="contact" />
@@ -17,11 +54,11 @@ function ContactPage() {
           backgroundPosition: "center",
         }}
       >
-        <main className="bg-[#f8f8f7] text-[#1f252b] w-full">
+        <main className="bg-[#f8f8f7] text-[#1f252b] w-[98vw]">
           <section
-            className="mx-auto w-full px-4 py-14 text-center sm:px-8"
+            className="mx-auto w-full h-[60vh] px-4 pt-44 text-center justify-content sm:px-8"
             style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url(${TOP_BG})`,
+              backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(${TOP_BG})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundAttachment: "fixed",
@@ -34,10 +71,19 @@ function ContactPage() {
               Get in touch with our team for trusted legal advice and
               professional support tailored to your needs.
             </p>
+            <div
+              className="rounded-2xl p-12 h-full w-[70vw] sm:p-16 lg:p-20 mx-auto mt-10 "
+              style={{
+                backgroundImage: `url(${CONTACT_BG})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            ></div>
+
           </section>
 
           <section
-            className="relative mx-auto max-w-5xl px-4 pb-12 sm:px-8"
+            className="relative mx-auto w-[98vw] min-h-[100vh] px-4 py-16 sm:px-8"
             style={{
               backgroundImage: `url(${WOMAN_IMAGE})`,
               backgroundPosition: "left center",
@@ -46,15 +92,8 @@ function ContactPage() {
               backgroundAttachment: "scroll",
             }}
           >
-            <div
-              className="rounded-2xl p-12 sm:p-16 lg:p-20"
-              style={{
-                backgroundImage: `url(${CONTACT_BG})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="grid gap-8 rounded-2xl bg-white p-6 sm:p-10 lg:grid-cols-[1.2fr_1fr]">
+            
+              <div className="grid gap-8 rounded-2xl w-[60vw] -mt-46 bg-white p-6 sm:p-10 lg:grid-cols-[1.2fr_1fr] mx-auto">
                 {/* Form Section */}
                 <div>
                   <h2 className="font-display text-3xl font-semibold text-[#1a1f24]">
@@ -65,11 +104,15 @@ function ContactPage() {
                     back to you promptly
                   </p>
 
-                  <form className="mt-6 space-y-4">
+                  <form ref={formRef} onSubmit={handleSubmit} className="mt-6 space-y-4">
                     <label className="block text-xs font-medium text-[#4c565d]">
                       Full Name
                       <input
                         type="text"
+                        name="from_name"
+                        value={form.from_name}
+                        onChange={handleChange}
+                        required
                         placeholder="Enter your full name"
                         className="mt-1 w-full rounded-md border border-[#dfe5e3] bg-white px-3 py-2 text-sm outline-none focus:border-[#215f66]"
                       />
@@ -78,6 +121,10 @@ function ContactPage() {
                       Email Address
                       <input
                         type="email"
+                        name="from_email"
+                        value={form.from_email}
+                        onChange={handleChange}
+                        required
                         placeholder="Enter your email address"
                         className="mt-1 w-full rounded-md border border-[#dfe5e3] bg-white px-3 py-2 text-sm outline-none focus:border-[#215f66]"
                       />
@@ -85,7 +132,10 @@ function ContactPage() {
                     <label className="block text-xs font-medium text-[#4c565d]">
                       Phone Number
                       <input
-                        type="text"
+                        type="tel"
+                        name="phone"
+                        value={form.phone}
+                        onChange={handleChange}
                         placeholder="Enter your phone number"
                         className="mt-1 w-full rounded-md border border-[#dfe5e3] bg-white px-3 py-2 text-sm outline-none focus:border-[#215f66]"
                       />
@@ -94,38 +144,66 @@ function ContactPage() {
                       Subject
                       <input
                         type="text"
+                        name="subject"
+                        value={form.subject}
+                        onChange={handleChange}
+                        required
                         placeholder="Briefly state the purpose of your inquiry"
                         className="mt-1 w-full rounded-md border border-[#dfe5e3] bg-white px-3 py-2 text-sm outline-none focus:border-[#215f66]"
                       />
                     </label>
                     <label className="block text-xs font-medium text-[#4c565d]">
                       Preferred Contact Method
-                      <select className="mt-1 w-full rounded-md border border-[#dfe5e3] bg-white px-3 py-2 text-sm outline-none focus:border-[#215f66]">
-                        <option>Select</option>
-                        <option>Email</option>
-                        <option>Phone</option>
+                      <select
+                        name="contact_method"
+                        value={form.contact_method}
+                        onChange={handleChange}
+                        className="mt-1 w-full rounded-md border border-[#dfe5e3] bg-white px-3 py-2 text-sm outline-none focus:border-[#215f66]"
+                      >
+                        <option value="">Select</option>
+                        <option value="Email">Email</option>
+                        <option value="Phone">Phone</option>
                       </select>
                     </label>
                     <label className="block text-xs font-medium text-[#4c565d]">
                       Message
                       <textarea
+                        name="message"
+                        value={form.message}
+                        onChange={handleChange}
+                        required
                         rows="4"
                         placeholder="Provide details about your inquiry so we can assist you effectively"
                         className="mt-1 w-full rounded-md border border-[#dfe5e3] bg-white px-3 py-2 text-sm outline-none focus:border-[#215f66]"
                       />
                     </label>
+
+                    {status === "success" && (
+                      <p className="rounded-md bg-green-50 px-3 py-2 text-xs text-green-700">
+                        Your message has been sent. We will get back to you shortly.
+                      </p>
+                    )}
+                    {status === "error" && (
+                      <p className="rounded-md bg-red-50 px-3 py-2 text-xs text-red-700">
+                        Something went wrong. Please try again or email us directly.
+                      </p>
+                    )}
+
                     <button
-                      type="button"
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#1a6268] px-4 py-3 text-sm font-medium text-white hover:bg-[#14545a]"
+                      type="submit"
+                      disabled={status === "sending"}
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#1a6268] px-4 py-3 text-sm font-medium text-white hover:bg-[#14545a] disabled:opacity-60"
                     >
-                      Send a Message
-                      <svg
-                        className="h-4 w-4"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 L4.13399899,1.16582773 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.837654326,3.0486314 1.15159189,3.99701575 L3.03521743,10.4380088 C3.03521743,10.5951061 3.19218622,10.7522035 3.50612381,10.7522035 L16.6915026,11.5376905 C16.6915026,11.5376905 17.1624089,11.5376905 17.1624089,12.0089827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z" />
-                      </svg>
+                      {status === "sending" ? "Sending…" : "Send a Message"}
+                      {status !== "sending" && (
+                        <svg
+                          className="h-4 w-4"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 L4.13399899,1.16582773 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.837654326,3.0486314 1.15159189,3.99701575 L3.03521743,10.4380088 C3.03521743,10.5951061 3.19218622,10.7522035 3.50612381,10.7522035 L16.6915026,11.5376905 C16.6915026,11.5376905 17.1624089,11.5376905 17.1624089,12.0089827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z" />
+                        </svg>
+                      )}
                     </button>
                   </form>
                 </div>
@@ -268,7 +346,6 @@ function ContactPage() {
                   </section>
                 </div>
               </div>
-            </div>
           </section>
         </main>
       </div>

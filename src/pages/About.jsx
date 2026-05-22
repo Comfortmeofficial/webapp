@@ -3,6 +3,7 @@ import ABOUT_BG from "../assets/main/aboutbg.svg";
 import BACKGROUND from "../assets/sections/background.jpg";
 import PARTNER_BG from "../assets/sections/cards/partner.jpg";
 import ROOTED_BG from "../assets/sections/cards/rooted.jpg";
+import PARALLEX from "../assets/sections/parallex.svg"
 import OUR_VALUES_BG from "../assets/sections/our-values.svg";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
@@ -141,8 +142,8 @@ function AboutPage() {
           backgroundPosition: "center",
         }}
       >
-        <main className="bg-[#f5f6f3] text-[#1e252a] w-[95vw]">
-          <section className="mx-auto max-w-[95vw] px-4 py-20 text-center sm:px-8">
+        <main className="bg-[#f5f6f3] text-[#1e252a] w-[98vw]">
+          <section className="mx-auto max-w-[95vw] px-4 py-30   text-center sm:px-8">
             <p className="text-xs text-[#80aa36]">Hear From Us</p>
             <h2 className="font-display mt-2 text-4xl text-[#151c21] sm:text-6xl">
               Our Story
@@ -160,7 +161,11 @@ function AboutPage() {
                 <span className="font-display text-4xl text-[#0d5c65] sm:text-3xl">
                   2015
                 </span>
-                <span className="h-px flex-1 bg-[#bdc8cc]" />
+                <span className="relative flex-1 border-t-2 border-dotted border-[#bdc8cc]">
+  <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[#bdc8cc]">
+    →
+  </span>
+</span>
                 <span className="text-2xl font-semibold text-[#0d5c65] sm:text-2xl">
                   Firm established
                 </span>
@@ -169,7 +174,11 @@ function AboutPage() {
                 <span className="font-display text-4xl text-[#0d5c65] sm:text-3xl">
                   2018
                 </span>
-                <span className="h-px flex-1 bg-[#bdc8cc]" />
+                <span className="relative flex-1 border-t-2 border-dotted border-[#bdc8cc]">
+  <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[#bdc8cc]">
+    →
+  </span>
+</span>
                 <span className="text-2xl font-semibold text-[#0d5c65] sm:text-2xl">
                   Expanded into corporate law
                 </span>
@@ -178,7 +187,11 @@ function AboutPage() {
                 <span className="font-display text-4xl text-[#0d5c65] sm:text-3xl">
                   2022
                 </span>
-                <span className="h-px flex-1 bg-[#bdc8cc]" />
+                <span className="relative flex-1 border-t-2 border-dotted border-[#bdc8cc]">
+  <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[#bdc8cc]">
+    →
+  </span>
+</span>
                 <span className="text-2xl font-semibold text-[#0d5c65] sm:text-2xl">
                   Recognised by national legal body
                 </span>
@@ -186,8 +199,8 @@ function AboutPage() {
             </div>
           </section>
           <ParallaxReveal
-            image={ABOUT_BG}
-            height="75vh"
+            image={PARALLEX}
+            height="60vh"
             eyebrow=""
             title=""
             description="
@@ -219,7 +232,7 @@ function AboutPage() {
               </div>
             </section>
           </ParallaxReveal>
-          <section className="mx-auto grid max-w-[90vw] items-stretch px-4 pb-20 sm:px-8 md:grid-cols-[1.3fr_1fr]">
+          <section className="mx-auto grid max-w-[90vw]  -mt-60 z-30 items-stretch px-4 pt-40 pb-20 sm:px-8 md:grid-cols-[1.3fr_1fr]">
             <div className="bg-[#f2f3f1] p-8 md:p-12">
               <h3 className="font-display text-4xl sm:text-6xl">Our Values</h3>
               <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -247,7 +260,7 @@ function AboutPage() {
 
           <section className="mx-auto max-w-[90vw] px-4 pb-20 sm:px-8">
             <div
-              className="rounded-3xl px-8 py-14 text-center text-white"
+              className="rounded-3xl px-8 py-34 text-center text-white"
               style={{
                 backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${ROOTED_BG})`,
                 backgroundSize: "cover",
@@ -310,7 +323,7 @@ function AboutPage() {
 
           <section className="mx-auto max-w-[90vw] px-4 pb-24 sm:px-8">
             <div
-              className="rounded-2xl px-8 py-14 text-center text-white"
+              className="rounded-2xl px-8 py-34 text-center text-white"
               style={{
                 backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${PARTNER_BG})`,
                 backgroundSize: "cover",

@@ -20,9 +20,9 @@ function LegacyProfilePage({ slug }) {
           backgroundPosition: "center",
         }}
       >
-        <main className="w-full bg-[#f3f3f1] text-[#1f252b]">
+        <main className="w-full bg-[#f3f3f1] text-[#1f252b] w-[100vw] py-22 sm:px-8">
           {/* Hero Section */}
-          <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-8">
+          {/* <section className="mx-auto w-full w-[95vw] px-4 py-16 sm:px-8">
             <div className="flex flex-wrap items-center justify-between gap-8 border-b border-[#d9dddf] pb-8">
               <a href="/" className="text-sm font-medium text-[#2f373d]">
                 BSY Legal
@@ -46,11 +46,11 @@ function LegacyProfilePage({ slug }) {
                 </a>
               </nav>
             </div>
-          </section>
+          </section> */}
 
           {/* Hero Content with Image */}
           <section
-            className="mx-auto max-w-7xl px-4 py-16 sm:px-8"
+            className="mx-auto w-[98vw] h-[85vh] px-4 py-16 sm:px-8"
             style={{
               backgroundImage: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url(${TOP_BG})`,
               backgroundSize: "cover",
@@ -79,7 +79,7 @@ function LegacyProfilePage({ slug }) {
                 <img
                   src={profile.image}
                   alt={profile.name}
-                  className="h-auto w-full rounded-lg object-cover shadow-lg"
+                  className="h-[60vh] w-[90%] rounded-lg object-cover shadow-lg"
                 />
               </div>
             </div>
@@ -87,7 +87,7 @@ function LegacyProfilePage({ slug }) {
 
           {/* Rise Section */}
           <section
-            className="relative mx-auto max-w-7xl px-4 py-16 sm:px-8"
+            className="relative mx-auto w-[98vw] h-[80vh] px-4 py-16 sm:px-8"
             style={{
               backgroundImage: `url(${WOMAN_IMAGE})`,
               backgroundPosition: "left center",
@@ -171,7 +171,7 @@ function LegacyProfilePage({ slug }) {
           </section>
 
           {/* Closing Quote */}
-          <section className="bg-[#ececea] px-4 py-16 text-center sm:px-8">
+          <section className="bg-[#ececea] px-4 py-16 text-center sm:px-8 h-[60vh] flex items-center justify-center">
             <p className="font-display text-4xl sm:text-6xl text-[#b6a57f]">
               "
             </p>

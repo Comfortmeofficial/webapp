@@ -48,15 +48,15 @@ function InsightsPage() {
       >
         <main className="bg-[#f4f5f2] text-[#1f252b]">
           <section
-            className="mx-auto w-[95vw] px-4 py-14 sm:px-8"
+            className="mx-auto w-[95vw] h-[55vh] px-4 py-44 sm:px-8 bg-white/90 "
             style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url(${TOP_BG})`,
+              backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(${TOP_BG})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundAttachment: "fixed",
             }}
           >
-            <h1 className="font-display text-5xl leading-[0.95] text-[#141b20] sm:text-7xl">
+            <h1 className="font-display text-5xl leading-[1.5] text-[#141b20] sm:text-7xl">
               Insights &
               <br />
               Publications
@@ -97,7 +97,7 @@ function InsightsPage() {
           </section>
 
           <section
-            className="relative mx-auto max-w-[90vw] px-4 pb-16 sm:px-8"
+            className="relative mx-auto w-[98vw] min-h-[100vh] px-4 py-16 sm:px-8"
             style={{
               backgroundImage: `url(${WOMAN_IMAGE})`,
               backgroundPosition: "left center",
@@ -106,7 +106,7 @@ function InsightsPage() {
               backgroundAttachment: "scroll",
             }}
           >
-            <h2 className="mb-4 text-xl font-semibold text-[#1e252a] sm:text-2xl">
+            <h2 className="mb-10 text-xl font-semibold text-[#1e252a] sm:text-2xl">
               Explore our latest thinking across key areas of legal practice.
             </h2>
 
