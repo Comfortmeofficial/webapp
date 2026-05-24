@@ -29,7 +29,7 @@ function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-16 text-center sm:px-8 sm:pb-16 sm:pt-24 md:pb-20 md:pt-30 min-h-screen flex flex-col justify-center sm:justify-start">
-        <div className="mx-auto max-w-5xl border-y py-6 sm:py-12 md:py-18">
+        <div className="mx-auto max-w-5xl  py-6 sm:py-12 md:py-18">
           <h1 className="hero-reveal-1 font-display text-3xl font-semibold leading-[1.1] text-white sm:text-4xl md:text-6xl lg:text-[78px]">
             Legal Excellence Rooted in
             <br />
