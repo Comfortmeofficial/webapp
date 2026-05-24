@@ -23,7 +23,7 @@ function Contact() {
   return (
     <section id="contact" className="bg-[#f5f6f3] py-16 sm:py-20 md:py-24">
       <div className="mx-auto max-w-full px-4 sm:px-8">
-        <div className="mx-4 sm:mx-15 max-w-2xl">
+        <div className="mx-4 sm:mx-15 max-w-2xl flex flex-col items-start gap-6 sm:gap-8">
           <p className="text-xs text-[#80aa36]">Articles & Insights</p>
           <div className="mt-3 flex flex-col sm:flex-wrap items-start sm:items-end justify-between gap-4 sm:gap-6">
             <div>
@@ -41,7 +41,7 @@ function Contact() {
               as="a"
               href="/insights"
               variant="secondary"
-              className="rounded-sm px-3 sm:px-4 py-2 text-xs sm:text-sm"
+              className="rounded-sm px-3 sm:px-4 py-2 text-xs sm:text-sm text-[#1f262c] hover:text-[#18535b] transition self-start sm:self-end"
             >
               Read More Articles
             </Button>

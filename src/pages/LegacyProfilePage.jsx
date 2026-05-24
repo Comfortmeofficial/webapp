@@ -20,7 +20,7 @@ function LegacyProfilePage({ slug }) {
           backgroundPosition: "center",
         }}
       >
-        <main className="w-full bg-[#f3f3f1] text-[#1f252b] w-[100vw] py-22 sm:px-8">
+        <main className="w-[98vw] bg-[#f3f3f1] text-[#1f252b]  py-[10%] ">
           {/* Hero Section */}
           {/* <section className="mx-auto w-full w-[95vw] px-4 py-16 sm:px-8">
             <div className="flex flex-wrap items-center justify-between gap-8 border-b border-[#d9dddf] pb-8">
@@ -50,15 +50,29 @@ function LegacyProfilePage({ slug }) {
 
           {/* Hero Content with Image */}
           <section
-            className="mx-auto w-[98vw] h-[85vh] px-4 py-16 sm:px-8"
+            className="relative mx-auto w-[100%] min-h-[85vh] overflow-hidden"
             style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url(${TOP_BG})`,
+              backgroundImage: `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url(${TOP_BG})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundAttachment: "fixed",
             }}
           >
-            <div className="grid items-center gap-12 lg:grid-cols-2">
+            {/* Full-bleed image on right half */}
+            <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[50%] h-[70%] lg:w-1/2 lg:h-[85%]">
+              <img
+                src={profile.image}
+                alt={profile.name}
+                className="h-full w-full object-cover object-center"
+              />
+              {/* Blend seam on desktop */}
+              <div className="absolute inset-y-0 left-0 hidden w-40 bg-gradient-to-r from-white to-transparent lg:block" />
+              {/* Darken overlay on mobile so text is readable above */}
+              <div className="absolute inset-0 bg-white/60 lg:hidden" />
+            </div>
+
+            {/* Text content */}
+            <div className="relative z-10 flex min-h-[85vh] items-center px-4 py-24 sm:px-12 lg:w-1/2 lg:py-32">
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[#9da4aa]">
                   Heritage Profiles
@@ -74,13 +88,6 @@ function LegacyProfilePage({ slug }) {
                 <p className="mt-6 max-w-lg border-l-2 border-[#c6ccd0] pl-4 text-sm italic leading-7 text-[#5f686f]">
                   {profile.intro}
                 </p>
-              </div>
-              <div className="relative">
-                <img
-                  src={profile.image}
-                  alt={profile.name}
-                  className="h-[60vh] w-[90%] rounded-lg object-cover shadow-lg"
-                />
               </div>
             </div>
           </section>

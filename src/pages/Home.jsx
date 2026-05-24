@@ -20,7 +20,7 @@ function Home() {
           backgroundPosition: "center",
         }}
       >
-        <main className="w-full max-w-full sm:w-[98vw]">
+        <main className=" max-w-full w-[98vw] sm:w-[98vw]">
           <About />
           {/* <ParallaxReveal> */}
           <Testimonials />

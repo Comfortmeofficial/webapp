@@ -69,7 +69,7 @@ function TeamPage() {
           backgroundPosition: "center",
         }}
       >
-        <main className="bg-[#f4f5f2] text-[#1f252b] w-full overflow-x-hidden">
+        <main className="bg-[#f4f5f2] text-[#1f252b] w-[98vw] overflow-x-hidden">
           <section
             className="w-full sm:w-[98vw] min-h-screen sm:h-[100vh] sm:px-4 md:px-8 justify-center mx-auto flex flex-col items-center py-12 sm:py-0 overflow-x-hidden"
             style={{

@@ -26,26 +26,42 @@ function Testimonials() {
   const marqueeItems = [...testimonials, ...testimonials, ...testimonials];
 
   return (
-    <section id="testimonials" className="bg-[#f5f6f3] py-16 sm:py-20 md:h-auto">
-      <div className="mx-auto overflow-hidden flex relative">
-        <div className="flex absolute inset-0">
-          <div className="hidden sm:flex relative w-[40vw] h-[80vh] drop-shadow-gray-950">
+    <section id="testimonials" className="bg-[#f5f6f3] overflow-hidden">
+      {/* Mobile header */}
+      <div className="sm:hidden px-6 pt-12 pb-8">
+        <p className="text-xs text-[#18535B] uppercase tracking-widest">Testimonials</p>
+        <h2 className="font-display mt-2 text-3xl leading-tight text-[#1a2028]">
+          Trusted by Clients.
+          <br />
+          Proven by Results.
+        </h2>
+        <p className="mt-3 text-sm leading-7 text-[#5f686f]">
+          We are committed to delivering exceptional legal services backed by
+          professionalism, integrity, and results.
+        </p>
+      </div>
+
+      {/* Marquee + desktop panel */}
+      <div className="relative flex">
+        {/* Desktop left panel */}
+        <div className="hidden sm:flex absolute inset-0 pointer-events-none">
+          <div className="relative w-[40vw] h-full">
             <div
-              className="flex shadow-xl shadow-black-900 text-white p-8 md:p-10
-          [clip-path:polygon(0_0,100%_0,70%_100%,0_100%)] absolute inset-0 z-10"
+              className="shadow-xl text-white p-8 md:p-10
+                [clip-path:polygon(0_0,95%_0,70%_100%,0_100%)] absolute inset-0 z-10"
               style={{
                 backgroundImage: `url(${BACKGROUND})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-            ></div>
+            />
             <div
-              className="bg-[#e6cd91]/95 text-white p-8 md:p-10
-          [clip-path:polygon(0_0,95%_0,65%_100%,0_100%)] absolute inset-0 z-20"
-            ></div>
+              className="bg-[#e6cd91]/95 p-8 md:p-10
+                [clip-path:polygon(0_0,90%_0,65%_100%,0_100%)] absolute inset-0 z-20"
+            />
             <div
               className="bg-[#18535B] text-white p-6 md:p-10
-          [clip-path:polygon(0_0,90%_0,60%_100%,0_100%)] absolute inset-0 z-30"
+                [clip-path:polygon(0_0,85%_0,60%_100%,0_100%)] absolute inset-0 z-30"
             >
               <p className="text-xs text-[#9cd4d8]">Testimonials</p>
               <h2 className="font-display mt-2 md:mt-3 text-3xl md:text-5xl leading-tight">
@@ -60,8 +76,10 @@ function Testimonials() {
             </div>
           </div>
         </div>
+
+        {/* Marquee */}
         <div
-          className="overflow-hidden py-16 sm:py-24 md:py-45 max-w-full w-full sm:w-auto"
+          className="w-full overflow-hidden py-8 sm:py-24 md:py-32"
           style={{
             backgroundImage: `url(${BACKGROUND2})`,
             backgroundSize: "cover",
@@ -72,7 +90,7 @@ function Testimonials() {
             {marqueeItems.map((item, index) => (
               <article
                 key={`${item.name}-${index}`}
-                className="w-[240px] sm:w-[280px] shrink-0 rounded-xl sm:rounded-2xl bg-white/95 p-4 sm:p-5 text-[#293038] shadow-sm md:w-[330px]"
+                className="w-[240px] sm:w-[280px] md:w-[330px] shrink-0 rounded-xl sm:rounded-2xl bg-white/95 p-4 sm:p-5 text-[#293038] shadow-sm"
               >
                 <p className="text-xs sm:text-sm leading-6 md:leading-7">{item.quote}</p>
                 <p className="mt-3 sm:mt-5 font-semibold text-sm">{item.name}</p>
