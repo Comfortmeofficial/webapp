@@ -232,7 +232,7 @@ function AboutPage() {
               </div>
             </section>
           </ParallaxReveal>
-          <section className="mx-auto grid max-w-[90vw]  -mt-60 z-30 items-stretch px-4 pt-40 pb-20 sm:px-8 md:grid-cols-[1.3fr_1fr]">
+          <section className="relative mx-auto grid max-w-[90vw] -mt-40 z-30 items-stretch px-4 pt-40 pb-20 sm:px-8 md:grid-cols-[1.3fr_1fr]">
             <div className="bg-[#f2f3f1] p-8 md:p-12">
               <h3 className="font-display text-4xl sm:text-6xl">Our Values</h3>
               <div className="mt-8 grid gap-6 sm:grid-cols-2">
