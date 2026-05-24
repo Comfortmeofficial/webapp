@@ -16,11 +16,11 @@ function NotFoundPage() {
           backgroundPosition: "center",
         }}
       >
-        <main className="bg-[#f4f5f2] px-4 py-14 sm:px-8">
+        <main className="bg-[#f4f5f2] px-4 py-14 w-[98vw] sm:px-8">
           <section
             className="mx-auto max-w-7xl rounded-sm border border-[#e7ecea] bg-white px-6 py-14 text-center sm:px-12"
             style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url(${TOP_BG})`,
+              backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(${TOP_BG})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundAttachment: "fixed",

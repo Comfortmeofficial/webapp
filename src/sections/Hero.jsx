@@ -1,4 +1,3 @@
-import { useState } from "react";
 import HERO_BG from "../assets/main/homebg.svg";
 import Button from "../components/Button";
 
@@ -6,8 +5,6 @@ import Button from "../components/Button";
 //   "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=80";
 
 function Hero() {
-  const [showCookie, setShowCookie] = useState(true);
-
   return (
     <section
       id="home"
@@ -53,42 +50,6 @@ function Hero() {
         </div>
       </div>
 
-      {showCookie && (
-        <aside className="fixed bottom-0 left-0 right-0 z-20 w-full sm:bottom-6 sm:left-auto sm:right-6 sm:w-[310px] rounded-t-2xl sm:rounded-2xl bg-white p-4 sm:p-5 text-[#273038] shadow-xl">
-          <button
-            type="button"
-            onClick={() => setShowCookie(false)}
-            className="absolute right-3 top-2 text-[#7f8990]"
-            aria-label="Close cookie banner"
-          >
-            ✕
-          </button>
-          <div className="mx-auto mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#f8dfb3] text-sm">
-            🍪
-          </div>
-          <h3 className="text-sm sm:text-base font-semibold">Our website uses cookies</h3>
-          <p className="mt-2 text-xs leading-5 text-[#738089]">
-            Our website uses cookies. By continuing, we assume your permission
-            to deploy cookies as detailed in our Privacy Policy.
-          </p>
-          <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <button
-              type="button"
-              onClick={() => setShowCookie(false)}
-              className="w-full sm:w-auto rounded-md px-3 py-2 text-xs text-[#58636c]"
-            >
-              Reject All
-            </button>
-            <button
-              type="button"
-              onClick={() => setShowCookie(false)}
-              className="w-full sm:w-auto rounded-md bg-[#1a6268] px-4 py-2 text-xs font-medium text-white"
-            >
-              Accept cookies
-            </button>
-          </div>
-        </aside>
-      )}
     </section>
   );
 }
