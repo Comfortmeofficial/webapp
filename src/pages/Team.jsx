@@ -187,7 +187,7 @@ function TeamPage() {
               <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg text-white/85">
                 Our team is ready to provide the legal expertise you need.
               </p>
-              <Button as="a" href="#" variant="accent" className="mt-4 sm:mt-6 text-xs sm:text-sm">
+              <Button as="a" href="/contact" variant="accent" className="mt-4 sm:mt-6 text-xs sm:text-sm">
                 Book a Consultation
               </Button>
             </div>

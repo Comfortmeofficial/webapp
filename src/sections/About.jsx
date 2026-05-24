@@ -81,7 +81,7 @@ function About() {
               businesses
             </p>
             <a
-              href="#contact"
+              href="/contact"
               className="mt-6 inline-flex rounded-full bg-[#73b329] px-6 sm:px-9 py-2 sm:py-3 text-xs sm:text-base font-semibold text-white hover:bg-[#5fa024] transition"
             >
               View all

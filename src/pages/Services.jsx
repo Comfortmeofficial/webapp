@@ -221,7 +221,7 @@ function ServicesPage() {
               <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-lg text-white/85">
                 Let us provide the legal clarity and representation you need
               </p>
-              <Button as="a" href="#" variant="accent" className="mt-5 sm:mt-6 text-xs sm:text-sm">
+              <Button as="a" href="/contact" variant="accent" className="mt-5 sm:mt-6 text-xs sm:text-sm">
                 Book a Consultation
               </Button>
             </div>

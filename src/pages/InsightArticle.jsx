@@ -64,7 +64,7 @@ function InsightArticlePage({ slug }) {
               </div>
 
               <div className="mt-8 border-t border-[#edf1ef] pt-6">
-                <Button as="a" href="#" variant="accent">
+                <Button as="a" href="/contact" variant="accent">
                   Book a Consultation
                 </Button>
               </div>

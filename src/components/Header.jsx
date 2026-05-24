@@ -17,7 +17,7 @@ function Header({ currentPage = "home" }) {
         <div className="hidden sm:flex items-center gap-2 md:gap-3">
           <Button
             as="a"
-            href="#"
+            href="/contact"
             variant="secondary"
             className="text-xs md:text-sm"
           >
@@ -25,7 +25,7 @@ function Header({ currentPage = "home" }) {
           </Button>
           <Button
             as="a"
-            href="#"
+            href="/contact"
             variant="primary"
             className="text-xs md:text-sm"
           >

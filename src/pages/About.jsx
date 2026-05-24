@@ -336,7 +336,7 @@ function AboutPage() {
               <p className="mt-3 text-lg text-white/85">
                 Let us provide the legal clarity and representation you need
               </p>
-              <Button as="a" href="#" variant="accent" className="mt-6">
+              <Button as="a" href="/contact" variant="accent" className="mt-6">
                 Book a Consultation
               </Button>
             </div>

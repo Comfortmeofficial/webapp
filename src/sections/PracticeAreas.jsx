@@ -41,7 +41,7 @@ function PracticeAreas() {
             <p className="mt-3 max-w-md text-lg text-[#5f676d]">
               Comprehensive legal solutions tailored to individuals and businesses.
             </p>
-            <Button as="a" href="#contact" variant="accent" className="mt-6">
+            <Button as="a" href="/contact" variant="accent" className="mt-6">
               View all
             </Button>
           </div>
