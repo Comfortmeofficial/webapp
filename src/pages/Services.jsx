@@ -114,7 +114,7 @@ function ServicesPage() {
     <>
       <Header currentPage="services" />
       <section
-        className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#06090c] px-4 py-12 sm:py-20 md:py-24 text-white sm:px-8"
+        className="relative flex h-[60vh] sm:min-h-screen items-center justify-center overflow-hidden bg-[#06090c] px-4 py-12 sm:py-20 md:py-24 text-white sm:px-8"
         style={{
           backgroundImage: `url(${LEGAL_BG})`,
           backgroundSize: "cover",

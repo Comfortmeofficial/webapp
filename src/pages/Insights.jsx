@@ -48,7 +48,7 @@ function InsightsPage() {
       >
         <main className="bg-[#f4f5f2] text-[#1f252b]">
           <section
-            className="mx-auto w-[95vw] h-[55vh] px-4 py-44 sm:px-8 bg-white/90 "
+            className="mx-auto w-[95vw] h-[55vh] px-4 py-20 sm:py-44 sm:px-8 bg-white/90 "
             style={{
               backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(${TOP_BG})`,
               backgroundSize: "cover",
@@ -77,7 +77,7 @@ function InsightsPage() {
                   className="w-full rounded-md border border-[#e6ebea] bg-white px-4 py-2 text-sm text-[#1f252b] outline-none focus:border-[#1f676d]"
                 />
               </label>
-              <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm">
+              <div className="flex flex-row overflow-x-scroll items-center gap-3 text-xs sm:text-sm">
                 {tabs.map((tab) => (
                   <button
                     key={tab}

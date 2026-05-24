@@ -94,7 +94,7 @@ function AboutPage() {
     <>
       <Header currentPage="about" />
       <section
-        className="relative flex min-h-screen items-center overflow-hidden bg-[#050707] px-4 py-24 text-white sm:px-8"
+        className="relative flex h-[60vh] sm:min-h-screen items-center overflow-hidden bg-[#050707] px-4 pt-40 sm:py-24 text-white sm:px-8"
         style={{
           backgroundImage: `url(${ABOUT_BG})`,
           backgroundSize: "cover",
@@ -158,7 +158,7 @@ function AboutPage() {
             </p>
             <div className="mx-auto mt-12 max-w-5xl space-y-4 text-left">
               <div className="flex items-center gap-4">
-                <span className="font-display text-4xl text-[#0d5c65] sm:text-3xl">
+                <span className="font-display text-4xl text-[#0d5c65] sm:text-xl">
                   2015
                 </span>
                 <span className="relative flex-1 border-t-2 border-dotted border-[#bdc8cc]">
@@ -166,12 +166,12 @@ function AboutPage() {
     →
   </span>
 </span>
-                <span className="text-2xl font-semibold text-[#0d5c65] sm:text-2xl">
+                <span className="text-2xl font-semibold text-[#0d5c65] sm:text-lg">
                   Firm established
                 </span>
               </div>
               <div className="flex items-center gap-4">
-                <span className="font-display text-4xl text-[#0d5c65] sm:text-3xl">
+                <span className="font-display text-4xl text-[#0d5c65] sm:text-xl">
                   2018
                 </span>
                 <span className="relative flex-1 border-t-2 border-dotted border-[#bdc8cc]">
@@ -179,12 +179,12 @@ function AboutPage() {
     →
   </span>
 </span>
-                <span className="text-2xl font-semibold text-[#0d5c65] sm:text-2xl">
+                <span className="text-2xl font-semibold text-[#0d5c65] sm:text-lg">
                   Expanded into corporate law
                 </span>
               </div>
               <div className="flex items-center gap-4">
-                <span className="font-display text-4xl text-[#0d5c65] sm:text-3xl">
+                <span className="font-display text-4xl text-[#0d5c65] sm:text-xl">
                   2022
                 </span>
                 <span className="relative flex-1 border-t-2 border-dotted border-[#bdc8cc]">
@@ -192,7 +192,7 @@ function AboutPage() {
     →
   </span>
 </span>
-                <span className="text-2xl font-semibold text-[#0d5c65] sm:text-2xl">
+                <span className="text-2xl font-semibold text-[#0d5c65] sm:text-lg">
                   Recognised by national legal body
                 </span>
               </div>
@@ -248,19 +248,19 @@ function AboutPage() {
                 ))}
               </div>
             </div>
-            <div
-              className="min-h-[340px] [clip-path:polygon(22%_0,100%_0,100%_100%,0_100%)]"
-              style={{
-                backgroundImage: `url(${OUR_VALUES_BG})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
+          <div
+  className="min-h-[340px] [clip-path:polygon(22%_0,100%_0,100%_100%,0_100%)] hidden sm:block"
+  style={{
+    backgroundImage: `url(${OUR_VALUES_BG})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+/>
           </section>
 
           <section className="mx-auto max-w-[90vw] px-4 pb-20 sm:px-8">
             <div
-              className="rounded-3xl px-8 py-34 text-center text-white"
+              className="rounded-3xl px-8 py-20  text-center text-white"
               style={{
                 backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${ROOTED_BG})`,
                 backgroundSize: "cover",

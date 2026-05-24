@@ -97,7 +97,7 @@ function Footer() {
                 className="flex items-center gap-2 text-xs text-[#5f686f] hover:text-[#1f676d] transition"
               >
                 <img src={FacebookIcon} alt="Facebook" className="h-4 w-4" />
-                <span className="hidden sm:inline">Facebook</span>
+                <span className=" sm:inline">Facebook</span>
               </a>
               <a
                 href="https://instagram.com/bsylegal"
@@ -106,7 +106,7 @@ function Footer() {
                 className="flex items-center gap-2 text-xs text-[#5f686f] hover:text-[#1f676d] transition"
               >
                 <img src={InstagramIcon} alt="Instagram" className="h-4 w-4" />
-                <span className="hidden sm:inline">Instagram</span>
+                <span className=" sm:inline">Instagram</span>
               </a>
               <a
                 href="https://twitter.com/bsylegal"
@@ -115,7 +115,7 @@ function Footer() {
                 className="flex items-center gap-2 text-xs text-[#5f686f] hover:text-[#1f676d] transition"
               >
                 <img src={TwitterIcon} alt="Twitter" className="h-4 w-4" />
-                <span className="hidden sm:inline">Twitter</span>
+                <span className=" sm:inline">Twitter</span>
               </a>
             </div>
           </div>
