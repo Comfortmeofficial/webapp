@@ -31,9 +31,7 @@ function Testimonials() {
       <div className="sm:hidden px-6 pt-12 pb-8">
         <p className="text-xs text-[#18535B] uppercase tracking-widest">Testimonials</p>
         <h2 className="font-display mt-2 text-3xl leading-tight text-[#1a2028]">
-          Trusted by Clients.
-          <br />
-          Proven by Results.
+          Excellence Starts with Our People.
         </h2>
         <p className="mt-3 text-sm leading-7 text-[#5f686f]">
           We are committed to delivering exceptional legal services backed by
@@ -65,9 +63,7 @@ function Testimonials() {
             >
               <p className="text-xs text-[#9cd4d8]">Testimonials</p>
               <h2 className="font-display mt-2 md:mt-3 text-3xl md:text-5xl leading-tight">
-                Trusted by Clients.
-                <br />
-                Proven by Results.
+                Excellence Starts with Our People.
               </h2>
               <p className="mt-3 md:mt-5 max-w-sm text-sm md:text-lg leading-7 md:leading-8 text-white/90">
                 We are committed to delivering exceptional legal services backed

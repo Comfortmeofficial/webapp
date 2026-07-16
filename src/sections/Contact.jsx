@@ -33,8 +33,8 @@ function Contact() {
                 Publications
               </h2>
               <p className="mt-3 sm:mt-4 max-w-xl text-base sm:text-lg md:text-2xl leading-7 md:leading-8 text-[#434c53]">
-                Expert perspectives on legal developments, business risks, and
-                regulatory changes.
+                {/* Expert perspectives on legal developments, business risks, and
+                regulatory changes. */}
               </p>
             </div>
             <Button
@@ -77,13 +77,12 @@ function Contact() {
         </div>
 
         <div className="mt-16 sm:mt-20 w-[90vw] sm:w-auto h-auto sm:h-[70vh] rounded-md bg-[#eef2ef] px-4 sm:px-2 py-8 sm:py-0 text-center flex flex-col items-center justify-center mx-auto">
-          <p className="text-xs text-[#80aa36]">Recognized & Affiliated With</p>
+          {/* <p className="text-xs text-[#80aa36]">Recognized & Affiliated With</p> */}
           <h3 className="font-display mt-2 sm:mt-3 text-2xl sm:text-3xl md:text-5xl text-[#12181d]">
             Trusted. Recognized. Connected.
           </h3>
           <p className="mx-auto mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base md:text-lg text-[#5f676d] px-2 sm:px-0">
-            We maintain strong professional ties and uphold the highest
-            standards within the legal industry.
+            Our services are tailored to meet the unique needs of our clients and the industries in which they operate.
           </p>
           <div className="mx-auto mt-10 sm:mt-20 max-w-full overflow-hidden w-full">
             <div className="animate-marquee-left-slow flex w-max items-center gap-6 sm:gap-10 px-2">

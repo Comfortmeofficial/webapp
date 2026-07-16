@@ -18,9 +18,9 @@ function About() {
       <div className="mx-auto max-w-[90vw] px-3 sm:px-4 md:px-8">
         <div className="grid gap-8 sm:gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <div className="pt-0 sm:pt-4 lg:pt-8">
-            <p className="text-xs text-[#80aa36]">About BSY Legal</p>
+            {/* <p className="text-xs text-[#80aa36]">About BSY Legal</p> */}
             <h2 className="font-display mt-3 max-w-md text-3xl sm:text-4xl md:text-5xl leading-tight text-[#171c21]">
-              Built on Expertise. Driven by Results.
+              Rooted in Integrity. Defined by Trust.
             </h2>
           </div>
           <div className="rounded-br-[50px] sm:rounded-br-[100px] rounded-tl-[50px] sm:rounded-tl-[100px] p-2 text-white shadow-[0_14px_36px_rgba(0,0,0,0.18)]"
@@ -32,10 +32,7 @@ function About() {
             }}>
           <div className="rounded-br-[50px] sm:rounded-br-[100px] rounded-tl-[50px] sm:rounded-tl-[100px] bg-[#0e5e66] p-6 sm:p-8 md:p-12 text-white shadow-[0_14px_36px_rgba(0,0,0,0.18)]">
             <p className="text-base sm:text-2xl md:text-[28px] leading-relaxed md:leading-[2.1rem]">
-              BSY Legal is a forward-thinking law firm committed to delivering
-              strategic, client-focused legal solutions. With deep expertise
-              across multiple practice areas, we combine legal precision with a
-              practical understanding of real-world challenges.
+              At BSY Legal, we combine legal expertise with genuine understanding to deliver exceptional client experiences. Guided by trust, empathy, and excellence, we provide strategic legal solutions tailored to our clients' needs while building lasting relationships founded on confidence and integrity.
             </p>
             <button
               type="button"
@@ -49,11 +46,23 @@ function About() {
         <div className="mt-10 sm:mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr]">
           <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
             {[
-              "Corporate & Commercial Law",
-              "Dispute Resolution & Litigation",
-              "Real Estate & Property Law",
-              "Banking & Finance Law",
-            ].map((title) => (
+              {
+                title: "Corporate & Commercial ",
+                text: "Delivering practical, commercially astute legal solutions that strengthen businesses, manage risk, and support long-term success.",
+              },
+              {
+                title: "Estate Planning and Trust Advisory",
+                text: "Helping individuals and families preserve wealth, protect legacies, and secure the future through thoughtful estate planning and bespoke trust solutions.",
+              },
+              {
+                title: "Real Estate & Property ",
+                text: "Guiding individuals, businesses, and investors through every stage of property ownership and development with practical legal solutions that safeguard their investments.",
+              },
+              {
+                title: "Energy & Power",
+                text: "Providing strategic legal counsel to stakeholders across the energy sector, helping them navigate regulatory complexities, manage risk, and drive sustainable growth.",
+              },
+            ].map(({ title, text }) => (
               <article
                 key={title}
                 className="rounded-lg sm:rounded-xl border border-[#ececec] bg-[#f1f2f2] p-4 sm:p-6"
@@ -65,8 +74,7 @@ function About() {
                 />
                 <h3 className="text-base sm:text-lg font-medium text-[#4d545a]">{title}</h3>
                 <p className="mt-2 sm:mt-3 text-xs sm:text-sm leading-6 sm:leading-7 text-[#7b8288]">
-                  Providing legal support and strategic guidance tailored to
-                  your goals.
+                  {text}
                 </p>
               </article>
             ))}

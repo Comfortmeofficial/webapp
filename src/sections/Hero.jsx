@@ -36,16 +36,15 @@ function Hero() {
             African Heritage
           </h1>
           <p className="hero-reveal-2 mx-auto mt-3 max-w-3xl text-xs sm:mt-4 sm:text-base text-white/85 md:mt-5 md:text-2xl">
-            Providing world-class legal counsel with integrity, precision, and a
-            deep respect for African identity.
+            Providing exceptional legal services built on trust, empathy and inclusivity
           </p>
           <div className="hero-reveal-3 mt-4 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3 sm:gap-3 md:mt-8">
             <Button as="a" href="/services" variant="primary" className="w-full sm:w-auto text-xs sm:text-sm">
-              Explore Our Services
+              Learn More
             </Button>
-            <Button as="a" href="/team" variant="secondary" className="w-full sm:w-auto text-xs sm:text-sm">
+            {/* <Button as="a" href="/team" variant="secondary" className="w-full sm:w-auto text-xs sm:text-sm">
               Meet the Team
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>

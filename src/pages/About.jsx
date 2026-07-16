@@ -105,22 +105,21 @@ function AboutPage() {
         <div className="relative mx-auto max-w-7xl  text-center flex flex-col gap-4">
           <div className="-mt-50">
             <h1 className="font-display text-4xl sm:text-6xl top-4">
-              About BSY Legal
+             Law Practiced with Purpose.
             </h1>
             <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-white/90 sm:text-xl">
-              A full-service Nigerian law firm built on trust, excellence, and a
-              deep-rooted commitment to African identity.
+              We are a new-generation law firm defined not just by what we know, but by how deeply we care. BSY Legal exists to take legal practice in Nigeria to its highest potential.
             </p>
           </div>
-          <div className="pointer-events-none absolute -left-[80vw] top-[10vh] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block md:-left-[12vw]">
+          {/* <div className="pointer-events-none absolute -left-[80vw] top-[10vh] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block md:-left-[12vw]">
             Over 23 Cases Handled
-          </div>
+          </div> */}
           <div className="pointer-events-none absolute right-4 top-[37vh] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block md:right-20">
             35+ Attorneys
           </div>
-          <div className="pointer-events-none absolute -bottom-[5vh] -right-[20%] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block">
+          {/* <div className="pointer-events-none absolute -bottom-[5vh] -right-[20%] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block">
             Established Since 1967
-          </div>
+          </div> */}
           <div className="mt-6 grid gap-3 md:hidden">
             <p className="rounded-full bg-white px-5 py-3 text-sm text-[#2a3036]">
               Over 23 Cases Handled
@@ -159,14 +158,14 @@ function AboutPage() {
             <div className="mx-auto mt-12 max-w-5xl space-y-4 text-left">
               <div className="flex items-center gap-4">
                 <span className="font-display text-4xl text-[#0d5c65] sm:text-xl">
-                  2015
+                  2021
                 </span>
                 <span className="relative flex-1 border-t-2 border-dotted border-[#bdc8cc]">
   <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[#bdc8cc]">
     →
   </span>
 </span>
-                <span className="text-2xl font-semibold text-[#0d5c65] sm:text-lg">
+                {/* <span className="text-2xl font-semibold text-[#0d5c65] sm:text-lg">
                   Firm established
                 </span>
               </div>
@@ -191,9 +190,9 @@ function AboutPage() {
   <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[#bdc8cc]">
     →
   </span>
-</span>
+</span> */}
                 <span className="text-2xl font-semibold text-[#0d5c65] sm:text-lg">
-                  Recognised by national legal body
+                  Firm established
                 </span>
               </div>
             </div>

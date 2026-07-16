@@ -14,8 +14,8 @@ function Header({ currentPage = "home" }) {
           <img src={LOGO} alt="BSY Legal" className="h-6 w-auto sm:h-8 md:h-10" />
         </a>
         <Navbar currentPage={currentPage} />
-        <div className="hidden sm:flex items-center gap-2 md:gap-3">
-          <Button
+        {/* <div className="hidden sm:flex items-center gap-2 md:gap-3"> */}
+          {/* <Button
             as="a"
             href="/contact"
             variant="secondary"
@@ -30,8 +30,8 @@ function Header({ currentPage = "home" }) {
             className="text-xs md:text-sm"
           >
             Book Consultation
-          </Button>
-        </div>
+          </Button> */}
+        {/* </div> */}
       </div>
     </header>
   );
