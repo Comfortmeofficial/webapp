@@ -80,10 +80,10 @@ function PrivacyPage() {
                     <strong>Contact:</strong> For privacy-related concerns,
                     please contact{" "}
                     <a
-                      href="mailto:info@bsylegal.com"
+                      href="mailto:reachbsylegal@gmail.com"
                       className="text-[#1f676d]"
                     >
-                      info@bsylegal.com
+                      reachbsylegal@gmail.com
                     </a>
                     .
                   </p>

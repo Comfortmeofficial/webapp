@@ -6,34 +6,19 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { INSIGHT_ARTICLES } from "../data/insights";
 
-const tabs = [
-  "All",
-  "Corporate",
-  "Litigation",
-  "Property",
-  "Employment",
-  "Finance",
-  "Energy",
-  "Immigration",
-];
-
 function InsightsPage() {
-  const [activeTab, setActiveTab] = useState("All");
   const [query, setQuery] = useState("");
 
   const filteredArticles = useMemo(() => {
     return INSIGHT_ARTICLES.filter((article) => {
-      const matchesTab =
-        activeTab === "All" ||
-        article.category.toLowerCase().includes(activeTab.toLowerCase());
       const matchesQuery =
         query.trim().length === 0 ||
         article.title.toLowerCase().includes(query.toLowerCase()) ||
         article.excerpt.toLowerCase().includes(query.toLowerCase());
 
-      return matchesTab && matchesQuery;
+      return matchesQuery;
     });
-  }, [activeTab, query]);
+  }, [query]);
 
   return (
     <>
@@ -61,10 +46,10 @@ function InsightsPage() {
               <br />
               Publications
             </h1>
-            <p className="mt-4 max-w-xl text-base leading-7 text-[#3f474d] sm:text-lg">
+            {/* <p className="mt-4 max-w-xl text-base leading-7 text-[#3f474d] sm:text-lg">
               A team of experienced legal professionals dedicated to delivering
               excellence, integrity, and results.
-            </p>
+            </p> */}
 
             <div className="mt-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <label className="block w-full max-w-sm">
@@ -77,22 +62,6 @@ function InsightsPage() {
                   className="w-full rounded-md border border-[#e6ebea] bg-white px-4 py-2 text-sm text-[#1f252b] outline-none focus:border-[#1f676d]"
                 />
               </label>
-              <div className="flex flex-row overflow-x-scroll items-center gap-3 text-xs sm:text-sm">
-                {tabs.map((tab) => (
-                  <button
-                    key={tab}
-                    type="button"
-                    onClick={() => setActiveTab(tab)}
-                    className={`px-2 py-1 transition ${
-                      activeTab === tab
-                        ? "font-semibold text-[#245e66]"
-                        : "text-[#2f373d]"
-                    }`}
-                  >
-                    {tab}
-                  </button>
-                ))}
-              </div>
             </div>
           </section>
 
@@ -125,9 +94,11 @@ function InsightsPage() {
                     <h3 className="font-display text-xl leading-tight text-[#1a2127]">
                       {article.title}
                     </h3>
-                    <span className="shrink-0 text-[10px] text-[#90969c]">
-                      {article.date}
-                    </span>
+                    {article.date && (
+                      <span className="shrink-0 text-[10px] text-[#90969c]">
+                        {article.date}
+                      </span>
+                    )}
                   </div>
                   <p className="mt-2 text-xs leading-5 text-[#667077]">
                     {article.excerpt}
@@ -140,35 +111,6 @@ function InsightsPage() {
                   </a>
                 </article>
               ))}
-            </div>
-
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-xs text-[#5e666d]">
-              <span>Page 1 of 20</span>
-              <a href="#" className="px-1">
-                {"<"}
-              </a>
-              <a href="#" className="px-1 text-[#1e252a]">
-                1
-              </a>
-              <a href="#" className="px-1">
-                2
-              </a>
-              <a href="#" className="px-1">
-                3
-              </a>
-              <a href="#" className="px-1">
-                4
-              </a>
-              <a href="#" className="px-1">
-                5
-              </a>
-              <a href="#" className="px-1">
-                {">"}
-              </a>
-              <span>Go to page</span>
-              <a href="#" className="px-1">
-                100
-              </a>
             </div>
           </section>
         </main>

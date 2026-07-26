@@ -45,7 +45,8 @@ function InsightArticlePage({ slug }) {
 
             <article className="mt-6 rounded-sm border border-[#e7ebea] bg-white p-6 sm:p-8">
               <p className="text-xs text-[#7f888f]">
-                {article.category} · {article.date}
+                {article.category}
+                {article.date && ` · ${article.date}`}
               </p>
               <h1 className="font-display mt-3 text-4xl leading-tight text-[#171f25] sm:text-6xl">
                 {article.title}
@@ -65,7 +66,7 @@ function InsightArticlePage({ slug }) {
 
               <div className="mt-8 border-t border-[#edf1ef] pt-6">
                 <Button as="a" href="/contact" variant="accent">
-                  Book a Consultation
+                  Speak With Us
                 </Button>
               </div>
             </article>

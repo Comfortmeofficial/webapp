@@ -7,99 +7,172 @@ import Button from "../components/Button";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
-const serviceTabs = [
-  "All",
-  "Corporate",
-  "Disputes",
-  "Property",
-  "Employment",
-  "Finance",
-  "Personal",
-  "Energy",
-  "Immigration",
-  "Tax",
-];
-
 const services = [
   {
-    title: "Corporate & Commercial Law",
-    category: "Corporate",
+    title: "Corporate Practice / Secretarial",
     short:
-      "Strategic legal support for businesses navigating complex commercial environments.",
-    full: "We support businesses across the full corporate lifecycle, from incorporation and governance to contract structuring, regulatory compliance, and high-value transactions.",
+      "Corporate structuring, governance, regulatory compliance, and commercial transactions for companies, investors, and founders.",
+    intro: [
+      "Strong corporate governance and regulatory compliance remain essential for business operations, particularly for contemporary businesses in an evolving commercial environment.",
+      "At BSY, our legal advice is tailor-made to serve companies, investors, founders, and institutions on corporate structuring, governance, regulatory compliance, and commercial transactions, ensuring legal frameworks support business growth and operational stability. Our corporate advisory services span from business inception and structuring to expansion, global recognition, sustainability, and long-term strategic growth.",
+    ],
+    whatWeDo: [
+      "Company incorporation and post-incorporation compliance",
+      "Corporate governance and company secretarial services",
+      "CAC filings, annual returns, and statutory compliance",
+      "Board and shareholder meeting documentation",
+      "Mergers, acquisitions, and corporate restructuring",
+      "Joint ventures, strategic alliances, and partnership arrangements",
+      "Commercial contract drafting, review, and negotiation",
+      "Shareholder agreements and equity structuring",
+      "Capital raising, structured finance, and investment advisory",
+      "Private equity and venture capital transactions",
+      "Offshore structuring and cross-border investment advisory",
+      "Business conversion, recapitalization, and ownership restructuring",
+      "Regulatory compliance and transactional due diligence",
+    ],
+    closing:
+      "BSY Legal acts for startups, local and multinational corporations, financial institutions, founders, and private investors across diverse sectors of the African economy.",
   },
   {
-    title: "Intellectual Property",
-    category: "Corporate",
+    title: "Energy / Power / Maritime",
     short:
-      "Protection and enforcement of intellectual assets and creative rights.",
-    full: "Our team advises on trademarks, copyrights, licensing, commercialization, and enforcement strategies that protect valuable intellectual property rights.",
+      "Regulatory, operational, and transactional advisory across the energy, clean energy, and maritime value chain.",
+    intro: [
+      "Our lawyers recognize that the energy, power, and maritime sectors remain central to economic growth, infrastructure development, industrial expansion, and international trade in any nation.",
+      "This is why our practice spans regulatory, operational, commercial, and transactional matters across the energy, clean energy, and maritime value chain, supporting the transition toward sustainable power systems, reduced carbon emissions, and long-term energy security.",
+    ],
+    whatWeDo: [
+      "Construction and operational contracts",
+      "Energy and maritime dispute resolution",
+      "Energy and maritime joint venture arrangements",
+      "Energy project structuring and financing",
+      "Energy/Power advisory across upstream, midstream, and downstream operations",
+      "Infrastructure and project finance transactions",
+      "Maritime transactions and shipping contracts",
+      "Power generation, transmission, distribution, and regulatory compliance",
+      "Power Purchase Agreements (PPAs) and related energy contracts",
+      "Regulatory engagement and sector compliance advisory",
+      "Renewable energy advisory, project development, and regulatory compliance",
+    ],
+    closing:
+      "We act for energy companies, shipping operators, infrastructure developers, investors, and commercial stakeholders operating within Nigeria's energy and maritime sectors.",
   },
   {
-    title: "Litigation & Dispute Resolution",
-    category: "Disputes",
+    title: "Estate Planning & Wealth Management",
     short:
-      "Effective representation and strategic resolution of complex disputes.",
-    full: "We represent clients in civil and commercial litigation, arbitration, and negotiated settlements with a strategy built around speed, precision, and business outcomes.",
+      "Wealth preservation, estate planning, trusts, wills, and succession arrangements for individuals, families, and family offices.",
+    intro: [
+      "Preserving wealth requires deliberate legal planning, robust asset protection structures, and well-structured, long-term succession strategies designed to withstand generational, economic, and regulatory changes.",
+      "We advise high-net-worth individuals, families, business owners, and family offices on comprehensive wealth preservation, estate planning, trusts, wills, and succession arrangements tailored to their personal, family, and commercial objectives, ensuring assets are protected, efficiently structured, and smoothly transitioned across generations.",
+      "Our approach integrates legal foresight with practical structuring solutions that address risk exposure, ownership continuity, and cross-border asset considerations. We also support clients in aligning their wealth structures with governance frameworks, investment goals, and family legacy objectives, ensuring clarity, stability, and long-term preservation of value.",
+    ],
+    whatWeDo: [
+      "Wealth structuring and asset protection strategies",
+      "Family office formation and governance advisory",
+      "Investment and portfolio structuring",
+      "Tax-conscious succession and ownership planning",
+      "Business succession and transition strategies",
+      "Will drafting, review, and estate planning",
+      "Trust creation and trustee advisory",
+      "Probate and estate administration",
+      "Letters of Administration and probate applications",
+      "Cross-border succession planning",
+      "Pre-nuptial and post-nuptial agreements",
+      "Philanthropic and charitable structuring",
+    ],
+    closing:
+      "BSY Legal delivers discreet, practical, and long-term legal solutions designed to preserve wealth and protect generational legacies.",
   },
   {
-    title: "Real Estate & Property Law",
-    category: "Property",
+    title: "Litigation & Arbitration",
     short:
-      "Comprehensive legal support for property transactions and real estate investments.",
-    full: "We handle property acquisitions, due diligence, title reviews, lease documentation, and dispute resolution for institutional and private clients.",
+      "Strategic, commercially aware representation in litigation, arbitration, and alternative dispute resolution.",
+    intro: [
+      "Corporate services naturally come with their share of disagreements, and these disputes require legal representation that is strategic, commercially aware, and results-oriented. Our lawyers are well equipped to represent clients in litigation, arbitration, and alternative dispute resolution proceedings across a broad range of commercial and corporate matters, combining legal precision with practical insight to protect client interests, manage risk effectively, and achieve efficient, commercially sound outcomes.",
+      "We focus on resolving disputes in a manner that preserves value, mitigates disruption to business operations, and, where possible, secures early and cost-effective settlement. Our experience spans complex multi-party disputes, high-value contractual claims, shareholder conflicts, regulatory enforcement actions, and cross-border matters, ensuring clients are supported at every stage of the dispute resolution process.",
+    ],
+    whatWeDo: [
+      "Commercial litigation and dispute resolution",
+      "Corporate and shareholder disputes",
+      "Contractual and transactional disputes",
+      "Real estate and title disputes",
+      "Energy, maritime, and infrastructure disputes",
+      "Debt recovery and enforcement proceedings",
+      "Employment and labour-related disputes",
+      "Arbitration and mediation proceedings",
+      "Regulatory and compliance-related disputes",
+      "Probate and estate disputes",
+      "Enforcement of judgments and arbitral awards",
+    ],
+    closing:
+      "At BSY Legal, we represent corporates, investors, financial institutions, property owners, and private clients in contentious matters across Nigeria.",
   },
   {
-    title: "Employment & Labour Law",
-    category: "Employment",
+    title: "Property / Real Estate Practice",
     short:
-      "Guidance on workplace regulations, employment contracts, and dispute management.",
-    full: "We advise employers and employees on workplace frameworks, policy compliance, disciplinary processes, and labour-related disputes.",
+      "End-to-end legal support for property acquisitions, financing, leasing, and development.",
+    intro: [
+      "The real estate market remains one of the most valuable and legally complex sectors in any nation's economy, requiring advisers with deep knowledge of land tenure systems, regulatory approvals, financing structures, and property transactions.",
+      "BSY Legal advises investors, developers, lenders, landlords, and occupiers on the full spectrum of real estate and property-related matters, providing end-to-end legal support that ensures transactions are secure, compliant, and commercially sound.",
+      "Our practice is focused on safeguarding title, reducing transactional risk, and enabling efficient deal execution across acquisitions, developments, and asset management. We also support clients in navigating regulatory requirements and structuring property interests in a way that protects value and supports long-term investment objectives.",
+    ],
+    whatWeDo: [
+      "Property acquisitions, disposals, and legal due diligence",
+      "Title perfection and Governor's Consent applications",
+      "Land registration and regulatory compliance",
+      "Real estate financing, mortgages, and security structuring",
+      "Development agreements and construction contracts",
+      "SPVs, joint ventures, and REIT structuring",
+      "Commercial and residential lease drafting and negotiation",
+      "Property management advisory and tenancy documentation",
+      "Lease renewals, rent reviews, and termination advisory",
+      "Facility management and property administration agreements",
+      "Real estate dispute resolution and title-related matters",
+    ],
+    closing:
+      "We provide commercially grounded legal support to private investors, developers, financial institutions, landlords, family offices, and corporate occupiers.",
   },
   {
-    title: "Banking & Finance Law",
-    category: "Finance",
+    title: "Technology & Telecommunications",
     short:
-      "Expert legal advisory on financial transactions and regulatory compliance.",
-    full: "Our finance team supports lending, security documentation, debt restructuring, and compliance with banking and financial regulations.",
+      "Regulatory, commercial, and transactional support for telecom operators, fintechs, and technology-driven businesses.",
+    intro: [
+      "Africa's underutilized digital economy continues to expand rapidly through telecommunications growth, fintech innovation, digital infrastructure, and technology-enabled businesses. We provide legal support to technology companies, telecom operators, startups, and digital platforms navigating an evolving regulatory and commercial environment, ensuring compliance while enabling scalable and sustainable growth.",
+      "Our practice supports clients across the full technology lifecycle — from formation and product development to fundraising, market entry, and expansion — while addressing key legal issues such as data protection, intellectual property, licensing, and regulatory approvals.",
+    ],
+    whatWeDo: [
+      "Telecommunications regulatory and licensing advisory",
+      "Technology and software agreements",
+      "SaaS, platform, and digital product contracts",
+      "Data protection, cybersecurity, and privacy compliance",
+      "Technology outsourcing and service agreements",
+      "E-commerce and digital business structuring",
+      "Intellectual property protection and commercialisation",
+      "Fintech and digital payment regulatory advisory",
+      "Media, content licensing, and distribution agreements",
+      "Venture capital and startup financing transactions",
+      "Founders' agreements and investment documentation",
+    ],
+    closing:
+      "Our lawyers advise founders, telecom operators, investors, fintech companies, media platforms, and technology-driven businesses across Africa and beyond.",
   },
-  {
-    title: "Family Law & Estate Planning",
-    category: "Personal",
-    short:
-      "Sensitive and professional handling of family matters and succession planning.",
-    full: "We provide confidential support for family law matters, wills, probate, succession planning, and long-term estate preservation.",
-  },
-  {
-    title: "Energy, Oil & Gas Law",
-    category: "Energy",
-    short:
-      "Specialised legal services for the energy and natural resources sector.",
-    full: "We advise operators, investors, and contractors on project structures, licensing, host-community compliance, and sector-specific regulatory obligations.",
-  },
-  {
-    title: "Immigration Law",
-    category: "Immigration",
-    short:
-      "Legal assistance for immigration processes, permits, and compliance.",
-    full: "Our team assists with immigration documentation, work permits, residence pathways, and compliance planning for individuals and businesses.",
-  },
-  {
-    title: "Tax & Revenue Law",
-    category: "Tax",
-    short: "Advisory on tax compliance, planning, and dispute resolution.",
-    full: "We guide clients on tax planning, filing obligations, tax audits, and tax dispute resolution before regulatory authorities and tribunals.",
-  },
+];
+
+const sectors = [
+  "Corporate and Commercial",
+  "Energy and Power Sector",
+  "Property and Real Estate",
+  "Technology, Media and Telecommunications (TMT) Sector",
+  "Investment & Asset Management",
+  "Agricultural Sector",
+  "Banking and Finance",
+  "Health and Wellness",
+  "Public Sector & Government Advisory",
 ];
 
 function ServicesPage() {
-  const [activeTab, setActiveTab] = useState("All");
   const [activeService, setActiveService] = useState(null);
-
-  const filteredServices =
-    activeTab === "All"
-      ? services
-      : services.filter((service) => service.category === activeTab);
 
   useEffect(() => {
     if (!activeService) return undefined;
@@ -124,12 +197,12 @@ function ServicesPage() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative mx-auto max-w-7xl text-center">
           <h1 className="font-display text-4xl sm:text-5xl md:text-7xl leading-tight">
-            Our Legal Services
+            Our Services
           </h1>
-          <p className="mx-auto mt-4 sm:mt-5 max-w-4xl text-xs sm:text-sm md:text-2xl font-medium leading-6 md:leading-8 text-white/90">
+          {/* <p className="mx-auto mt-4 sm:mt-5 max-w-4xl text-xs sm:text-sm md:text-2xl font-medium leading-6 md:leading-8 text-white/90">
             Comprehensive, strategic legal solutions tailored to individuals,
             businesses, and institutions across diverse sectors.
-          </p>
+          </p> */}
         </div>
       </section>
       <div
@@ -164,25 +237,8 @@ function ServicesPage() {
             }}
           >
             <div className="rounded-sm border border-[#eceeec] p-3 sm:p-5 md:p-6 relative z-10 overflow-x-hidden">
-              <div className="mb-4 sm:mb-6 overflow-x-auto flex gap-2 sm:gap-3 md:gap-4 border-b border-[#eef0ef] pb-3 sm:pb-4 text-[11px] sm:text-sm">
-                {serviceTabs.map((tab) => (
-                  <button
-                    key={tab}
-                    type="button"
-                    onClick={() => setActiveTab(tab)}
-                    className={`px-2.5 sm:px-3 py-1.5 font-medium transition whitespace-nowrap ${
-                      activeTab === tab
-                        ? "text-[#215861]"
-                        : "text-[#343c42] hover:text-[#215861]"
-                    }`}
-                  >
-                    {tab}
-                  </button>
-                ))}
-              </div>
-
               <div className="grid gap-3 sm:gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 overflow-hidden">
-                {filteredServices.map((service) => (
+                {services.map((service) => (
                   <article
                     key={service.title}
                     className="rounded-lg border border-[#f0f1f1] bg-[#f8f9f8] p-4 sm:p-5 md:p-6 flex flex-col"
@@ -206,6 +262,24 @@ function ServicesPage() {
             </div>
           </section>
 
+          <section className="mx-auto w-full sm:w-[98vw] px-3 pb-10 sm:px-4 md:px-8 md:pb-14 overflow-x-hidden">
+            <div className="rounded-sm border border-[#e8ebea] px-4 sm:px-6 md:px-14 py-8 sm:py-10 overflow-x-hidden">
+              <h2 className="text-center font-display text-2xl sm:text-3xl md:text-4xl text-[#1e252a]">
+                Sectors & Industries We Deliver Our Services To
+              </h2>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+                {sectors.map((sector) => (
+                  <p
+                    key={sector}
+                    className="rounded-md border border-[#e8ecea] bg-[#f8f9f8] px-4 py-3 text-xs sm:text-sm text-[#2f373d]"
+                  >
+                    {sector}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </section>
+
           <section className="mx-auto max-w-full px-3 pb-12 sm:px-4 md:px-8 md:pb-24 overflow-x-hidden">
             <div
               className="rounded-lg sm:rounded-2xl px-4 sm:px-8 py-10 sm:py-16 md:py-32 text-center text-white"
@@ -222,7 +296,7 @@ function ServicesPage() {
                 Let us provide the legal clarity and representation you need
               </p>
               <Button as="a" href="/contact" variant="accent" className="mt-5 sm:mt-6 text-xs sm:text-sm">
-                Book a Consultation
+                Speak With Us
               </Button>
             </div>
           </section>
@@ -253,8 +327,24 @@ function ServicesPage() {
                 ✕
               </button>
             </div>
-            <p className="text-sm sm:text-base md:text-lg leading-6 sm:leading-7 md:leading-8 text-[#586169]">
-              {activeService.full}
+            <div className="space-y-4 text-sm sm:text-base leading-6 sm:leading-7 text-[#586169]">
+              {activeService.intro.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            <p className="mt-5 text-sm sm:text-base font-semibold text-[#1e252a]">
+              What We Do
+            </p>
+            <ul className="mt-2 space-y-1.5 text-sm sm:text-base leading-6 text-[#586169]">
+              {activeService.whatWeDo.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="text-[#215861]">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm sm:text-base leading-6 sm:leading-7 text-[#586169]">
+              {activeService.closing}
             </p>
             <div className="mt-6 sm:mt-7">
               <Button

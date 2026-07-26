@@ -1,4 +1,3 @@
-import { useState } from "react";
 import BACKGROUND from "../assets/sections/background.jpg";
 import TOP_BG from "../assets/sections/topbackground.png";
 import WORK_WITH_BG from "../assets/sections/cards/workWith.jpg";
@@ -8,56 +7,13 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { TEAM_MEMBERS } from "../data/teamMembers";
 
-const teamTabs = [
-  "All",
-  "Corporate",
-  "Litigation",
-  "Property",
-  "Employment",
-  "Finance",
-  "Energy",
-  "Immigration",
-];
-
 const featuredMembers = TEAM_MEMBERS.filter((member) =>
-  ["mark-gallogly", "jody-greenstone-miller", "rachel-more-oshodi"].includes(
+  ["glorious-ofeh", "ebitibi-akeke", "adedamola-fagbamigbe"].includes(
     member.slug,
   ),
 );
 
-const teamMembers = [
-  { name: "Adewale Ogunleye", category: "Corporate", slug: "adewale-ogunleye" },
-  { name: "Adewale Ogunleye", category: "Finance", slug: "adewale-ogunleye" },
-  {
-    name: "Adewale Ogunleye",
-    category: "Employment",
-    slug: "adewale-ogunleye",
-  },
-  {
-    name: "Adewale Ogunleye",
-    category: "Litigation",
-    slug: "adewale-ogunleye",
-  },
-  { name: "Adewale Ogunleye", category: "Corporate", slug: "adewale-ogunleye" },
-  { name: "Adewale Ogunleye", category: "Property", slug: "adewale-ogunleye" },
-  { name: "Adewale Ogunleye", category: "Energy", slug: "adewale-ogunleye" },
-  {
-    name: "Adewale Ogunleye",
-    category: "Immigration",
-    slug: "adewale-ogunleye",
-  },
-  { name: "Adewale Ogunleye", category: "Corporate", slug: "adewale-ogunleye" },
-  { name: "Adewale Ogunleye", category: "Finance", slug: "adewale-ogunleye" },
-];
-
 function TeamPage() {
-  const [activeTab, setActiveTab] = useState("All");
-
-  const filteredMembers =
-    activeTab === "All"
-      ? teamMembers
-      : teamMembers.filter((member) => member.category === activeTab);
-
   return (
     <>
       <Header currentPage="team" />
@@ -125,29 +81,9 @@ function TeamPage() {
             }}
           >
             <div className="rounded-sm border border-[#edf0ef] p-3 sm:p-4 md:p-6 relative z-10 overflow-x-hidden">
-              <div className="mb-4 sm:mb-6 overflow-x-auto flex gap-2 sm:gap-4 border-b border-[#eef1ef] pb-3 sm:pb-4 text-xs sm:text-sm">
-                {teamTabs.map((tab) => (
-                  <button
-                    key={tab}
-                    type="button"
-                    onClick={() => setActiveTab(tab)}
-                    className={`px-2 sm:px-3 py-1 font-medium transition whitespace-nowrap ${
-                      activeTab === tab
-                        ? "text-[#235e66]"
-                        : "text-[#31393f] hover:text-[#235e66]"
-                    }`}
-                  >
-                    {tab}
-                  </button>
-                ))}
-              </div>
-
               <div className="grid gap-4 sm:gap-5 md:gap-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 overflow-hidden">
-                {filteredMembers.map((member, index) => (
-                  <article
-                    key={`${member.name}-${index}`}
-                    className="text-center p-2 sm:p-3"
-                  >
+                {TEAM_MEMBERS.map((member) => (
+                  <article key={member.slug} className="text-center p-2 sm:p-3">
                     <img
                       src={member.image}
                       alt={member.name}
@@ -157,9 +93,11 @@ function TeamPage() {
                       {member.name}
                     </h3>
                     <p className="text-xs text-[#6b747b]">{member.role}</p>
-                    <p className="mt-1 text-[10px] leading-4 text-[#9fa5aa] line-clamp-2">
-                      {member.specialties}
-                    </p>
+                    {member.specialties && (
+                      <p className="mt-1 text-[10px] leading-4 text-[#9fa5aa] line-clamp-2">
+                        {member.specialties}
+                      </p>
+                    )}
                     <a
                       href={`/team/${member.slug}`}
                       className="mt-2 inline-flex rounded-full border border-[#d4e6df] px-2 sm:px-3 py-1 text-[10px] font-medium text-[#256169] hover:bg-[#d4e6df]/20 transition"
@@ -182,13 +120,13 @@ function TeamPage() {
               }}
             >
               <h3 className="font-display text-2xl sm:text-4xl md:text-6xl">
-                Work With Experienced Legal Professionals
+                Work With A Team That Exudes Excellence
               </h3>
-              <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg text-white/85">
+              {/* <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg text-white/85">
                 Our team is ready to provide the legal expertise you need.
-              </p>
+              </p> */}
               <Button as="a" href="/contact" variant="accent" className="mt-4 sm:mt-6 text-xs sm:text-sm">
-                Book a Consultation
+                Speak With Us
               </Button>
             </div>
           </section>

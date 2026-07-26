@@ -1,6 +1,5 @@
 import LOGO from "../assets/main/BSY LEGAL 1.svg";
 import FOOTER_BG from "../assets/sections/footer.jpg";
-import FacebookIcon from "../assets/sections/footer/social-icons/Facebook.svg";
 import InstagramIcon from "../assets/sections/footer/social-icons/instagram.svg";
 import TwitterIcon from "../assets/sections/footer/social-icons/x.svg";
 import NEFERTITI from "../assets/sections/footer/nefertiti.png";
@@ -89,33 +88,35 @@ function Footer() {
             <h3 className="mb-2 text-xs sm:text-sm font-semibold text-[#8a9096]">
               Social
             </h3>
-            <div className="space-y-1">
+            <div className="flex items-center gap-3">
               <a
-                href="https://facebook.com/bsylegal"
+                href="https://www.linkedin.com/company/bsy-legal/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs text-[#5f686f] hover:text-[#1f676d] transition"
+                aria-label="LinkedIn"
+                className="text-[#5f686f] hover:text-[#1f676d] transition"
               >
-                <img src={FacebookIcon} alt="Facebook" className="h-4 w-4" />
-                <span className=" sm:inline">bsylegal</span>
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                </svg>
               </a>
               <a
                 href="https://instagram.com/bsylegal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs text-[#5f686f] hover:text-[#1f676d] transition"
+                aria-label="Instagram"
+                className="text-[#5f686f] hover:text-[#1f676d] transition"
               >
-                <img src={InstagramIcon} alt="Instagram" className="h-4 w-4" />
-                <span className=" sm:inline">bsylegal</span>
+                <img src={InstagramIcon} alt="" className="h-4 w-4" />
               </a>
               <a
                 href="https://twitter.com/bsylegal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs text-[#5f686f] hover:text-[#1f676d] transition"
+                aria-label="Twitter"
+                className="text-[#5f686f] hover:text-[#1f676d] transition"
               >
-                <img src={TwitterIcon} alt="Twitter" className="h-4 w-4" />
-                <span className=" sm:inline">bsylegal</span>
+                <img src={TwitterIcon} alt="" className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -127,7 +128,7 @@ function Footer() {
             </h3>
             <div className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm text-[#5f686f]">
               <a
-                href="mailto:info@bsylegal.com"
+                href="mailto:reachbsylegal@gmail.com"
                 className="flex items-center gap-2 hover:text-[#1f676d] transition"
               >
                 <svg
@@ -137,10 +138,10 @@ function Footer() {
                 >
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                 </svg>
-                <span>info@bsylegal.com</span>
+                <span>reachbsylegal@gmail.com</span>
               </a>
               <a
-                href="tel:+2341234567890"
+                href="tel:+2347038678083"
                 className="flex items-center gap-2 hover:text-[#1f676d] transition"
               >
                 <svg
@@ -150,7 +151,7 @@ function Footer() {
                 >
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                 </svg>
-                <span>+234 1234567890</span>
+                <span>+234 703 867 8083</span>
               </a>
               <div className="flex items-start gap-2">
                 <svg
@@ -161,7 +162,7 @@ function Footer() {
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8m3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
                 </svg>
                 <span className="text-xs leading-4 sm:leading-5">
-                  Udiumo Itseui Foundation Building, Olajuwon Oluyide Extension, Ajibode Road, Ibadan, Nigeria.
+                  Plot 12a, Stella Ogunleye Street, off T.F Kuboye Street, Oniru, Lagos.
                 </span>
               </div>
             </div>

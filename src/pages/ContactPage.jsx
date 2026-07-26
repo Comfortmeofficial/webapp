@@ -68,10 +68,10 @@ function ContactPage() {
             <h1 className="font-display text-4xl text-[#1f252b] sm:text-6xl">
               Contact Us
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#5f686f] sm:text-base">
+            {/* <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#5f686f] sm:text-base">
               Get in touch with our team for trusted legal advice and
               professional support tailored to your needs.
-            </p>
+            </p> */}
           </section>
 
           {/* Decorative band + Form card */}
@@ -214,7 +214,7 @@ function ContactPage() {
                     width="100%"
                     height="100%"
                     frameBorder="0"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6450407214607!2d3.5211!3d6.4262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f7b5c8f3c8f3c8f%3A0x3c8f3c8f3c8f3c8f!2sVictoria%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1234567890"
+                    src="https://maps.google.com/maps?q=Plot%2012a%2C%20Stella%20Ogunleye%20Street%2C%20off%20T.F%20Kuboye%20Street%2C%20Oniru%2C%20Lagos&output=embed"
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -231,7 +231,7 @@ function ContactPage() {
                     <div>
                       <p className="text-xs text-[#7f8890]">Office Address</p>
                       <p className="mt-1 text-sm font-medium text-[#2f3941]">
-                        No. 1.2 Abeola Odude Street, Victoria Island, Lagos, Nigeria
+                        Plot 12a, Stella Ogunleye Street, off T.F Kuboye Street, Oniru, Lagos.
                       </p>
                     </div>
                   </div>
@@ -243,19 +243,13 @@ function ContactPage() {
                     <svg className="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                     </svg>
-                    <span>+234 1234567890</span>
+                    <span>+234 703 867 8083</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <svg className="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                     </svg>
-                    <span>info@bsylegal.com</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <svg className="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
-                    <span>support@bsylegal.com</span>
+                    <span>reachbsylegal@gmail.com</span>
                   </div>
                 </section>
 
@@ -279,10 +273,10 @@ function ContactPage() {
                 <section className="rounded-lg border border-[#e6ebea] bg-[#f9faf9] p-4">
                   <p className="text-sm font-medium text-[#2e3740]">Connect With Us</p>
                   <div className="mt-3 flex gap-4">
-                    <a href="https://facebook.com/bsylegal" target="_blank" rel="noopener noreferrer"
+                    <a href="https://www.linkedin.com/company/bsy-legal/" target="_blank" rel="noopener noreferrer"
                       className="inline-flex h-8 w-8 items-center justify-center rounded-full hover:bg-[#f0f0f0]">
-                      <svg className="h-5 w-5" fill="#1877F2" viewBox="0 0 24 24">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                      <svg className="h-5 w-5" fill="#0A66C2" viewBox="0 0 24 24">
+                        <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
                       </svg>
                     </a>
                     <a href="https://instagram.com/bsylegal" target="_blank" rel="noopener noreferrer"

@@ -9,6 +9,7 @@ import Button from "../components/Button";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ParallaxReveal from "../sections/ParallaxReveal";
+import { TEAM_MEMBERS } from "../data/teamMembers";
 
 function useCountUp(target, duration = 1800) {
   const ref = useRef(null);
@@ -61,33 +62,22 @@ function StatCard({ value, label }) {
 }
 
 const values = [
+  ["Trustworthy", ""],
+  ["Empathy", ""],
+  ["Mutual Respect", "For co-workers, clients, colleagues, and the profession."],
+  ["Education", ""],
+  ["Excellent Service", ""],
   [
-    "Integrity",
-    "We uphold the highest ethical standards in every engagement, ensuring honesty, transparency, and accountability.",
+    "Presence and Ambience",
+    "Great and professional appearance in person and in space.",
   ],
-  [
-    "Excellence",
-    "We are committed to delivering superior legal services through expertise, diligence, and attention to detail.",
-  ],
-  [
-    "Client Commitment",
-    "Our clients are at the center of everything we do. We listen, understand, and act in their best interests.",
-  ],
-  [
-    "Cultural Pride",
-    "We embrace and reflect the richness of African heritage in our identity, perspective, and approach to legal practice.",
-  ],
-  [
-    "Innovation",
-    "We continuously evolve, adopting modern legal strategies and solutions to meet changing client needs.",
-  ],
+  ["God at the Center", ""],
+  ["Charitable", ""],
+  ["Inclusiveness", "Everyone matters."],
+  ["Positive Mindset", ""],
 ];
 
-const experts = [
-  "Mark Gallogly",
-  "Jody Greenstone Miller",
-  "Rachel More-Oshodi",
-];
+const experts = ["glorious-ofeh", "ebitibi-akeke", "adedamola-fagbamigbe"];
 
 function AboutPage() {
   return (
@@ -143,17 +133,48 @@ function AboutPage() {
       >
         <main className="bg-[#f5f6f3] text-[#1e252a] w-[98vw]">
           <section className="mx-auto max-w-[95vw] px-4 py-30   text-center sm:px-8">
-            <p className="text-xs text-[#80aa36]">Hear From Us</p>
+            <p className="text-xs text-[#80aa36]">Who We Are</p>
             <h2 className="font-display mt-2 text-4xl text-[#151c21] sm:text-6xl">
-              Our Story
+              BSY Legal
             </h2>
             <p className="mx-auto mt-8 max-w-5xl text-lg leading-10 text-[#485159]">
-              BSY Legal was founded with a clear vision to build a law firm that
-              delivers world-class legal services while remaining deeply rooted
-              in African values and identity. Through dedication, discipline,
-              and an unwavering pursuit of results, BSY Legal has established a
-              reputation for reliability, professionalism, and strategic legal
-              thinking.
+              BSY Legal is a forward-thinking Nigerian law firm built on a
+              singular conviction: that excellent legal service and genuine
+              human empathy are not in competition. They are inseparable.
+            </p>
+            <blockquote className="mx-auto mt-6 max-w-3xl text-xl italic leading-9 text-[#0d5c65]">
+              "We are not merely advisors. We are advocates, builders, and
+              partners, assembled to help our clients navigate the law with
+              confidence and clarity."
+            </blockquote>
+            <p className="mx-auto mt-6 max-w-5xl text-lg leading-10 text-[#485159]">
+              From the boardroom to the courtroom, from protecting legacies to
+              building businesses, we bring focused expertise across the legal
+              needs that matter most, delivered with the care and precision
+              that our clients deserve.
+            </p>
+
+            <h3 className="font-display mt-16 text-3xl text-[#151c21] sm:text-5xl">
+              Our Approach
+            </h3>
+            <p className="mx-auto mt-6 max-w-5xl text-lg leading-10 text-[#485159]">
+              We believe the future of law in Nigeria belongs to firms willing
+              to think differently. BSY Legal was founded to challenge the
+              status quo; assembling young, passionate, and highly skilled
+              legal minds trained in niche areas of law, united under a
+              culture of mutual respect and continuous growth.
+            </p>
+            <p className="mx-auto mt-6 max-w-5xl text-lg leading-10 text-[#485159]">
+              Every client engagement is a relationship, not a transaction. We
+              listen first. We understand the human stakes behind every
+              matter. And we bring our full capability, legal and personal,
+              to bear on every brief we carry.
+            </p>
+            <p className="mx-auto mt-6 max-w-5xl text-lg leading-10 text-[#485159]">
+              Our firm is equally anchored in faith and service. We place God
+              at the center of all we do, and we extend that spirit outward
+              through charitable engagement and a commitment to
+              inclusiveness, because we believe everyone matters.
             </p>
             <div className="mx-auto mt-12 max-w-5xl space-y-4 text-left">
               <div className="flex items-center gap-4">
@@ -213,8 +234,10 @@ function AboutPage() {
                   </h3>
 
                   <p className="mt-4 text-lg text-[#6b747b]">
-                    To deliver exceptional legal solutions with integrity,
-                    precision, and unwavering dedication.
+                    To assemble the best team of young, passionate lawyers
+                    with quality experience in niche areas of law, under a
+                    fully balanced and rewarding environment, solving
+                    clients' legal needs with empathy.
                   </p>
                 </div>
 
@@ -224,8 +247,8 @@ function AboutPage() {
                   </h3>
 
                   <p className="mt-4 text-lg text-[#6b747b]">
-                    To be a leading African law firm recognised globally for
-                    excellence, innovation, and cultural authenticity.
+                    To build a New-Generation Law Firm to Take Over the
+                    Center Stage of Law Practice in Nigeria.
                   </p>
                 </div>
               </div>
@@ -240,9 +263,11 @@ function AboutPage() {
                     <h4 className="text-2xl font-semibold sm:text-3xl">
                       {title}
                     </h4>
-                    <p className="mt-2 text-base leading-7 text-[#5d666d]">
-                      {text}
-                    </p>
+                    {text && (
+                      <p className="mt-2 text-base leading-7 text-[#5d666d]">
+                        {text}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
@@ -278,7 +303,7 @@ function AboutPage() {
             </div>
           </section>
 
-          <section className="mx-auto max-w-[90vw] px-4 pb-20 text-center sm:px-8">
+          {/* <section className="mx-auto max-w-[90vw] px-4 pb-20 text-center sm:px-8">
             <h3 className="font-display text-4xl sm:text-6xl">
               Our Key Milestones
             </h3>
@@ -299,24 +324,38 @@ function AboutPage() {
                 <StatCard key={value} value={value} label={label} />
               ))}
             </div>
-          </section>
+          </section> */}
 
           <section className="mx-auto max-w-[90vw] px-4 pb-20 text-center sm:px-8">
             <h3 className="font-display text-4xl sm:text-6xl">
               Meet Our Legal Experts
             </h3>
             <div className="mt-10 grid gap-8 md:grid-cols-3">
-              {experts.map((name) => (
-                <article key={name}>
-                  <div className="mx-auto h-48 w-48 rounded-full bg-[linear-gradient(135deg,#4f3a28,#b79565)]" />
-                  <h4 className="mt-5 text-3xl font-semibold text-[#1d2429] sm:text-4xl">
-                    {name}
-                  </h4>
-                  <p className="mt-1 text-sm text-[#8b9196]">
-                    Senior Legal Counsel
-                  </p>
-                </article>
-              ))}
+              {experts.map((slug) => {
+                const member = TEAM_MEMBERS.find((item) => item.slug === slug);
+                if (!member) return null;
+                return (
+                  <article key={member.slug}>
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="mx-auto h-48 w-48 rounded-full object-cover"
+                    />
+                    <h4 className="mt-5 text-3xl font-semibold text-[#1d2429] sm:text-4xl">
+                      {member.name}
+                    </h4>
+                    <p className="mt-1 text-sm text-[#8b9196]">
+                      {member.role}
+                    </p>
+                    <a
+                      href={`/team/${member.slug}`}
+                      className="mt-2 inline-flex rounded-full border border-[#d4e6df] px-3 py-1 text-xs font-medium text-[#256169] hover:bg-[#d4e6df]/20 transition"
+                    >
+                      View Profile
+                    </a>
+                  </article>
+                );
+              })}
             </div>
           </section>
 
@@ -336,7 +375,7 @@ function AboutPage() {
                 Let us provide the legal clarity and representation you need
               </p>
               <Button as="a" href="/contact" variant="accent" className="mt-6">
-                Book a Consultation
+                Speak With Us
               </Button>
             </div>
           </section>

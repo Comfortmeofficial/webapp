@@ -51,21 +51,23 @@ function TeamMemberPage({ slug }) {
                     {member.name}
                   </h1>
                   <p className="text-base text-[#4f5a61]">{member.role}</p>
-                  <p className="mt-2 text-xs text-[#7f8890]">
-                    {member.specialties}
-                  </p>
+                  {member.specialties && (
+                    <p className="mt-2 text-xs text-[#7f8890]">
+                      {member.specialties}
+                    </p>
+                  )}
                 </div>
               </div>
             </section>
 
-            <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
+            {/* <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
               <p className="text-xs font-semibold text-[#3b4850]">
                 Specialization
               </p>
               <p className="mt-2 text-xs text-[#738088]">
                 {member.specialties}
               </p>
-            </section>
+            </section> */}
 
             <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
               <p className="text-xs font-semibold text-[#3b4850]">
@@ -73,34 +75,49 @@ function TeamMemberPage({ slug }) {
               </p>
               <div className="mt-3 flex flex-col gap-3 text-sm text-[#4f5b62] sm:flex-row sm:items-center sm:justify-between">
                 <p>{member.email}</p>
-                <p>{member.phone}</p>
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-[#256169] underline underline-offset-2"
+                  >
+                    LinkedIn Profile
+                  </a>
+                )}
                 <Button as="a" href="#" variant="accent" className="text-xs">
-                  Book a Consultation
+                  Speak With Us
                 </Button>
               </div>
             </section>
 
-            <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
-              <p className="text-xs font-semibold text-[#3b4850]">Biography</p>
-              <div className="mt-3 space-y-4 text-xs leading-6 text-[#6d767d]">
-                {member.bio.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-            </section>
+            {member.bio.length > 0 && (
+              <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
+                <p className="text-xs font-semibold text-[#3b4850]">
+                  Biography
+                </p>
+                <div className="mt-3 space-y-4 text-xs leading-6 text-[#6d767d]">
+                  {member.bio.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </section>
+            )}
 
-            <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
-              <p className="text-xs font-semibold text-[#3b4850]">
-                Qualification
-              </p>
-              <ul className="mt-2 space-y-1 text-xs text-[#2f3a41]">
-                {member.qualifications.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </section>
+            {member.qualifications.length > 0 && (
+              <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
+                <p className="text-xs font-semibold text-[#3b4850]">
+                  Qualification
+                </p>
+                <ul className="mt-2 space-y-1 text-xs text-[#2f3a41]">
+                  {member.qualifications.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
-            <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
+            {/* <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
               <p className="text-xs font-semibold text-[#3b4850]">
                 Bar Admissions
               </p>
@@ -109,50 +126,8 @@ function TeamMemberPage({ slug }) {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </section>
+            </section> */}
 
-            <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
-              <p className="text-xs font-semibold text-[#3b4850]">
-                Publications & Insights
-              </p>
-              <div className="mt-3 grid gap-4 sm:grid-cols-2">
-                {[1, 2].map((idx) => (
-                  <article key={idx}>
-                    <h2 className="font-display text-2xl leading-tight text-[#1f272d]">
-                      Key Legal Considerations for Business Expansion
-                    </h2>
-                    <p className="mt-1 text-[10px] text-[#90979c]">
-                      Corporate Law
-                    </p>
-                    <a
-                      href="#"
-                      className="mt-2 inline-block text-xs text-[#2d3940]"
-                    >
-                      Continue Reading →
-                    </a>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
-              <p className="text-xs font-semibold text-[#3b4850]">
-                Notable Cases
-              </p>
-              <div className="mt-3 grid gap-4 sm:grid-cols-2">
-                {[1, 2].map((idx) => (
-                  <article key={idx}>
-                    <h2 className="font-display text-2xl leading-tight text-[#1f272d]">
-                      Key Legal Considerations for Business Expansion
-                    </h2>
-                    <p className="mt-2 text-xs leading-5 text-[#8b9298]">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Ut elit massa mi.
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </section>
           </div>
         </main>
       </div>
