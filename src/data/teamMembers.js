@@ -1,10 +1,17 @@
+import ebitibiPhoto from "../assets/team/Ebitibi.jpg";
+import gloriousPhoto from "../assets/team/Glorious.jpg";
+import adedamolaPhoto from "../assets/team/Adedamola.jpg";
+import funmbiPhoto from "../assets/team/Fumbi.jpg";
+import ebimaPhoto from "../assets/team/Ebima.jpg";
+import temitopePhoto from "../assets/team/Temitope.jpg";
+import deborahPhoto from "../assets/team/Deborah.jpg";
+
 export const TEAM_MEMBERS = [
   {
     slug: "ebitibi-akeke",
     name: "Ebitibi Akeke",
     role: "Lead Partner",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+    image: ebitibiPhoto,
     specialties: "",
     email: "ea.bsylegal@gmail.com",
     linkedin: "https://www.linkedin.com/in/ebitibi-akeke-66a84194",
@@ -16,8 +23,7 @@ export const TEAM_MEMBERS = [
     slug: "glorious-ofeh",
     name: "Glorious Ofeh",
     role: "Senior Associate",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+    image: gloriousPhoto,
     specialties:
       "Corporate & Commercial + Renewable Energy + Regulatory Compliance + Real Estate + Estate Planning",
     email: "og.bsylegal@gmail.com",
@@ -39,8 +45,7 @@ export const TEAM_MEMBERS = [
     slug: "adedamola-fagbamigbe",
     name: "Adedamola Fagbamigbe",
     role: "Associate",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+    image: adedamolaPhoto,
     specialties:
       "Corporate & Commercial + Regulatory Compliance + Corporate Governance + Estate Planning & Trusts",
     email: "af.bsylegal@gmail.com",
@@ -61,8 +66,7 @@ export const TEAM_MEMBERS = [
     slug: "funmbi-onabolu",
     name: "Funmbi Onabolu",
     role: "Practice Manager",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+    image: funmbiPhoto,
     specialties: "",
     email: "fo.bsylegal@gmail.com",
     linkedin: "",
@@ -74,8 +78,7 @@ export const TEAM_MEMBERS = [
     slug: "ebima-akeke",
     name: "Ebima Akeke",
     role: "Head of IT",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
+    image: ebimaPhoto,
     specialties:
       "IT Infrastructure Management + Cloud Productivity Solutions + Technical Support",
     email: "Ebima.akeke@braveswitchyoung.com",
@@ -99,8 +102,7 @@ export const TEAM_MEMBERS = [
     slug: "ademola-temitope",
     name: "Ademola Temitope Aramide Acia",
     role: "Head of Operations",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+    image: temitopePhoto,
     specialties: "HR & Operations + Recruitment + Employee Relations",
     email: "temitope.ademola@braveswitchyoung.com",
     linkedin: "https://www.linkedin.com/in/temitope-ademola-phri-cia-3634413b1",
@@ -119,8 +121,7 @@ export const TEAM_MEMBERS = [
     slug: "deborah-lawrence",
     name: "Deborah Ogheneruona Lawrence",
     role: "Client Service Rep",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
+    image: deborahPhoto,
     specialties: "Client Service + Administrative Support + Tenant Relations",
     email: "deborah.lawrence@braveswitchyoung.com",
     linkedin: "",

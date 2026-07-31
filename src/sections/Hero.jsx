@@ -1,4 +1,4 @@
-import HERO_BG from "../assets/main/homebg.svg";
+import HERO_BG from "../assets/main/homebg.png";
 import Button from "../components/Button";
 
 // const HERO_BG =
