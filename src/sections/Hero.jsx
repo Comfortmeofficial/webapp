@@ -1,4 +1,4 @@
-import HERO_BG from "../assets/main/homebg.png";
+import HERO_BG from "../assets/main/homebg.jpg";
 
 // const HERO_BG =
 //   "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=80";

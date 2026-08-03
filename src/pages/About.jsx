@@ -130,7 +130,7 @@ function AboutPage() {
             <h1 className="font-display text-4xl sm:text-6xl">
               Law Practiced with <span className="text-[#d4af6a]">Purpose.</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-3xl text-base font-semibold leading-8 text-white/90 sm:text-xl">
+            <p className="mx-auto mt-4 max-w-3xl text-base font-light leading-8 text-white/90 sm:text-md">
               We are a new-generation law firm defined not just by what we know, but by how deeply we care. BSY Legal exists to take legal practice in Nigeria to its highest potential.
             </p>
           </div>

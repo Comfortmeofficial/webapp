@@ -1,4 +1,4 @@
-import LEGAL_BG from "../assets/main/legalbg.svg";
+import LEGAL_BG from "../assets/main/legalbg.jpg";
 import BACKGROUND from "../assets/sections/background.jpg";
 import PARTNER_BG from "../assets/sections/cards/partner.jpg";
 import WOMAN_IMAGE from "../assets/sections/woman_law.svg";
