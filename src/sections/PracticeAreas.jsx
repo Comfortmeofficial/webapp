@@ -30,15 +30,15 @@ function PracticeAreas() {
                 key={item.title}
                 className="rounded-xl border border-[#e6e6e6] bg-[#f8f8f8] p-6"
               >
-                <h3 className="text-lg font-medium text-[#2c343b]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#667077]">{item.desc}</p>
+                <h3 className="text-base sm:text-lg font-medium text-[#2c343b]">{item.title}</h3>
+                <p className="mt-3 text-xs sm:text-sm leading-7 text-[#667077]">{item.desc}</p>
               </article>
             ))}
           </div>
           <div className="pt-2">
             <p className="mb-2 text-xs text-[#80aa36]">Our Service</p>
-            <h2 className="font-display text-5xl leading-tight text-[#171d22]">Our Practice Areas</h2>
-            <p className="mt-3 max-w-md text-lg text-[#5f676d]">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-6xl leading-tight text-[#171d22]">Our Practice Areas</h2>
+            <p className="mt-3 max-w-md text-base sm:text-lg text-[#5f676d]">
               Comprehensive legal solutions tailored to individuals and businesses.
             </p>
             <Button as="a" href="/contact" variant="accent" className="mt-6">

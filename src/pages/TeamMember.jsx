@@ -1,6 +1,7 @@
 import BACKGROUND from "../assets/sections/background.jpg";
 import TOP_BG from "../assets/sections/topbackground.png";
 import Button from "../components/Button";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { TEAM_MEMBERS } from "../data/teamMembers";
 
@@ -12,91 +13,106 @@ function TeamMemberPage({ slug }) {
     <>
       <Header currentPage="team" />
       <div
-        className="flex h-[] items-center justify-center "
+        className="flex w-full items-center justify-center"
         style={{
           backgroundImage: `url(${BACKGROUND})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <main className="bg-[#f4f5f2] px-4 py-22 text-[#1e252a] w-[98vw] sm:px-8">
-          <div
-            className="mx-auto w-[95vw]"
-            style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(${TOP_BG})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundAttachment: "fixed",
-              padding: "2rem",
-              borderRadius: "0.5rem",
-              marginBottom: "2rem",
-            }}
-          >
+        <main
+          className="relative w-[98vw] overflow-hidden px-4 py-16 pt-32 text-[#1e252a] sm:px-8"
+          style={{
+            backgroundImage: `url(${TOP_BG})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
+          }}
+        >
+          <div className="absolute inset-0 bg-[#f4f5f2]/80" />
+          <div className="relative z-10 mx-auto max-w-5xl">
             <a
               href="/team"
-              className="inline-flex rounded-md border border-[#dbe1de] bg-white px-3 py-2 text-xs text-[#435057]"
+              className="inline-flex items-center gap-1 rounded-md border border-[#18535b] px-3 py-2 text-xs font-medium text-[#18535b] transition hover:bg-[#18535b]/5"
             >
-              ← Back To Our Team
+              ← Back to Our Teams
             </a>
 
-            <section className="mt-7 rounded-sm border border-[#e8ecea] bg-white p-6">
-              <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="h-24 w-24 rounded-full object-cover"
-                />
-                <div>
-                  <h1 className="text-3xl font-semibold text-[#151d22]">
-                    {member.name}
-                  </h1>
-                  <p className="text-base text-[#4f5a61]">{member.role}</p>
-                  {member.specialties && (
-                    <p className="mt-2 text-xs text-[#7f8890]">
-                      {member.specialties}
-                    </p>
-                  )}
-                </div>
+            <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center">
+              <img
+                src={member.image}
+                alt={member.name}
+                className="h-[220px] w-[220px] rounded-full object-cover object-top sm:h-[260px] sm:w-[260px]"
+              />
+              <div>
+                <h1 className="text-3xl font-bold uppercase text-[#151d22] sm:text-4xl">
+                  {member.name}
+                </h1>
+                <p className="mt-1 text-lg text-[#3b4850] sm:text-xl">
+                  {member.role}
+                </p>
+                {member.specialties && (
+                  <p className="mt-2 text-xs text-[#7f8890]">
+                    {member.specialties}
+                  </p>
+                )}
               </div>
-            </section>
+            </div>
 
-            {/* <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
-              <p className="text-xs font-semibold text-[#3b4850]">
-                Specialization
-              </p>
-              <p className="mt-2 text-xs text-[#738088]">
-                {member.specialties}
-              </p>
-            </section> */}
-
-            <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
-              <p className="text-xs font-semibold text-[#3b4850]">
+            <section className="mt-8 rounded-md border border-[#eceeec] bg-white p-6 sm:p-8">
+              <p className="text-sm font-semibold text-[#18535b]">
                 Quick Contact
               </p>
-              <div className="mt-3 flex flex-col gap-3 text-sm text-[#4f5b62] sm:flex-row sm:items-center sm:justify-between">
-                <p>{member.email}</p>
-                {member.linkedin && (
+              <div className="mt-4 flex flex-col gap-4 text-sm text-[#4f5b62] sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-wrap items-center gap-4 sm:gap-6">
                   <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-[#256169] underline underline-offset-2"
+                    href={`mailto:${member.email}`}
+                    className="flex items-center gap-2 transition hover:text-[#18535b]"
                   >
-                    LinkedIn Profile
+                    <svg
+                      className="h-4 w-4 shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                    <span>{member.email}</span>
                   </a>
-                )}
-                <Button as="a" href="#" variant="accent" className="text-xs">
-                  Speak With Us
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 underline underline-offset-2 transition hover:text-[#18535b]"
+                    >
+                      <svg
+                        className="h-4 w-4 shrink-0"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                      </svg>
+                      <span>{member.linkedin}</span>
+                    </a>
+                  )}
+                </div>
+                <Button
+                  as="a"
+                  href="/contact"
+                  variant="accent"
+                  className="shrink-0 text-xs sm:text-sm"
+                >
+                  Book a Consultation
                 </Button>
               </div>
             </section>
 
             {member.bio.length > 0 && (
-              <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
-                <p className="text-xs font-semibold text-[#3b4850]">
-                  Biography
+              <section className="mt-6 rounded-md border border-[#eceeec] bg-white p-6 sm:p-8">
+                <p className="text-sm font-semibold text-[#18535b]">
+                  Web Profile
                 </p>
-                <div className="mt-3 space-y-4 text-xs leading-6 text-[#6d767d]">
+                <div className="mt-4 space-y-4 text-sm leading-7 text-[#5c656d] sm:text-base">
                   {member.bio.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -105,32 +121,21 @@ function TeamMemberPage({ slug }) {
             )}
 
             {member.qualifications.length > 0 && (
-              <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
-                <p className="text-xs font-semibold text-[#3b4850]">
+              <section className="mt-6 rounded-md border border-[#eceeec] bg-white p-6 sm:p-8">
+                <p className="text-sm font-semibold text-[#18535b]">
                   Qualification
                 </p>
-                <ul className="mt-2 space-y-1 text-xs text-[#2f3a41]">
+                <ul className="mt-3 space-y-1 text-sm text-[#2f3a41]">
                   {member.qualifications.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
               </section>
             )}
-
-            {/* <section className="mt-4 rounded-sm border border-[#e8ecea] bg-white p-5">
-              <p className="text-xs font-semibold text-[#3b4850]">
-                Bar Admissions
-              </p>
-              <ul className="mt-2 space-y-1 text-xs text-[#2f3a41]">
-                {member.admissions.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </section> */}
-
           </div>
         </main>
       </div>
+      <Footer />
     </>
   );
 }

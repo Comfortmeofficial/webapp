@@ -7,11 +7,17 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { TEAM_MEMBERS } from "../data/teamMembers";
 
+const FEATURED_SLUGS = ["ebitibi-akeke", "glorious-ofeh", "adedamola-fagbamigbe"];
 const featuredMembers = TEAM_MEMBERS.filter((member) =>
-  ["glorious-ofeh", "ebitibi-akeke", "adedamola-fagbamigbe"].includes(
-    member.slug,
-  ),
+  FEATURED_SLUGS.includes(member.slug),
 );
+
+const REST_SLUGS = ["funmbi-onabolu", "ademola-temitope", "ebima-akeke", "deborah-lawrence"];
+const restMembers = REST_SLUGS.map((slug) =>
+  TEAM_MEMBERS.find((member) => member.slug === slug),
+).filter(Boolean);
+
+const shortName = (fullName) => fullName.split(" ").slice(0, 2).join(" ");
 
 function TeamPage() {
   return (
@@ -44,26 +50,26 @@ function TeamPage() {
                 delivering excellence, integrity, and results.
               </p>
 
-              <div className="mt-8 sm:mt-16 md:mt-42 grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 overflow-hidden">
+              <div className="mt-8 sm:mt-16 md:mt-42 grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 overflow-hidden">
                 {featuredMembers.map((member) => (
                   <article key={member.slug}>
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="mx-auto h-40 sm:h-48 md:h-64 w-40 sm:w-48 md:w-64 rounded-full object-cover"
-                    />
-                    <h2 className="mt-3 sm:mt-4 text-lg sm:text-xl font-semibold text-[#1e252a]">
+                    <a href={`/team/${member.slug}`} className="block">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="mx-auto h-56 sm:h-72 md:h-[350px] w-56 sm:w-72 md:w-[350px] rounded-full object-cover object-top transition hover:opacity-90"
+                      />
+                    </a>
+                    <h2
+                      className={`mt-3 sm:mt-4 text-lg sm:text-xl font-semibold text-[#1e252a] ${
+                        member.slug === "ebitibi-akeke" ? "uppercase" : ""
+                      }`}
+                    >
                       {member.name}
                     </h2>
                     <p className="mt-1 text-xs sm:text-sm leading-5 text-[#9aa0a5]">
                       {member.role}
                     </p>
-                    <a
-                      href={`/team/${member.slug}`}
-                      className="mt-2 inline-flex rounded-full border border-[#d4e6df] px-3 py-1 text-xs font-medium text-[#256169] hover:bg-[#d4e6df]/20 transition"
-                    >
-                      View Profile
-                    </a>
                   </article>
                 ))}
               </div>
@@ -81,23 +87,20 @@ function TeamPage() {
             }}
           >
             <div className="rounded-sm border border-[#edf0ef] p-3 sm:p-4 md:p-6 relative z-10 overflow-x-hidden">
-              <div className="grid gap-4 sm:gap-5 md:gap-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 overflow-hidden">
-                {TEAM_MEMBERS.map((member) => (
+              <div className="grid gap-4 sm:gap-5 md:gap-7 grid-cols-2 lg:grid-cols-4 overflow-hidden">
+                {restMembers.map((member) => (
                   <article key={member.slug} className="text-center p-2 sm:p-3">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="mx-auto h-20 sm:h-24 w-20 sm:w-24 rounded-full object-cover"
-                    />
+                    <a href={`/team/${member.slug}`} className="block">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="mx-auto h-[200px] w-[200px] rounded-full border border-[#d9d9d9] object-cover object-top opacity-100 transition hover:opacity-90"
+                      />
+                    </a>
                     <h3 className="mt-2 sm:mt-3 text-sm sm:text-base font-semibold text-[#1e252a]">
-                      {member.name}
+                      {shortName(member.name)}
                     </h3>
                     <p className="text-xs text-[#6b747b]">{member.role}</p>
-                    {member.specialties && (
-                      <p className="mt-1 text-[10px] leading-4 text-[#9fa5aa] line-clamp-2">
-                        {member.specialties}
-                      </p>
-                    )}
                     <a
                       href={`/team/${member.slug}`}
                       className="mt-2 inline-flex rounded-full border border-[#d4e6df] px-2 sm:px-3 py-1 text-[10px] font-medium text-[#256169] hover:bg-[#d4e6df]/20 transition"

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Home from "./pages/Home";
 import AboutPage from "./pages/About";
 import ServicesPage from "./pages/Services";
+import ServiceDetailPage from "./pages/ServiceDetail";
 import TeamPage from "./pages/Team";
 import TeamMemberPage from "./pages/TeamMember";
 import InsightsPage from "./pages/Insights";
@@ -73,6 +74,10 @@ function AppContent() {
 
   if (path === "/about") return <AboutPage />;
   if (path === "/services") return <ServicesPage />;
+  if (path.startsWith("/services/")) {
+    const slug = path.replace("/services/", "").trim();
+    return <ServiceDetailPage slug={slug} />;
+  }
   if (path === "/team") return <TeamPage />;
   if (path.startsWith("/team/")) {
     const slug = path.replace("/team/", "").trim();

@@ -4,14 +4,14 @@ import InstagramIcon from "../assets/sections/footer/social-icons/instagram.svg"
 import TwitterIcon from "../assets/sections/footer/social-icons/x.svg";
 import NEFERTITI from "../assets/sections/footer/nefertiti.png";
 import ODUDUWA from "../assets/sections/footer/oduduwa.png";
+import QUEEN_IDIA from "../assets/sections/footer/queen_idia.png";
 
 const heritageItems = [
   {
     title: "Queen Idia",
     text: "first Queen Mother of the Benin Kingdom, symbol of power and maternal strength.",
     href: "/legacy/queen-idia",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+    image: QUEEN_IDIA,
   },
   {
     title: "Oduduwa",
@@ -94,9 +94,9 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-[#5f686f] hover:text-[#1f676d] transition"
+                className="opacity-90 transition hover:opacity-100"
               >
-                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="h-4 w-4" fill="#0A66C2" viewBox="0 0 24 24">
                   <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
                 </svg>
               </a>
@@ -181,7 +181,7 @@ function Footer() {
       <div
         className="overflow-hidden bg-[linear-gradient(90deg,#5a2617,#8b3d1f,#4f2214)] py-3 sm:py-4 md:py-6"
         style={{
-          backgroundImage: `url(${FOOTER_BG})`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${FOOTER_BG})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

@@ -1,16 +1,21 @@
+import NEFERTITI from "../assets/sections/footer/nefertiti.png";
+import ODUDUWA from "../assets/sections/footer/oduduwa.png";
+import QUEEN_IDIA from "../assets/sections/footer/queen_idia.png";
+
 export const LEGACY_PROFILES = [
   {
     slug: "queen-idia",
     name: "Queen Idia",
     label: "Benin Stateswoman",
     date: "16TH CENTURY",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop",
+    image: QUEEN_IDIA,
     backdropImage: "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=1200&h=600&fit=crop",
     intro:
       "The legendary Iyoba of Benin whose tactical brilliance and political influence helped define one of West Africa's most formidable pre-colonial kingdoms.",
     riseTitle: "The Rise of Queen Idia",
-    riseText:
+    riseText: [
       "Queen Idia rose to prominence as the Iyoba (Queen Mother) of the Benin Kingdom, wielding unprecedented political and administrative influence. Her strategic counsel shaped succession policies, diplomatic relations, and the kingdom's military affairs. Through her legacy of disciplined governance and institutional innovation, she established precedents that would influence West African political structures for centuries. Her maternal authority transcended ceremonial roles, positioning her as a trusted advisor to successive rulers.",
+    ],
     quote:
       "Strength and wisdom are not inherited titles, they are earned through duty to people and land.",
     chronologyTitle: "The Chronology of Impact",
@@ -40,15 +45,19 @@ export const LEGACY_PROFILES = [
   {
     slug: "oduduwa",
     name: "Oduduwa",
-    label: "Yoruba Progenitor",
-    date: "ANCIENT ERA",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=700&fit=crop",
+    label: "Father of the Yoruba Nation",
+    date: "Historical / Mythological Era",
+    image: ODUDUWA,
     backdropImage: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=1200&h=600&fit=crop",
     intro:
-      "A revered founding figure in Yoruba historical tradition, associated with the establishment of kingship systems and enduring social order.",
+      "Legendary progenitor of the Yoruba people and foundational figure in Yoruba history, identity, and kingship.",
     riseTitle: "The Rise of Oduduwa",
-    riseText:
-      "Oduduwa stands as a foundational figure in Yoruba tradition, credited with establishing the principles of legitimate kingship and dynastic succession. His symbolic journey from Ile-Ife established the spiritual and political framework that would unite diverse Yoruba kingdoms. Through structured governance models and institutional frameworks, Oduduwa created a legacy of lawful authority and intergenerational continuity. His influence extended beyond political structures, embedding institutional wisdom into the collective memory of Yoruba peoples.",
+    riseText: [
+      "Oduduwa is widely regarded as the ancestral father and foundational figure of the Yoruba people. Revered across Yorubaland and beyond, he occupies a central place in Yoruba history, spirituality, and traditional kingship.",
+      "According to Yoruba oral tradition, Oduduwa established the ancient kingdom of Ile-Ife, considered the spiritual and cultural cradle of the Yoruba civilization. His descendants went on to establish many prominent Yoruba kingdoms, shaping governance, culture, trade, and identity across generations.",
+      "Oduduwa represents unity, wisdom, leadership, and cultural continuity. His story continues to inspire millions as a symbol of heritage, authority, and the enduring strength of African civilization.",
+      "Even centuries later, his legacy remains deeply woven into Yoruba tradition and identity.",
+    ],
     quote:
       "Nations are built through vision, law, and the collective memory of their people.",
     chronologyTitle: "The Chronology of Impact",
@@ -80,13 +89,14 @@ export const LEGACY_PROFILES = [
     name: "Nefertiti",
     label: "Egyptian Queen",
     date: "C. 1370 BC",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=700&fit=crop",
+    image: NEFERTITI,
     backdropImage: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=1200&h=600&fit=crop",
     intro:
       "An iconic Egyptian queen recognized for diplomatic influence, political visibility, and the symbolic authority of royal stewardship.",
     riseTitle: "The Rise of Nefertiti",
-    riseText:
+    riseText: [
       "Nefertiti's ascendancy during Egypt's transformative Amarna Period marked a pivotal moment in ancient governance. Her prominence in ceremonial and diplomatic affairs reflected unprecedented agency in state affairs. Associated with major socio-religious reforms, she wielded influence over policy, culture, and political legitimacy. Her image became a symbol of authority and intellect, establishing a template for how women could exercise institutional influence through partnership and vision.",
+    ],
     quote:
       "The true measure of power is the ability to shape institutions that outlast the present.",
     chronologyTitle: "The Chronology of Impact",

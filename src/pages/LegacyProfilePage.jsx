@@ -50,7 +50,7 @@ function LegacyProfilePage({ slug }) {
 
           {/* Hero Content with Image */}
           <section
-            className="relative mx-auto w-[100%] min-h-[85vh] overflow-hidden"
+            className="relative mx-auto w-full min-h-[85vh] overflow-hidden"
             style={{
               backgroundImage: `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url(${TOP_BG})`,
               backgroundSize: "cover",
@@ -58,43 +58,52 @@ function LegacyProfilePage({ slug }) {
               backgroundAttachment: "fixed",
             }}
           >
-            {/* Full-bleed image on right half */}
-            <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[50%] h-[70%] lg:w-1/2 lg:h-[85%]">
-              <img
-                src={profile.image}
-                alt={profile.name}
-                className="h-full w-full object-cover object-center"
-              />
-              {/* Blend seam on desktop */}
-              <div className="absolute inset-y-0 left-0 hidden w-40 bg-gradient-to-r from-white to-transparent lg:block" />
-              {/* Darken overlay on mobile so text is readable above */}
-              <div className="absolute inset-0 bg-white/60 lg:hidden" />
-            </div>
-
-            {/* Text content */}
-            <div className="relative z-10 flex min-h-[85vh] items-center px-4 py-24 sm:px-12 lg:w-1/2 lg:py-32">
+            <div className="mx-auto grid min-h-[85vh] max-w-7xl items-center gap-10 px-4 py-16 sm:px-12 lg:grid-cols-2 lg:gap-16">
+              {/* Text content */}
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#9da4aa]">
-                  Heritage Profiles
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#b08d57]">
+                  Heritage Profile
                 </p>
-                <h1 className="font-display mt-4 text-5xl sm:text-6xl text-[#21292f]">
+                <h1 className="font-display mt-4 text-5xl sm:text-6xl text-[#171f25]">
                   {profile.name}
                 </h1>
-                <p className="mt-4 text-sm text-[#6f787f]">
-                  <span className="font-semibold">{profile.date}</span>
-                  <span> • </span>
-                  <span>{profile.label}</span>
-                </p>
-                <p className="mt-6 max-w-lg border-l-2 border-[#c6ccd0] pl-4 text-sm italic leading-7 text-[#5f686f]">
+                <p className="mt-6 max-w-lg border-l-2 border-[#b08d57] pl-4 text-lg italic leading-8 text-[#2f373d]">
                   {profile.intro}
                 </p>
+                <div className="mt-10 flex gap-10">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#b08d57]">
+                      Born
+                    </p>
+                    <p className="mt-1 text-sm font-medium text-[#1f252b]">
+                      {profile.date}
+                    </p>
+                  </div>
+                  <div className="border-l border-[#dcdfdc] pl-10">
+                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#b08d57]">
+                      Legacy
+                    </p>
+                    <p className="mt-1 text-sm font-medium text-[#1f252b]">
+                      {profile.label}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Framed image */}
+              <div className="mx-auto w-full max-w-lg border border-[#e2e5e2] bg-white p-3">
+                <img
+                  src={profile.image}
+                  alt={profile.name}
+                  className="h-[420px] w-full object-cover sm:h-[480px]"
+                />
               </div>
             </div>
           </section>
 
           {/* Rise Section */}
           <section
-            className="relative mx-auto w-[98vw] h-[80vh] px-4 py-16 sm:px-8"
+            className="relative mx-auto flex min-h-[80vh] w-[98vw] flex-col items-center justify-center px-4 py-16 sm:px-8"
             style={{
               backgroundImage: `url(${WOMAN_IMAGE})`,
               backgroundPosition: "left center",
@@ -103,12 +112,14 @@ function LegacyProfilePage({ slug }) {
               backgroundAttachment: "scroll",
             }}
           >
-            <h2 className="font-display text-4xl text-[#1f262c] sm:text-5xl">
+            <h2 className="font-display text-center text-4xl text-[#1f262c] sm:text-5xl">
               {profile.riseTitle}
             </h2>
-            <p className="mt-6 max-w-4xl text-base leading-8 text-[#5f686f]">
-              {profile.riseText}
-            </p>
+            <div className="mx-auto mt-8 max-w-4xl space-y-6 text-center text-base leading-8 text-[#5f686f]">
+              {profile.riseText.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </section>
 
           {/* Chronology Section - Dark Background */}

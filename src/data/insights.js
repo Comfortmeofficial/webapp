@@ -1,11 +1,7 @@
-const FAMILY_IMAGE =
-  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop";
-const GAVEL_IMAGE =
-  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop";
-const OFFICE_IMAGE =
-  "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=500&h=300&fit=crop";
-const MUSIC_IMAGE =
-  "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500&h=300&fit=crop";
+import FAMILY_IMAGE from "../assets/article_images/1ff4b840061fcde1e98f3337e937eb4dcdeb8ff3.jpg";
+import OFFICE_IMAGE from "../assets/article_images/74a56955248d3ce0a13277dd7d246e05859ffd6b.jpg";
+import GAVEL_IMAGE from "../assets/article_images/b3b4683f14b634ec444c0da8c26c115c008b2283.jpg";
+import MUSIC_IMAGE from "../assets/article_images/999502818f1978101dda6bae723eaa554c6733f9.jpg";
 
 export const INSIGHT_ARTICLES = [
   {

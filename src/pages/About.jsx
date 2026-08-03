@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import ABOUT_BG from "../assets/main/aboutbg.svg";
+import ABOUT_BG from "../assets/main/aboutbg.jpg";
 import BACKGROUND from "../assets/sections/background.jpg";
+import WOMAN_IMAGE from "../assets/sections/woman_law.svg";
+import MISSION_BG from "../assets/sections/mission_bg.png";
 import PARTNER_BG from "../assets/sections/cards/partner.jpg";
 import ROOTED_BG from "../assets/sections/cards/rooted.jpg";
 import PARALLEX from "../assets/sections/parallex.svg"
-import OUR_VALUES_BG from "../assets/sections/our-values.svg";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -61,55 +62,91 @@ function StatCard({ value, label }) {
   );
 }
 
-const values = [
-  ["Trustworthy", ""],
-  ["Empathy", ""],
-  ["Mutual Respect", "For co-workers, clients, colleagues, and the profession."],
-  ["Education", ""],
-  ["Excellent Service", ""],
-  [
-    "Presence and Ambience",
-    "Great and professional appearance in person and in space.",
-  ],
-  ["God at the Center", ""],
-  ["Charitable", ""],
-  ["Inclusiveness", "Everyone matters."],
-  ["Positive Mindset", ""],
+const coreValues = [
+  {
+    group: "BRAVE",
+    items: [
+      ["Belief", "We have confidence in our mission and our people."],
+      [
+        "Reliability",
+        "We carry out consistent and dependable legal service delivery.",
+      ],
+      ["Accountability", "We own our actions, advice, and outcomes."],
+      ["Vigilant", "We are precise, aware, and proactive."],
+      [
+        "Excellence",
+        "We are relentless in our pursuit of world-class legal service.",
+      ],
+    ],
+  },
+  {
+    group: "SWITCH",
+    items: [
+      [
+        "Strategic",
+        "We ensure that the solutions we deliver are well structured, sustainable and have our expected outcomes.",
+      ],
+      [
+        "Winning Mindset",
+        "We ensure our services are focused on achieving success and demonstrating resilience in complex matters.",
+      ],
+      [
+        "Innovation",
+        "We deliver creative, modern, contemporary, and technology-driven legal solutions.",
+      ],
+      [
+        "Think",
+        "We maintain a critical, independent, and forward-thinking legal mindset in every matter.",
+      ],
+      [
+        "Competence",
+        "We demonstrate strong technical expertise supported by continuous professional growth.",
+      ],
+      [
+        "Homegrown",
+        "We foster a culture of gratitude, humility, and mutual respect in all client and team relationships.",
+      ],
+    ],
+  },
 ];
 
-const experts = ["glorious-ofeh", "ebitibi-akeke", "adedamola-fagbamigbe"];
+const experts = ["ebitibi-akeke", "glorious-ofeh", "adedamola-fagbamigbe"];
 
 function AboutPage() {
   return (
     <>
       <Header currentPage="about" />
       <section
-        className="relative flex h-[60vh] sm:min-h-screen items-center overflow-hidden bg-[#050707] px-4 pt-40 sm:py-24 text-white sm:px-8"
+        className="relative flex h-[95vh]  items-center overflow-hidden bg-[#050707] px-4 pt-40 -mt-32 sm:py-24 text-white sm:px-8"
         style={{
           backgroundImage: `url(${ABOUT_BG})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "top",
         }}
       >
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative mx-auto max-w-7xl  text-center flex flex-col gap-4">
           <div className="-mt-50">
-            <h1 className="font-display text-4xl sm:text-6xl top-4">
-             Law Practiced with Purpose.
+            <h1 className="font-display text-4xl sm:text-6xl">
+              Law Practiced with <span className="text-[#d4af6a]">Purpose.</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-white/90 sm:text-xl">
+            <p className="mx-auto mt-4 max-w-3xl text-base font-semibold leading-8 text-white/90 sm:text-xl">
               We are a new-generation law firm defined not just by what we know, but by how deeply we care. BSY Legal exists to take legal practice in Nigeria to its highest potential.
             </p>
           </div>
-          {/* <div className="pointer-events-none absolute -left-[80vw] top-[10vh] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block md:-left-[12vw]">
-            Over 23 Cases Handled
-          </div> */}
-          <div className="pointer-events-none absolute right-4 top-[37vh] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block md:right-20">
+          <div className="pointer-events-none absolute -right-[25vw] -bottom-[20vh] hidden items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:flex">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              className="h-4 w-4"
+            >
+              <path d="M12 3v18M7 21h10M5 7l-3 6a3 3 0 0 0 6 0l-3-6ZM19 7l-3 6a3 3 0 0 0 6 0l-3-6ZM5 7h14M12 3l-2 4h4l-2-4Z" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
             35+ Attorneys
           </div>
-          {/* <div className="pointer-events-none absolute -bottom-[5vh] -right-[20%] hidden rounded-full bg-white px-5 py-3 text-sm text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:block">
-            Established Since 1967
-          </div> */}
           <div className="mt-6 grid gap-3 md:hidden">
             <p className="rounded-full bg-white px-5 py-3 text-sm text-[#2a3036]">
               Over 23 Cases Handled
@@ -132,90 +169,86 @@ function AboutPage() {
         }}
       >
         <main className="bg-[#f5f6f3] text-[#1e252a] w-[98vw]">
-          <section className="mx-auto max-w-[95vw] px-4 py-30   text-center sm:px-8">
-            <p className="text-xs text-[#80aa36]">Who We Are</p>
-            <h2 className="font-display mt-2 text-4xl text-[#151c21] sm:text-6xl">
-              BSY Legal
-            </h2>
-            <p className="mx-auto mt-8 max-w-5xl text-lg leading-10 text-[#485159]">
-              BSY Legal is a forward-thinking Nigerian law firm built on a
-              singular conviction: that excellent legal service and genuine
-              human empathy are not in competition. They are inseparable.
-            </p>
-            <blockquote className="mx-auto mt-6 max-w-3xl text-xl italic leading-9 text-[#0d5c65]">
+          <section
+            className="mx-auto max-w-[95vw] px-4 py-30 sm:px-8"
+            style={{
+              backgroundImage: `url(${WOMAN_IMAGE})`,
+              backgroundPosition: "left center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "contain",
+            }}
+          >
+            <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+              <div>
+                <h2 className="font-display text-4xl text-[#151c21] sm:text-5xl">
+                  Who We Are
+                </h2>
+                <blockquote className="mt-6 border-l-4 border-[#b08d57] bg-[#faf6ec] p-6 text-lg italic leading-8 text-[#3f474d]">
+                  BSY Legal is a forward-thinking Nigerian law firm built on a
+                  singular conviction: that excellent legal service and
+                  genuine human empathy are not in competition, they are
+                  inseparable.
+                </blockquote>
+              </div>
+              <div>
+                <h3 className="font-display text-4xl text-[#151c21] sm:text-5xl">
+                  Our Approach
+                </h3>
+                <p className="mt-6 text-lg leading-8 text-[#485159]">
+                  We believe the future of law in Nigeria belongs to firms
+                  willing to think differently. BSY Legal was founded to
+                  challenge the status quo, assembling young, passionate, and
+                  highly skilled legal minds trained in niche areas of law,
+                  united under a culture of mutual respect and continuous
+                  growth.
+                </p>
+                <p className="mt-6 text-lg leading-8 text-[#485159]">
+                  Every client engagement is a relationship, not a
+                  transaction. We listen first. We understand the human
+                  stakes behind every matter. And we bring our full
+                  capability, legal and personal to bear on every brief we
+                  carry.
+                </p>
+                <p className="mt-6 text-lg leading-8 text-[#485159]">
+                  Our firm is equally anchored in faith and service. We place
+                  God at the centre of all we do, and we extend that spirit
+                  outward through charitable engagement and a commitment to
+                  inclusiveness because we believe everyone matters.
+                </p>
+              </div>
+            </div>
+
+            {/* <blockquote className="mx-auto mt-16 max-w-3xl text-center text-xl italic leading-9 text-[#0d5c65]">
               "We are not merely advisors. We are advocates, builders, and
               partners, assembled to help our clients navigate the law with
               confidence and clarity."
-            </blockquote>
-            <p className="mx-auto mt-6 max-w-5xl text-lg leading-10 text-[#485159]">
+            </blockquote> */}
+            {/* <p className="mx-auto mt-6 max-w-5xl text-center text-lg leading-10 text-[#485159]">
               From the boardroom to the courtroom, from protecting legacies to
               building businesses, we bring focused expertise across the legal
               needs that matter most, delivered with the care and precision
               that our clients deserve.
-            </p>
-
-            <h3 className="font-display mt-16 text-3xl text-[#151c21] sm:text-5xl">
-              Our Approach
-            </h3>
-            <p className="mx-auto mt-6 max-w-5xl text-lg leading-10 text-[#485159]">
-              We believe the future of law in Nigeria belongs to firms willing
-              to think differently. BSY Legal was founded to challenge the
-              status quo; assembling young, passionate, and highly skilled
-              legal minds trained in niche areas of law, united under a
-              culture of mutual respect and continuous growth.
-            </p>
-            <p className="mx-auto mt-6 max-w-5xl text-lg leading-10 text-[#485159]">
-              Every client engagement is a relationship, not a transaction. We
-              listen first. We understand the human stakes behind every
-              matter. And we bring our full capability, legal and personal,
-              to bear on every brief we carry.
-            </p>
-            <p className="mx-auto mt-6 max-w-5xl text-lg leading-10 text-[#485159]">
-              Our firm is equally anchored in faith and service. We place God
-              at the center of all we do, and we extend that spirit outward
-              through charitable engagement and a commitment to
-              inclusiveness, because we believe everyone matters.
-            </p>
+            </p> */}
             <div className="mx-auto mt-12 max-w-5xl space-y-4 text-left">
-              <div className="flex items-center gap-4">
-                <span className="font-display text-4xl text-[#0d5c65] sm:text-xl">
-                  2021
-                </span>
-                <span className="relative flex-1 border-t-2 border-dotted border-[#bdc8cc]">
-  <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[#bdc8cc]">
-    →
-  </span>
-</span>
-                {/* <span className="text-2xl font-semibold text-[#0d5c65] sm:text-lg">
-                  Firm established
-                </span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="font-display text-4xl text-[#0d5c65] sm:text-xl">
-                  2018
-                </span>
-                <span className="relative flex-1 border-t-2 border-dotted border-[#bdc8cc]">
-  <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[#bdc8cc]">
-    →
-  </span>
-</span>
-                <span className="text-2xl font-semibold text-[#0d5c65] sm:text-lg">
-                  Expanded into corporate law
-                </span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="font-display text-4xl text-[#0d5c65] sm:text-xl">
-                  2022
-                </span>
-                <span className="relative flex-1 border-t-2 border-dotted border-[#bdc8cc]">
-  <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[#bdc8cc]">
-    →
-  </span>
-</span> */}
-                <span className="text-2xl font-semibold text-[#0d5c65] sm:text-lg">
-                  Firm established
-                </span>
-              </div>
+              {[
+                ["2021", "Firm established"],
+                ["", "Expanded into corporate law"],
+                ["", "Recognised by national legal body"],
+              ].map(([year, label]) => (
+                <div key={label} className="flex items-center gap-4">
+                  <span className="font-display text-xl text-[#0d5c65] md:text-4xl">
+                    {year}
+                  </span>
+                  <span className="relative flex-1 border-t-2 border-dotted border-[#bdc8cc]">
+                    <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[#bdc8cc]">
+                      →
+                    </span>
+                  </span>
+                  <span className="text-lg font-semibold text-[#0d5c65] md:text-2xl">
+                    {label}
+                  </span>
+                </div>
+              ))}
             </div>
           </section>
           <ParallaxReveal
@@ -226,67 +259,71 @@ function AboutPage() {
             description="
   "
           >
-            <section className="mx-auto max-w-7xl px-4 py-8 sm:px-8">
-              <div className="grid gap-0 rounded-sm border border-[#eceeed] bg-[#fbfcfa] md:grid-cols-2">
-                <div className="p-10">
+            <section
+              className="-mx-4 w-[calc(100%+2rem)] px-4 py-16 sm:-mx-8 sm:w-[calc(100%+4rem)] sm:px-8"
+              style={{
+                backgroundImage: `linear-gradient(rgba(245,246,243,0.85), rgba(245,246,243,0.85)), url(${MISSION_BG})`,
+                backgroundRepeat: "no-repeat, repeat",
+              }}
+            >
+              <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 md:gap-16">
+                <div>
                   <h3 className="font-display text-4xl sm:text-5xl">
                     Our Mission
                   </h3>
 
                   <p className="mt-4 text-lg text-[#6b747b]">
-                    To assemble the best team of young, passionate lawyers
-                    with quality experience in niche areas of law, under a
-                    fully balanced and rewarding environment, solving
-                    clients' legal needs with empathy.
+                    Providing first-rate service focused on delivering
+                    deliberate BRAVE steps that drives a transformational
+                    SWITCH in legal mindset, practice, and culture.
                   </p>
                 </div>
 
-                <div className="p-10">
+                <div>
                   <h3 className="font-display text-4xl sm:text-5xl">
                     Our Vision
                   </h3>
 
                   <p className="mt-4 text-lg text-[#6b747b]">
-                    To build a New-Generation Law Firm to Take Over the
-                    Center Stage of Law Practice in Nigeria.
+                    To be a premier law firm with an Africa-centered
+                    perspective, committed to strengthening the Nigerian
+                    legal system.
                   </p>
                 </div>
               </div>
             </section>
           </ParallaxReveal>
-          <section className="relative mx-auto grid max-w-[90vw] -mt-40 z-30 items-stretch px-4 pt-40 pb-20 sm:px-8 md:grid-cols-[1.3fr_1fr]">
-            <div className="bg-[#f2f3f1] p-8 md:p-12">
-              <h3 className="font-display text-4xl sm:text-6xl">Our Values</h3>
-              <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                {values.map(([title, text]) => (
-                  <div key={title}>
-                    <h4 className="text-2xl font-semibold sm:text-3xl">
-                      {title}
-                    </h4>
-                    {text && (
+          <section className="relative mx-auto max-w-[90vw] z-30 px-4 pt-20 pb-20 sm:px-8">
+            <h3 className="font-display text-4xl sm:text-6xl">Our Core Values</h3>
+            {coreValues.map(({ group, items }) => (
+              <div key={group} className="mt-12">
+                <div className="flex items-center gap-4">
+                  <span className="shrink-0 text-lg font-bold tracking-wide text-[#151c21]">
+                    {group}
+                  </span>
+                  <span className="flex-1 border-t-2 border-dashed border-[#b08d57]" />
+                </div>
+                <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+                  {items.map(([title, text]) => (
+                    <div key={title}>
+                      <h4 className="text-xl font-semibold text-[#151c21]">
+                        {title}
+                      </h4>
                       <p className="mt-2 text-base leading-7 text-[#5d666d]">
                         {text}
                       </p>
-                    )}
-                  </div>
-                ))}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          <div
-  className="min-h-[340px] [clip-path:polygon(22%_0,100%_0,100%_100%,0_100%)] hidden sm:block"
-  style={{
-    backgroundImage: `url(${OUR_VALUES_BG})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
-/>
+            ))}
           </section>
 
           <section className="mx-auto max-w-[90vw] px-4 pb-20 sm:px-8">
             <div
               className="rounded-3xl px-8 py-20  text-center text-white"
               style={{
-                backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${ROOTED_BG})`,
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(${ROOTED_BG})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -299,6 +336,11 @@ function AboutPage() {
                 richness of African heritage. We are proud to reflect the
                 strength, resilience, and sophistication of our culture in every
                 aspect of our practice.
+              </p>
+              <p className="mx-auto mt-2 max-w-4xl text-lg leading-9 text-white/90">
+                Our approach blends global legal standards with a distinctly
+                African perspective, allowing us to serve both local and
+                international clients with authenticity and depth
               </p>
             </div>
           </section>
@@ -336,23 +378,23 @@ function AboutPage() {
                 if (!member) return null;
                 return (
                   <article key={member.slug}>
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="mx-auto h-48 w-48 rounded-full object-cover"
-                    />
-                    <h4 className="mt-5 text-3xl font-semibold text-[#1d2429] sm:text-4xl">
+                    <a href={`/team/${member.slug}`} className="block">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="mx-auto h-[350px] w-[350px] rounded-full object-cover object-top opacity-100 transition hover:opacity-90"
+                      />
+                    </a>
+                    <h4
+                      className={`mt-5 text-3xl font-semibold text-[#1d2429] sm:text-4xl ${
+                        member.slug === "ebitibi-akeke" ? "uppercase" : ""
+                      }`}
+                    >
                       {member.name}
                     </h4>
                     <p className="mt-1 text-sm text-[#8b9196]">
                       {member.role}
                     </p>
-                    <a
-                      href={`/team/${member.slug}`}
-                      className="mt-2 inline-flex rounded-full border border-[#d4e6df] px-3 py-1 text-xs font-medium text-[#256169] hover:bg-[#d4e6df]/20 transition"
-                    >
-                      View Profile
-                    </a>
                   </article>
                 );
               })}

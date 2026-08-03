@@ -31,7 +31,7 @@ function About() {
               backgroundSize: "cover",
             }}>
           <div className="rounded-br-[50px] sm:rounded-br-[100px] rounded-tl-[50px] sm:rounded-tl-[100px] bg-[#0e5e66] p-6 sm:p-8 md:p-12 text-white shadow-[0_14px_36px_rgba(0,0,0,0.18)]">
-            <p className="text-base sm:text-2xl md:text-[28px] leading-relaxed md:leading-[2.1rem]">
+            <p className="text-base sm:text-2xl md:text-[20px] leading-relaxed md:leading-[2.1rem]">
               At BSY Legal, we combine legal expertise with genuine understanding to deliver exceptional client experiences. Guided by trust, empathy, and excellence, we provide strategic legal solutions tailored to our clients' needs while building lasting relationships founded on confidence and integrity.
             </p>
             <button
@@ -43,7 +43,7 @@ function About() {
           </div></div>
         </div>
 
-        <div className="mt-10 sm:mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr]">
+        <div className="mt-10 sm:mt-14 ml-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr]">
           <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
             {[
               {
@@ -53,10 +53,6 @@ function About() {
               {
                 title: "Estate Planning and Trust Advisory",
                 text: "Helping individuals and families preserve wealth, protect legacies, and secure the future through thoughtful estate planning and bespoke trust solutions.",
-              },
-              {
-                title: "Real Estate & Property ",
-                text: "Guiding individuals, businesses, and investors through every stage of property ownership and development with practical legal solutions that safeguard their investments.",
               },
               {
                 title: "Energy & Power",
@@ -79,7 +75,7 @@ function About() {
               </article>
             ))}
           </div>
-          <div className="pt-0 sm:pt-4">
+          <div className="pt-0 mr-2 sm:pt-4">
             <p className="text-xs text-[#80aa36]">Our Service</p>
             <h3 className="font-display mt-2 text-3xl sm:text-4xl md:text-6xl leading-tight text-[#171c21]">
               Our Practice Areas
@@ -89,7 +85,7 @@ function About() {
               businesses
             </p>
             <a
-              href="/contact"
+              href="/services"
               className="mt-6 inline-flex rounded-full bg-[#73b329] px-6 sm:px-9 py-2 sm:py-3 text-xs sm:text-base font-semibold text-white hover:bg-[#5fa024] transition"
             >
               View all

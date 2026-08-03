@@ -1,7 +1,7 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import BACKGROUND from "../assets/sections/background.jpg";
-import TOP_BG from "../assets/sections/topbackground.png";
+import CONTACT_TOP_BG from "../assets/sections/footer/contact_top_bg.jpg";
 import CONTACT_BG from "../assets/sections/contact-us.svg";
 import WOMAN_IMAGE from "../assets/sections/woman_law.svg";
 import Footer from "../components/Footer";
@@ -57,28 +57,24 @@ function ContactPage() {
         <main className="bg-[#f8f8f7] text-[#1f252b] w-[98vw]">
           {/* Hero */}
           <section
-            className="mx-auto w-full px-4 pt-28 pb-10 sm:pt-44 sm:pb-16 text-center sm:px-8"
+            className="mx-auto flex min-h-[45vh] sm:min-h-[100vh] w-full items-center justify-center px-4 pb-10 sm:pb-16 text-center sm:px-8"
             style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(${TOP_BG})`,
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(${CONTACT_TOP_BG})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundAttachment: "fixed",
             }}
           >
-            <h1 className="font-display text-4xl text-[#1f252b] sm:text-6xl">
+            <h1 className="font-display text-4xl text-white sm:text-6xl">
               Contact Us
             </h1>
-            {/* <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#5f686f] sm:text-base">
-              Get in touch with our team for trusted legal advice and
-              professional support tailored to your needs.
-            </p> */}
           </section>
 
           {/* Decorative band + Form card */}
-          <section className="relative pb-16">
+          <section className="relative pb-28">
             {/* CONTACT_BG visible at top — card overlaps the bottom half */}
             <div
-              className="h-36 sm:h-52 w-[70vw] mx-auto rounded-tl-3xl rounded-tr-3xl mb-[-5rem] sm:mb-[-8rem]"
+              className="h-36 sm:h-68 w-[70vw] mx-auto rounded-tl-3xl rounded-tr-3xl mb-[-5rem] sm:mb-[-8rem] mt-28"
               style={{
                 backgroundImage: `url(${CONTACT_BG})`,
                 backgroundSize: "cover",
