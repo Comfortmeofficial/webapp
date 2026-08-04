@@ -4,6 +4,8 @@ import BACKGROUND from "../assets/sections/background.jpg";
 import CONTACT_TOP_BG from "../assets/sections/footer/contact_top_bg.jpg";
 import CONTACT_BG from "../assets/sections/contact-us.svg";
 import WOMAN_IMAGE from "../assets/sections/woman_law.svg";
+import InstagramIcon from "../assets/sections/footer/social-icons/instagram.svg";
+import XIcon from "../assets/sections/footer/social-icons/x.svg";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -277,15 +279,11 @@ function ContactPage() {
                     </a>
                     <a href="https://instagram.com/bsylegal" target="_blank" rel="noopener noreferrer"
                       className="inline-flex h-8 w-8 items-center justify-center rounded-full hover:bg-[#f0f0f0]">
-                      <svg className="h-5 w-5" fill="#E4405F" viewBox="0 0 24 24">
-                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m0 22.5C6.2 22.5 1.5 17.8 1.5 12S6.2 1.5 12 1.5 22.5 6.2 22.5 12 17.8 22.5 12 22.5m5.5-16.5h-11c-.825 0-1.5.675-1.5 1.5v11c0 .825.675 1.5 1.5 1.5h11c.825 0 1.5-.675 1.5-1.5v-11c0-.825-.675-1.5-1.5-1.5m-5.5 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6m3-10.5c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5" />
-                      </svg>
+                      <img src={InstagramIcon} alt="Instagram" className="h-5 w-5" />
                     </a>
                     <a href="https://twitter.com/bsylegal" target="_blank" rel="noopener noreferrer"
                       className="inline-flex h-8 w-8 items-center justify-center rounded-full hover:bg-[#f0f0f0]">
-                      <svg className="h-5 w-5" fill="#000000" viewBox="0 0 24 24">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.514l-5.106-6.694-5.829 6.694h-3.31l7.73-8.835L.424 2.25h6.68l4.881 6.236 5.259-6.236zM17.09 19.32h1.827L5.75 4.154H3.81l13.28 15.166z" />
-                      </svg>
+                      <img src={XIcon} alt="X" className="h-5 w-5" />
                     </a>
                   </div>
                 </section>

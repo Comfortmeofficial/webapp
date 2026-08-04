@@ -1,6 +1,9 @@
 import { useState } from "react";
 import BACKGROUND from "../assets/sections/background.jpg";
 import TOP_BG from "../assets/sections/topbackground.png";
+import FacebookIcon from "../assets/sections/footer/social-icons/Facebook.svg";
+import InstagramIcon from "../assets/sections/footer/social-icons/instagram.svg";
+import XIcon from "../assets/sections/footer/social-icons/x.svg";
 import { INSIGHT_ARTICLES } from "../data/insights";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -110,37 +113,27 @@ function InsightArticlePage({ slug }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on Facebook"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1877F2] text-white transition hover:opacity-90"
+                  className="transition hover:opacity-90"
                 >
-                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z" />
-                  </svg>
+                  <img src={FacebookIcon} alt="" className="h-9 w-9" />
                 </a>
                 <a
                   href="https://instagram.com/bsylegal"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on Instagram"
-                  className="flex h-9 w-9 items-center justify-center rounded-full text-white transition hover:opacity-90"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
-                  }}
+                  className="transition hover:opacity-90"
                 >
-                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m0 22.5C6.2 22.5 1.5 17.8 1.5 12S6.2 1.5 12 1.5 22.5 6.2 22.5 12 17.8 22.5 12 22.5m5.5-16.5h-11c-.825 0-1.5.675-1.5 1.5v11c0 .825.675 1.5 1.5 1.5h11c.825 0 1.5-.675 1.5-1.5v-11c0-.825-.675-1.5-1.5-1.5m-5.5 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6m3-10.5c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5" />
-                  </svg>
+                  <img src={InstagramIcon} alt="" className="h-9 w-9" />
                 </a>
                 <a
                   href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(article.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on X"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-black text-white transition hover:opacity-90"
+                  className="transition hover:opacity-90"
                 >
-                  <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.514l-5.106-6.694-5.829 6.694h-3.31l7.73-8.835L.424 2.25h6.68l4.881 6.236 5.259-6.236zM17.09 19.32h1.827L5.75 4.154H3.81l13.28 15.166z" />
-                  </svg>
+                  <img src={XIcon} alt="" className="h-9 w-9" />
                 </a>
                 <button
                   type="button"
