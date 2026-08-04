@@ -82,10 +82,10 @@ function Testimonials() {
                 [clip-path:polygon(0_0,85%_0,60%_100%,0_100%)] absolute inset-0 z-30"
             >
               {/* <p className="text-xs text-[#9cd4d8]">Testimonials</p> */}
-              <h2 className="font-display text-3xl sm:text-2xl md:text-3xl leading-tight">
+              <h2 className="font-display max-w-[22vw] text-3xl sm:text-2xl md:text-3xl leading-tight">
                 Excellence Starts with Our People.
               </h2>
-              <p className="mt-3 md:mt-5 max-w-sm text-sm md:text-lg leading-7 md:leading-8 text-white/90">
+              <p className="mt-3 md:mt-5 max-w-[19vw] text-sm md:text-lg leading-7 md:leading-8 text-white/90">
                 We are committed to delivering exceptional legal services backed
                 by professionalism, integrity, and results.
               </p>

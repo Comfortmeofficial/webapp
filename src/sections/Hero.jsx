@@ -17,16 +17,6 @@ function Hero() {
     >
       <div className="absolute inset-0 bg-black/20" />
 
-      {/* Cinematic reveal lines — anchored at vertical centre */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-0 right-0 hidden sm:block"
-        style={{ top: "65.88%", zIndex: 10 , width: "55%", justifyContent: "center", margin: "0 auto" }}
-      >
-        <div className="hero-line-top" />
-        <div className="hero-line-bottom" />
-      </div>
-
       <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-16 text-center sm:px-8 sm:pb-16 sm:pt-24 md:pb-20 md:pt-30 min-h-screen flex flex-col justify-center sm:justify-start">
         <div className="mx-auto max-w-5xl  py-8 sm:py-12 md:py-38">
           <h1 className="hero-reveal-1 font-display text-[clamp(1.875rem,0.63rem+5.3vw,4.875rem)] font-baseS leading-[1.1] text-white">
@@ -34,6 +24,16 @@ function Hero() {
             <br />
             African Heritage
           </h1>
+
+          {/* Cinematic reveal lines — tracks the heading, not the viewport */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none relative mx-auto hidden w-[55%] sm:block"
+          >
+            <div className="hero-line-top" />
+            <div className="hero-line-bottom" />
+          </div>
+
           <p className="hero-reveal-2 mx-auto mt-3 max-w-3xl text-xs sm:mt-4 sm:text-base text-white/85 md:mt-5 md:text-xl">
             Providing exceptional legal services built on trust, empathy and inclusivity
           </p>

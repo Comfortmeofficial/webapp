@@ -33,7 +33,7 @@ function TeamPage() {
       >
         <main className="bg-[#f4f5f2] text-[#1f252b] w-[98vw] overflow-x-hidden">
           <section
-            className="w-full sm:w-[98vw] min-h-screen sm:h-[100vh] sm:px-4 md:px-8 justify-center mx-auto flex flex-col items-center py-12 sm:py-0 overflow-x-hidden"
+            className="w-full sm:w-[98vw] min-h-screen sm:px-4 md:px-8 justify-center mx-auto flex flex-col items-center py-12 sm:py-16 overflow-x-hidden"
             style={{
               backgroundImage: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url(${TOP_BG})`,
               backgroundSize: "cover",
@@ -41,7 +41,7 @@ function TeamPage() {
               backgroundAttachment: "fixed",
             }}
           >
-            <div className="rounded-sm px-4 sm:px-5 md:px-10 py-12 sm:py-20 md:py-32 text-center bg-white/80 w-full sm:w-[98vw] h-auto sm:h-full flex flex-col justify-center overflow-x-hidden">
+            <div className="rounded-sm px-4 sm:px-5 md:px-10 py-12 sm:py-16 md:py-20 text-center bg-white/80 w-full sm:w-[98vw] flex flex-col justify-center overflow-x-hidden">
               <h1 className="font-display text-4xl sm:text-5xl md:text-7xl text-[#171d22] pb-2 sm:pb-4 break-words">
                 Our Team
               </h1>
@@ -50,7 +50,7 @@ function TeamPage() {
                 delivering excellence, integrity, and results.
               </p>
 
-              <div className="mt-8 sm:mt-16 md:mt-42 grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 overflow-hidden">
+              <div className="mt-8 sm:mt-12 md:mt-16 grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 overflow-hidden">
                 {featuredMembers.map((member) => (
                   <article key={member.slug}>
                     <a href={`/team/${member.slug}`} className="block">
@@ -77,7 +77,7 @@ function TeamPage() {
           </section>
 
           <section
-            className="relative mx-auto max-w-full px-3 py-16 sm:px-4 md:px-8 md:py-20 overflow-x-hidden"
+            className="relative mx-auto max-w-full px-3 pt-6 pb-16 sm:px-4 md:px-8 md:pt-8 md:pb-20 overflow-x-hidden"
             style={{
               backgroundImage: `url(${WOMAN_IMAGE})`,
               backgroundPosition: "left center",
