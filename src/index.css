@@ -44,12 +44,12 @@ body {
 
 @keyframes hero-line-up {
   from { transform: scaleX(1) translateY(0);     }
-  to   { transform: scaleX(1) translateY(-50vh); }
+  to   { transform: scaleX(1) translateY(-23vh); }
 }
 
 @keyframes hero-line-down {
   from { transform: scaleX(1) translateY(0);    }
-  to   { transform: scaleX(1) translateY(-4vh); }
+  to   { transform: scaleX(1) translateY(20vh); }
 }
 
 @keyframes hero-reveal {
