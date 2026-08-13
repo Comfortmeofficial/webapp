@@ -17,18 +17,38 @@ function shuffle(array) {
   return result;
 }
 
+// Random shuffle plus a repair pass: images that were near each other in the
+// original (capture-order) sequence are usually visually similar, so we keep
+// them at least `minGap` apart in the final order.
+function declusterShuffle(images, minGap = 3) {
+  const result = shuffle(images);
+  for (let i = 1; i < result.length; i++) {
+    const prevOriginalIndex = result[i - 1].originalIndex;
+    if (Math.abs(result[i].originalIndex - prevOriginalIndex) < minGap) {
+      for (let j = i + 1; j < result.length; j++) {
+        if (Math.abs(result[j].originalIndex - prevOriginalIndex) >= minGap) {
+          [result[i], result[j]] = [result[j], result[i]];
+          break;
+        }
+      }
+    }
+  }
+  return result;
+}
+
 const sortedGalleryImages = Object.values(highlightImageModules)
   .map((module) => module.default)
   .sort((a, b) => a.localeCompare(b))
-  .map((src) => ({
+  .map((src, index) => ({
     src,
     alt: src.split("/").pop() || "Gallery image",
+    originalIndex: index,
   }));
 
 const [firstGalleryImage, ...restGalleryImages] = sortedGalleryImages;
 const galleryImages = firstGalleryImage
-  ? [firstGalleryImage, ...shuffle(restGalleryImages)]
-  : shuffle(restGalleryImages);
+  ? [firstGalleryImage, ...declusterShuffle(restGalleryImages)]
+  : declusterShuffle(restGalleryImages);
 
 function GalleryPage() {
   return (
