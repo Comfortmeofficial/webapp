@@ -104,32 +104,6 @@ export const SERVICES = [
       "At BSY Legal, we represent corporates, investors, financial institutions, property owners, and private clients in contentious matters across Nigeria.",
   },
   {
-    slug: "property-real-estate-practice",
-    title: "Property / Real Estate Practice",
-    short:
-      "End-to-end legal support for property acquisitions, financing, leasing, and development.",
-    intro: [
-      "The real estate market remains one of the most valuable and legally complex sectors in any nation's economy, requiring advisers with deep knowledge of land tenure systems, regulatory approvals, financing structures, and property transactions.",
-      "BSY Legal advises investors, developers, lenders, landlords, and occupiers on the full spectrum of real estate and property-related matters, providing end-to-end legal support that ensures transactions are secure, compliant, and commercially sound.",
-      "Our practice is focused on safeguarding title, reducing transactional risk, and enabling efficient deal execution across acquisitions, developments, and asset management. We also support clients in navigating regulatory requirements and structuring property interests in a way that protects value and supports long-term investment objectives.",
-    ],
-    whatWeDo: [
-      "Property acquisitions, disposals, and legal due diligence",
-      "Title perfection and Governor's Consent applications",
-      "Land registration and regulatory compliance",
-      "Real estate financing, mortgages, and security structuring",
-      "Development agreements and construction contracts",
-      "SPVs, joint ventures, and REIT structuring",
-      "Commercial and residential lease drafting and negotiation",
-      "Property management advisory and tenancy documentation",
-      "Lease renewals, rent reviews, and termination advisory",
-      "Facility management and property administration agreements",
-      "Real estate dispute resolution and title-related matters",
-    ],
-    closing:
-      "We provide commercially grounded legal support to private investors, developers, financial institutions, landlords, family offices, and corporate occupiers.",
-  },
-  {
     slug: "technology-telecommunications",
     title: "Technology & Telecommunications",
     short:

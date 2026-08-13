@@ -7,6 +7,7 @@ import TeamPage from "./pages/Team";
 import TeamMemberPage from "./pages/TeamMember";
 import InsightsPage from "./pages/Insights";
 import InsightArticlePage from "./pages/InsightArticle";
+import GalleryPage from "./pages/Gallery";
 import ContactPage from "./pages/ContactPage";
 import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
@@ -88,6 +89,7 @@ function AppContent() {
     const slug = path.replace("/insights/", "").trim();
     return <InsightArticlePage slug={slug} />;
   }
+  if (path === "/gallery") return <GalleryPage />;
   if (path === "/contact") return <ContactPage />;
   if (path === "/terms") return <TermsPage />;
   if (path === "/privacy") return <PrivacyPage />;

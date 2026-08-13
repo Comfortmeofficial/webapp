@@ -6,18 +6,13 @@ const navItems = [
   { label: "Our Services", href: "/services" },
   { label: "Our Team", href: "/team" },
   { label: "Articles & Insights", href: "/insights" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact Us", href: "/contact" },
 ];
 
 function Navbar({ currentPage = "home" }) {
-  const [isPath, setIsPath] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef(null);
-  const whitePaths = ["/about", "/services", "/"];
-  
-  useEffect(() => {
-    setIsPath(whitePaths.includes(window.location.pathname.toLowerCase()));
-  }, []);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -33,18 +28,10 @@ function Navbar({ currentPage = "home" }) {
     }
   }, [mobileMenuOpen]);
 
-  const isWhitePath = isPath;
-
   return (
     <nav aria-label="Primary" className="relative" ref={menuRef}>
       {/* Desktop Navigation */}
-      <ul
-        className={
-          isWhitePath
-            ? `hidden items-center gap-3 text-xs font-medium tracking-wide text-white/90 lg:flex xl:gap-6`
-            : `hidden items-center gap-3 text-xs font-medium tracking-wide text-black lg:flex xl:gap-6`
-        }
-      >
+      <ul className="hidden items-center gap-3 text-xs font-medium tracking-wide text-black lg:flex xl:gap-6">
         {navItems.map((item) => (
           <li key={item.label}>
             <a
@@ -54,6 +41,7 @@ function Navbar({ currentPage = "home" }) {
                 (currentPage === "services" && item.href === "/services") ||
                 (currentPage === "team" && item.href === "/team") ||
                 (currentPage === "insights" && item.href === "/insights") ||
+                (currentPage === "gallery" && item.href === "/gallery") ||
                 (currentPage === "contact" && item.href === "/contact") ||
                 (currentPage === "home" && item.href === "/")
                   ? "text-[#18535b]"
@@ -69,9 +57,7 @@ function Navbar({ currentPage = "home" }) {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className={`lg:hidden p-2 rounded-md transition z-40 relative ${
-          isWhitePath ? "text-white/90 hover:text-white" : "text-black hover:text-[#18535b]"
-        }`}
+        className="lg:hidden p-2 rounded-md transition z-40 relative text-black hover:text-[#18535b]"
         aria-label="Toggle mobile menu"
         aria-expanded={mobileMenuOpen}
       >
@@ -106,25 +92,22 @@ function Navbar({ currentPage = "home" }) {
 
       {/* Mobile Navigation Dropdown */}
       {mobileMenuOpen && (
-        <div className={`fixed top-16 left-4 right-4 rounded-xl shadow-2xl z-40 lg:hidden ${
-          isWhitePath ? "bg-[#0d1c24] border border-white/10" : "bg-white border border-gray-200"
-        }`}>
+        <div className="fixed top-16 left-4 right-4 rounded-xl shadow-2xl z-40 lg:hidden bg-white border border-gray-200">
           <ul className="flex flex-col max-h-[calc(100vh-200px)] overflow-y-auto">
             {navItems.map((item, index) => (
-              <li key={item.label} className={`${isWhitePath ? "border-white/5" : "border-gray-100"} ${index !== navItems.length - 1 ? "border-b" : ""}`}>
+              <li key={item.label} className={`border-gray-100 ${index !== navItems.length - 1 ? "border-b" : ""}`}>
                 <a
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block px-5 py-4 text-base font-medium transition ${
-                    isWhitePath ? "text-white/90 hover:text-white hover:bg-white/10" : "text-black hover:text-[#18535b] hover:bg-gray-50"
-                  } ${
+                  className={`block px-5 py-4 text-base font-medium transition text-black hover:text-[#18535b] hover:bg-gray-50 ${
                     (currentPage === "about" && item.href === "/about") ||
                     (currentPage === "services" && item.href === "/services") ||
                     (currentPage === "team" && item.href === "/team") ||
                     (currentPage === "insights" && item.href === "/insights") ||
+                    (currentPage === "gallery" && item.href === "/gallery") ||
                     (currentPage === "contact" && item.href === "/contact") ||
                     (currentPage === "home" && item.href === "/")
-                      ? isWhitePath ? "text-white bg-white/10 border-l-4 border-white" : "text-[#18535b] bg-blue-50 border-l-4 border-[#18535b]"
+                      ? "text-[#18535b] bg-blue-50 border-l-4 border-[#18535b]"
                       : ""
                   }`}
                 >

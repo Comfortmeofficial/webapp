@@ -229,6 +229,7 @@ function AboutPage() {
               needs that matter most, delivered with the care and precision
               that our clients deserve.
             </p> */}
+            {/*
             <div className="mx-auto mt-12 max-w-5xl space-y-4 text-left">
               {[
                 ["2021", "Firm established"],
@@ -250,6 +251,7 @@ function AboutPage() {
                 </div>
               ))}
             </div>
+            */}
           </section>
           <ParallaxReveal
             image={PARALLEX}
@@ -385,11 +387,7 @@ function AboutPage() {
                         className="mx-auto h-[350px] w-[350px] rounded-full object-cover object-top opacity-100 transition hover:opacity-90"
                       />
                     </a>
-                    <h4
-                      className={`mt-5 text-3xl font-semibold text-[#1d2429] sm:text-4xl ${
-                        member.slug === "ebitibi-akeke" ? "uppercase" : ""
-                      }`}
-                    >
+                    <h4 className="mt-5 text-xl font-semibold text-[#1d2429] sm:text-2xl">
                       {member.name}
                     </h4>
                     <p className="mt-1 text-sm text-[#8b9196]">

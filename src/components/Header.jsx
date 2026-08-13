@@ -3,12 +3,8 @@ import Navbar from "./Navbar";
 import LOGO from "../assets/main/BSY LEGAL 1.svg";
 
 function Header({ currentPage = "home" }) {
-  const darkPagesOverlay = ["home", "about", "services"];
-  const isDarkPage = darkPagesOverlay.includes(currentPage);
-  const headerBg = isDarkPage ? "bg-black/10" : "bg-white/85";
-
   return (
-    <header className={`sticky -mb-20 inset-x-0 top-0 z-50 ${headerBg} backdrop-blur-sm`}>
+    <header className="sticky -mb-20 inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="mx-auto flex max-w-[90vw] items-center justify-between px-3 py-3 sm:px-4 md:px-8 md:py-4">
         <a href="/">
           <img src={LOGO} alt="BSY Legal" className="h-6 w-auto sm:h-8 md:h-10" />
