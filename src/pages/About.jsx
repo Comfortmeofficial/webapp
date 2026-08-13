@@ -64,53 +64,29 @@ function StatCard({ value, label }) {
 
 const coreValues = [
   {
-    group: "BRAVE",
+    group: "",
     items: [
-      ["Belief", "We have confidence in our mission and our people."],
+      ["Trustworthiness", "The foundation of every relationship we build."],
+      ["Empathy", "Understanding the person behind every legal matter."],
+      ["Mutual Respect", "For clients, colleagues, and the profession."],
+      ["Education", "Committed to knowledge, growth, and legal literacy."],
+      ["Excellent Service", "Nothing less than our very best, always."],
       [
-        "Reliability",
-        "We carry out consistent and dependable legal service delivery.",
+        "Presence & Ambience",
+        "Professional appearance in person and in space.",
       ],
-      ["Accountability", "We own our actions, advice, and outcomes."],
-      ["Vigilant", "We are precise, aware, and proactive."],
+      ["God at the Centre", "Our faith shapes everything we do."],
+      ["Charitable", "Giving back to the communities we serve."],
+      ["Inclusiveness", "Every person who walks through our doors matters."],
       [
-        "Excellence",
-        "We are relentless in our pursuit of world-class legal service.",
-      ],
-    ],
-  },
-  {
-    group: "SWITCH",
-    items: [
-      [
-        "Strategic",
-        "We ensure that the solutions we deliver are well structured, sustainable and have our expected outcomes.",
-      ],
-      [
-        "Winning Mindset",
-        "We ensure our services are focused on achieving success and demonstrating resilience in complex matters.",
-      ],
-      [
-        "Innovation",
-        "We deliver creative, modern, contemporary, and technology-driven legal solutions.",
-      ],
-      [
-        "Think",
-        "We maintain a critical, independent, and forward-thinking legal mindset in every matter.",
-      ],
-      [
-        "Competence",
-        "We demonstrate strong technical expertise supported by continuous professional growth.",
-      ],
-      [
-        "Homegrown",
-        "We foster a culture of gratitude, humility, and mutual respect in all client and team relationships.",
+        "Positive Mindset",
+        "Solutions-focused, resilient, and forward-looking.",
       ],
     ],
   },
 ];
 
-const experts = ["ebitibi-akeke", "funmbi-onabolu", "glorious-ofeh"];
+const experts = ["ebitibi-akeke", "glorious-ofeh", "adedamola-fagbamigbe"];
 
 function AboutPage() {
   return (
@@ -275,9 +251,10 @@ function AboutPage() {
                   </h3>
 
                   <p className="mt-4 text-lg text-[#6b747b]">
-                    Providing first-rate service focused on delivering
-                    deliberate BRAVE steps that drives a transformational
-                    SWITCH in legal mindset, practice, and culture.
+                    To assemble the best team of young, passionate lawyers
+                    with quality experience in niche areas of law, under a
+                    fully balanced and rewarding environment, solving
+                    clients' legal needs with empathy at every turn.
                   </p>
                 </div>
 
@@ -287,9 +264,10 @@ function AboutPage() {
                   </h3>
 
                   <p className="mt-4 text-lg text-[#6b747b]">
-                    To be a premier law firm with an Africa-centered
-                    perspective, committed to strengthening the Nigerian
-                    legal system.
+                    To build a new-generation law firm that takes centre
+                    stage in the practice of law in Nigeria, redefining what
+                    it means to deliver justice with excellence, integrity,
+                    and ambition.
                   </p>
                 </div>
               </div>
