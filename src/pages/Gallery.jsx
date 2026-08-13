@@ -1,8 +1,15 @@
+import { useEffect, useMemo, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import coverImg from "../assets/gallery/Highlights/IMG_1043.jpg";
 import BACKGROUND from "../assets/sections/background.jpg";
+import galleryDimensions from "../data/galleryDimensions.json";
 
+const COLUMN_BREAKPOINTS = [
+  { minWidth: 1280, columnCount: 4 },
+  { minWidth: 768, columnCount: 3 },
+  { minWidth: 0, columnCount: 2 },
+];
 
 const highlightImageModules = import.meta.glob("../assets/gallery/Highlights/*.jpg", {
   eager: true,
@@ -36,14 +43,60 @@ function declusterShuffle(images, minGap = 3) {
   return result;
 }
 
-const sortedGalleryImages = Object.values(highlightImageModules)
-  .map((module) => module.default)
-  .sort((a, b) => a.localeCompare(b))
-  .map((src, index) => ({
-    src,
-    alt: src.split("/").pop() || "Gallery image",
-    originalIndex: index,
-  }));
+// Places each image into the column that's currently shortest, so multiple
+// columns of naturally-varied-height images still end at roughly the same
+// bottom edge (the same idea as assigning the next job to the
+// least-loaded worker). Assumes all columns share the same width.
+function layoutMasonryColumns(images, columnCount) {
+  const columns = Array.from({ length: columnCount }, () => []);
+  const columnHeights = new Array(columnCount).fill(0);
+  for (const image of images) {
+    let shortest = 0;
+    for (let i = 1; i < columnCount; i++) {
+      if (columnHeights[i] < columnHeights[shortest]) shortest = i;
+    }
+    columns[shortest].push(image);
+    columnHeights[shortest] += 1 / image.aspectRatio;
+  }
+  return columns;
+}
+
+function getColumnCount(width) {
+  const match = COLUMN_BREAKPOINTS.find((bp) => width >= bp.minWidth);
+  return match.columnCount;
+}
+
+function useColumnCount() {
+  const [columnCount, setColumnCount] = useState(() =>
+    typeof window === "undefined" ? 2 : getColumnCount(window.innerWidth),
+  );
+
+  useEffect(() => {
+    const handleResize = () => setColumnCount(getColumnCount(window.innerWidth));
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return columnCount;
+}
+
+const sortedGalleryImages = Object.entries(highlightImageModules)
+  .map(([path, module]) => {
+    const filename = path.split("/").pop();
+    const dimensions = galleryDimensions[filename];
+    return {
+      src: module.default,
+      alt: filename || "Gallery image",
+      filename,
+      aspectRatio:
+        dimensions && dimensions.height
+          ? dimensions.width / dimensions.height
+          : 1,
+    };
+  })
+  .sort((a, b) => a.filename.localeCompare(b.filename))
+  .map((image, index) => ({ ...image, originalIndex: index }));
 
 const [firstGalleryImage, ...restGalleryImages] = sortedGalleryImages;
 const galleryImages = firstGalleryImage
@@ -51,6 +104,12 @@ const galleryImages = firstGalleryImage
   : declusterShuffle(restGalleryImages);
 
 function GalleryPage() {
+  const columnCount = useColumnCount();
+  const galleryColumns = useMemo(
+    () => layoutMasonryColumns(galleryImages, columnCount),
+    [columnCount],
+  );
+
   return (
     <>
       <Header currentPage="gallery" />
@@ -96,18 +155,22 @@ function GalleryPage() {
             </p>
           </div>
 
-          <div className="mx-auto max-w-[1400px] columns-2 gap-3 md:columns-3 xl:columns-4">
-            {galleryImages.map((image, index) => (
-              <figure
-                key={`${image.src}-${index}`}
-                className="mb-3 overflow-hidden rounded-sm border border-[#e7e0d8] bg-[#f5f0eb]"
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="block h-auto w-full object-cover transition duration-300 hover:opacity-90"
-                />
-              </figure>
+          <div className="mx-auto flex max-w-[1400px] gap-3">
+            {galleryColumns.map((column, columnIndex) => (
+              <div key={columnIndex} className="flex flex-1 flex-col gap-3">
+                {column.map((image) => (
+                  <figure
+                    key={image.src}
+                    className="overflow-hidden rounded-sm border border-[#e7e0d8] bg-[#f5f0eb]"
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="block h-auto w-full object-cover transition duration-300 hover:opacity-90"
+                    />
+                  </figure>
+                ))}
+              </div>
             ))}
           </div>
         </section></div>
