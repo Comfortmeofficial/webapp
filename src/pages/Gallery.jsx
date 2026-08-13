@@ -1,6 +1,8 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import coverImg from "../assets/gallery/cover.jpg";
+import coverImg from "../assets/gallery/Highlights/IMG_1043.jpg";
+import BACKGROUND from "../assets/sections/background.jpg";
+
 
 const highlightImageModules = import.meta.glob("../assets/gallery/Highlights/*.jpg", {
   eager: true,
@@ -23,14 +25,14 @@ function GalleryPage() {
         <section
           className="relative flex min-h-[72vh] items-center justify-center overflow-hidden bg-[#f9f6f3]"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.12), rgba(255,255,255,0.2)), url(${coverImg})`,
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(${coverImg})`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "60% 35% ",
           }}
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08),rgba(0,0,0,0.42))]" />
 
-          <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-center px-5 text-center">
+          <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-end px-5 pb-36 sm:pb-44 text-center top-60">
             <span className="mb-5 inline-flex items-center rounded-full border border-white/80 bg-white/10 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.35em] text-white backdrop-blur-sm">
               5 Years of Excellence
             </span>
@@ -45,8 +47,15 @@ function GalleryPage() {
             </button>
           </div>
         </section>
-
-        <section className="bg-white px-3 pb-20 pt-8 sm:px-6">
+          <div
+                  className="flex flex-col items-center justify-center"
+                  style={{
+                    backgroundImage: `url(${BACKGROUND})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+        <section className="bg-white px-3 pb-20 pt-8 sm:px-4 max-w-full w-[98vw] sm:w-[98vw]">
           <div className="mx-auto mb-7 max-w-[1400px] text-center">
             <p className="text-[11px] font-medium uppercase tracking-[0.4em] text-[#7a736d]">
               Celebrating five years of impact
@@ -67,7 +76,7 @@ function GalleryPage() {
               </figure>
             ))}
           </div>
-        </section>
+        </section></div>
       </main>
 
       <a

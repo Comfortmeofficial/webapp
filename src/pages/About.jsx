@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import ABOUT_BG from "../assets/main/aboutbg.jpg";
+import ABOUT_BG from "../assets/gallery/Highlights/IMG_9831.jpg";
 import BACKGROUND from "../assets/sections/background.jpg";
 import WOMAN_IMAGE from "../assets/sections/woman_law.svg";
 import MISSION_BG from "../assets/sections/mission_bg.png";
@@ -121,12 +121,12 @@ function AboutPage() {
         style={{
           backgroundImage: `url(${ABOUT_BG})`,
           backgroundSize: "cover",
-          backgroundPosition: "top",
+          backgroundPosition: " top",
         }}
       >
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="relative mx-auto max-w-7xl  text-center flex flex-col gap-4">
-          <div className="-mt-50">
+          <div className="mt-40">
             <h1 className="font-display text-4xl sm:text-6xl">
               Law Practiced with <span className="text-[#d4af6a]">Purpose.</span>
             </h1>
@@ -134,7 +134,7 @@ function AboutPage() {
               We are a new-generation law firm defined not just by what we know, but by how deeply we care. BSY Legal exists to take legal practice in Nigeria to its highest potential.
             </p>
           </div>
-          <div className="pointer-events-none absolute -right-[25vw] -bottom-[20vh] hidden items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:flex">
+          {/* <div className="pointer-events-none absolute -right-[25vw] -bottom-[20vh] hidden items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-[#2a3036] shadow-[0_0_28px_rgba(255,255,255,0.45)] md:flex">
             <svg
               aria-hidden="true"
               viewBox="0 0 24 24"
@@ -146,8 +146,8 @@ function AboutPage() {
               <path d="M12 3v18M7 21h10M5 7l-3 6a3 3 0 0 0 6 0l-3-6ZM19 7l-3 6a3 3 0 0 0 6 0l-3-6ZM5 7h14M12 3l-2 4h4l-2-4Z" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             35+ Attorneys
-          </div>
-          <div className="mt-6 grid gap-3 md:hidden">
+          </div> */}
+          {/* <div className="mt-6 grid gap-3 md:hidden">
             <p className="rounded-full bg-white px-5 py-3 text-sm text-[#2a3036]">
               Over 23 Cases Handled
             </p>
@@ -157,7 +157,7 @@ function AboutPage() {
             <p className="rounded-full bg-white px-5 py-3 text-sm text-[#2a3036]">
               Established Since 1967
             </p>
-          </div>
+          </div> */}
         </div>
       </section>
       <div
