@@ -131,7 +131,7 @@ function GalleryPage() {
 
       <main id="gallery-top" className="min-h-screen bg-white text-[#1a1a1a]">
         <section
-          className="relative flex min-h-[72vh] items-center justify-center overflow-hidden bg-[#f9f6f3]"
+          className="relative flex min-h-[clamp(420px,72vh,760px)] items-center justify-center overflow-hidden bg-[#f9f6f3]"
           style={{
             backgroundImage: `linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(${coverImg})`,
             backgroundSize: "cover",
@@ -140,7 +140,7 @@ function GalleryPage() {
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08),rgba(0,0,0,0.42))]" />
 
-          <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-end px-5 pb-36 sm:pb-44 text-center top-60">
+          <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-end px-5 pb-20 sm:pb-36 lg:pb-44 text-center top-24 sm:top-40 lg:top-60">
             <span className="mb-5 inline-flex items-center rounded-full border border-white/80 bg-white/10 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.35em] text-white backdrop-blur-sm">
               5 Years of Excellence
             </span>
