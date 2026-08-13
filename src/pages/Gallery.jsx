@@ -43,20 +43,35 @@ function declusterShuffle(images, minGap = 3) {
   return result;
 }
 
-// Places each image into the column that's currently shortest, so multiple
-// columns of naturally-varied-height images still end at roughly the same
-// bottom edge (the same idea as assigning the next job to the
-// least-loaded worker). Assumes all columns share the same width.
+// Assigns each image to the column that's currently shortest (same idea as
+// giving the next job to the least-loaded worker), so columns of
+// naturally-varied-height images still end at roughly the same bottom edge.
+// Assumes all columns share the same width.
+//
+// Which *column* an image lands in is decided largest-first (LPT): a big
+// image placed early still has other columns free to balance against,
+// while placing it late (i.e. in shuffle order) can leave no room left to
+// even things out. Display order within a column still follows the
+// original (shuffled) sequence, so the grid doesn't look sorted by size.
 function layoutMasonryColumns(images, columnCount) {
-  const columns = Array.from({ length: columnCount }, () => []);
   const columnHeights = new Array(columnCount).fill(0);
-  for (const image of images) {
+  const columnIndexByImage = new Map();
+
+  const bySizeDescending = [...images].sort(
+    (a, b) => 1 / b.aspectRatio - 1 / a.aspectRatio,
+  );
+  for (const image of bySizeDescending) {
     let shortest = 0;
     for (let i = 1; i < columnCount; i++) {
       if (columnHeights[i] < columnHeights[shortest]) shortest = i;
     }
-    columns[shortest].push(image);
+    columnIndexByImage.set(image.src, shortest);
     columnHeights[shortest] += 1 / image.aspectRatio;
+  }
+
+  const columns = Array.from({ length: columnCount }, () => []);
+  for (const image of images) {
+    columns[columnIndexByImage.get(image.src)].push(image);
   }
   return columns;
 }
@@ -155,7 +170,7 @@ function GalleryPage() {
             </p>
           </div>
 
-          <div className="mx-auto flex max-w-[1400px] gap-3">
+          <div className="mx-auto flex max-w-[1400px] items-start gap-3">
             {galleryColumns.map((column, columnIndex) => (
               <div key={columnIndex} className="flex flex-1 flex-col gap-3">
                 {column.map((image) => (
