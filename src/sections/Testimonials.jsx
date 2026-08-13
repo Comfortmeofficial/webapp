@@ -2,37 +2,15 @@ import BACKGROUND2 from "../assets/sections/trusted-by-clients.svg";
 import BACKGROUND from "../assets/sections/trusted-slider.svg";
 import TEAM_1040 from "../assets/team/team_slideshow/IMG_1040copy.jpg";
 import TEAM_1043 from "../assets/team/team_slideshow/IMG_1043.jpg";
-import TEAM_1047 from "../assets/team/team_slideshow/IMG_1047copy.jpg";
-import TEAM_9512 from "../assets/team/team_slideshow/IMG_9512-Recovered.jpg";
-import TEAM_9545 from "../assets/team/team_slideshow/IMG_9545.jpg";
-import TEAM_9686 from "../assets/team/team_slideshow/IMG_9686.jpg";
-import TEAM_9691 from "../assets/team/team_slideshow/IMG_9691.jpg";
-import TEAM_9763 from "../assets/team/team_slideshow/IMG_9763.jpg";
-import TEAM_9768 from "../assets/team/team_slideshow/IMG_9768.jpg";
-import TEAM_9787 from "../assets/team/team_slideshow/IMG_9787copy.jpg";
 import TEAM_9805 from "../assets/team/team_slideshow/IMG_9805.jpg";
 import TEAM_9820 from "../assets/team/team_slideshow/IMG_9820.jpg";
-import TEAM_9831 from "../assets/team/team_slideshow/IMG_9831.jpg";
-import TEAM_9847 from "../assets/team/team_slideshow/IMG_9847.jpg";
-import TEAM_9853 from "../assets/team/team_slideshow/IMG_9853.jpg";
 import TEAM_9860 from "../assets/team/team_slideshow/IMG_9860.jpg";
 
 const teamPhotos = [
   TEAM_1040,
   TEAM_1043,
-  TEAM_1047,
-  TEAM_9512,
-  TEAM_9545,
-  TEAM_9686,
-  TEAM_9691,
-  TEAM_9763,
-  TEAM_9768,
-  TEAM_9787,
   TEAM_9805,
   TEAM_9820,
-  TEAM_9831,
-  TEAM_9847,
-  TEAM_9853,
   TEAM_9860,
 ];
 

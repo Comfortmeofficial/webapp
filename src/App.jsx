@@ -42,9 +42,7 @@ function CookieBanner() {
       >
         ✕
       </button>
-      <div className="mx-auto mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#f8dfb3] text-sm">
-        🍪
-      </div>
+      
       <h3 className="text-sm sm:text-base font-semibold">Our website uses cookies</h3>
       <p className="mt-2 text-xs leading-5 text-[#738089]">
         Our website uses cookies. By continuing, we assume your permission to

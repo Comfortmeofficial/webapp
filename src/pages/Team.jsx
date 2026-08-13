@@ -7,12 +7,12 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { TEAM_MEMBERS } from "../data/teamMembers";
 
-const FEATURED_SLUGS = ["ebitibi-akeke", "glorious-ofeh", "adedamola-fagbamigbe"];
+const FEATURED_SLUGS = ["ebitibi-akeke", "funmbi-onabolu", "glorious-ofeh"];
 const featuredMembers = TEAM_MEMBERS.filter((member) =>
   FEATURED_SLUGS.includes(member.slug),
 );
 
-const REST_SLUGS = ["funmbi-onabolu", "ademola-temitope", "ebima-akeke", "deborah-lawrence"];
+const REST_SLUGS = ["adedamola-fagbamigbe", "ademola-temitope", "ebima-akeke", "deborah-lawrence"];
 const restMembers = REST_SLUGS.map((slug) =>
   TEAM_MEMBERS.find((member) => member.slug === slug),
 ).filter(Boolean);

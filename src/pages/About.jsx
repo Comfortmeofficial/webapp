@@ -110,7 +110,7 @@ const coreValues = [
   },
 ];
 
-const experts = ["ebitibi-akeke", "glorious-ofeh", "adedamola-fagbamigbe"];
+const experts = ["ebitibi-akeke", "funmbi-onabolu", "glorious-ofeh"];
 
 function AboutPage() {
   return (
