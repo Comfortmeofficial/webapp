@@ -10,7 +10,7 @@ const practiceAreas = [
     desc: "Representing clients in civil and commercial disputes with strategic, results-driven advocacy.",
   },
   {
-    title: "Real Estate & Property Law",
+    title: "Property Law",
     desc: "Handling property transactions, due diligence, and regulatory compliance with precision.",
   },
   {

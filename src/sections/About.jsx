@@ -55,7 +55,7 @@ function About() {
                 text: "Helping individuals and families preserve wealth, protect legacies, and secure the future through thoughtful estate planning and bespoke trust solutions.",
               },
               {
-                title: "Real Estate & Property ",
+                title: "Property ",
                 text: "Guiding individuals, businesses, and investors through every stage of property ownership and development with practical legal solutions that safeguard their investments.",
               },
               {
