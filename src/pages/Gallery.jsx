@@ -39,12 +39,12 @@ function GalleryPage() {
             <h1 className="text-4xl font-light uppercase tracking-[0.06em] text-white sm:text-6xl md:text-[5rem] lg:text-[6rem]">
               BSY Moments
             </h1>
-            <button
+            {/* <button
               type="button"
               className="mt-8 border border-white/80 bg-white/10 px-7 py-3 text-xs font-medium uppercase tracking-[0.2em] text-white transition hover:bg-white/20 backdrop-blur-sm"
             >
               VIEW GALLERY
-            </button>
+            </button> */}
           </div>
         </section>
           <div
