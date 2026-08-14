@@ -43,17 +43,21 @@ function Contact() {
         <div className="mt-6 sm:mt-8 mx-4 sm:mx-15 grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {articles.map((article) => (
             <article key={`${article.title}-${article.date}`} className="flex h-full flex-col p-1">
-              <img
-                src={article.image}
-                alt={article.title}
-                className="h-32 sm:h-44 w-full border border-[#d5d7d8] object-cover"
-              />
+              <a href={`/insights/${article.slug}`} className="block">
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  className="h-32 sm:h-44 w-full border border-[#d5d7d8] object-cover transition hover:opacity-90"
+                />
+              </a>
               <p className="mt-2 sm:mt-3 text-[10px] sm:text-[11px] uppercase tracking-wide text-[#b08d57]">
                 {article.date}
               </p>
-              <h3 className="mt-1 line-clamp-2 min-h-[60px] font-display text-[24px] font-bold leading-[30px] tracking-normal text-[#1f262c]">
-                {article.title}
-              </h3>
+              <a href={`/insights/${article.slug}`} className="block hover:text-[#18535b] transition">
+                <h3 className="mt-1 line-clamp-2 min-h-[60px] font-display text-[24px] font-bold leading-[30px] tracking-normal text-[#1f262c]">
+                  {article.title}
+                </h3>
+              </a>
               <p className="mt-1 text-[10px] sm:text-[11px] text-[#aeb2b7]">{article.category}</p>
               <p className="mt-2 sm:mt-3 line-clamp-3 text-xs sm:text-base leading-6 sm:leading-7 text-[#4c565d]">
                 {article.excerpt}
