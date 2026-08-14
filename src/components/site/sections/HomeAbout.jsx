@@ -1,0 +1,109 @@
+import Link from "next/link";
+
+const WOMAN_IMAGE = "/assets/sections/woman_law.svg";
+const CONTACT_BACKGROUND = "/assets/sections/contact-us.svg";
+const HAMMER = "/assets/sections/hammer.svg";
+
+function HomeAbout() {
+  return (
+    <section
+      id="about"
+      className="relative bg-[#f5f6f3] py-16 sm:py-20 md:py-24 text-[#1e252a]"
+      style={{
+        backgroundImage: `url(${WOMAN_IMAGE})`,
+        backgroundPosition: "left center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain",
+        backgroundAttachment: "scroll",
+      }}
+    >
+      <div className="mx-auto max-w-[90vw] px-3 sm:px-4 md:px-8">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+          <div className="pt-0 sm:pt-4 lg:pt-8">
+            <h2 className="font-display mt-3 max-w-md text-3xl sm:text-4xl md:text-5xl leading-tight text-[#171c21]">
+              Rooted in Integrity. Defined by Trust.
+            </h2>
+          </div>
+          <div
+            className="rounded-br-[50px] sm:rounded-br-[100px] rounded-tl-[50px] sm:rounded-tl-[100px] p-2 text-white shadow-[0_14px_36px_rgba(0,0,0,0.18)]"
+            style={{
+              backgroundImage: `url(${CONTACT_BACKGROUND})`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          >
+            <div className="rounded-br-[50px] sm:rounded-br-[100px] rounded-tl-[50px] sm:rounded-tl-[100px] bg-[#0e5e66] p-6 sm:p-8 md:p-12 text-white shadow-[0_14px_36px_rgba(0,0,0,0.18)]">
+              <p className="text-base sm:text-2xl md:text-[20px] leading-relaxed md:leading-[2.1rem]">
+                At BSY Legal, we combine legal expertise with genuine understanding to deliver exceptional client experiences. Guided by trust, empathy, and excellence, we provide strategic legal solutions tailored to our clients&apos; needs while building lasting relationships founded on confidence and integrity.
+              </p>
+              <Link
+                href="/about"
+                className="mt-6 inline-flex rounded-md bg-white px-4 py-2 text-xs sm:text-sm font-medium text-[#1c242a] hover:bg-gray-100 transition"
+              >
+                Learn More About Us
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 sm:mt-14 ml-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr]">
+          <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
+            {[
+              {
+                title: "Corporate & Commercial ",
+                text: "Delivering practical, commercially astute legal solutions that strengthen businesses, manage risk, and support long-term success.",
+              },
+              {
+                title: "Estate Planning and Trust Advisory",
+                text: "Helping individuals and families preserve wealth, protect legacies, and secure the future through thoughtful estate planning and bespoke trust solutions.",
+              },
+              {
+                title: "Property ",
+                text: "Guiding individuals, businesses, and investors through every stage of property ownership and development with practical legal solutions that safeguard their investments.",
+              },
+              {
+                title: "Energy & Power",
+                text: "Providing strategic legal counsel to stakeholders across the energy sector, helping them navigate regulatory complexities, manage risk, and drive sustainable growth.",
+              },
+            ].map(({ title, text }) => (
+              <article
+                key={title}
+                className="rounded-lg sm:rounded-xl border border-[#ececec] bg-[#f1f2f2] p-4 sm:p-6"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={HAMMER}
+                  alt="Hammer"
+                  className="h-10 sm:h-14 w-10 sm:w-14 text-[#5d656d] mb-3 sm:mb-4 object-contain"
+                />
+                <h3 className="text-base sm:text-lg font-medium text-[#4d545a]">{title}</h3>
+                <p className="mt-2 sm:mt-3 text-xs sm:text-sm leading-6 sm:leading-7 text-[#7b8288]">
+                  {text}
+                </p>
+              </article>
+            ))}
+          </div>
+          <div className="pt-0 mr-2 sm:pt-4">
+            <p className="text-xs text-[#80aa36]">Our Service</p>
+            <h3 className="font-display mt-2 text-3xl sm:text-4xl md:text-6xl leading-tight text-[#171c21]">
+              Our Practice Areas
+            </h3>
+            <p className="mt-3 max-w-md text-base sm:text-lg text-[#6d747a]">
+              Comprehensive legal solutions tailored to individuals and
+              businesses
+            </p>
+            <Link
+              href="/services"
+              className="mt-6 inline-flex rounded-full bg-[#73b329] px-6 sm:px-9 py-2 sm:py-3 text-xs sm:text-base font-semibold text-white hover:bg-[#5fa024] transition"
+            >
+              View all
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default HomeAbout;

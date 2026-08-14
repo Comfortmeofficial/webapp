@@ -4,8 +4,8 @@ import path from "node:path";
 import { imageSizeFromFile } from "image-size/fromFile";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const galleryDir = path.join(__dirname, "../src/assets/gallery/Highlights");
-const outputFile = path.join(__dirname, "../src/data/galleryDimensions.json");
+const galleryDir = path.join(__dirname, "../public/assets/gallery/Highlights");
+const outputFile = path.join(__dirname, "../src/lib/data/galleryDimensions.json");
 
 const files = readdirSync(galleryDir).filter((file) =>
   file.toLowerCase().endsWith(".jpg"),

@@ -1,23 +1,42 @@
 {
   "name": "bsy-law-firm",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "gallery:dimensions": "node scripts/generate-gallery-dimensions.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "gallery:dimensions": "node scripts/generate-gallery-dimensions.js",
+    "seed:super-admin": "tsx --env-file=.env scripts/seed-super-admin.ts",
+    "seed:insight-articles": "tsx --env-file=.env scripts/seed-insight-articles.ts",
+    "seed:legal-pages": "tsx --env-file=.env scripts/seed-legal-pages.ts"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.10.0",
+    "mongoose": "^9.9.2",
+    "next": "16.3.1",
+    "next-auth": "^5.0.0-beta.32",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "slugify": "^1.6.9",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.7",
-    "@vitejs/plugin-react": "^4.3.2",
+    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.1",
     "image-size": "^2.0.2",
-    "vite": "^5.4.10"
+    "tailwindcss": "^4",
+    "tsx": "^4.23.12",
+    "typescript": "^5"
   }
 }
