@@ -69,7 +69,7 @@ function Testimonials() {
               </p>
               <a
                 href="/team"
-                className="mt-4 md:mt-6 inline-flex rounded-md bg-white px-4 py-2 text-xs sm:text-sm font-medium text-[#1c242a] hover:bg-gray-100 transition"
+                className="pointer-events-auto mt-4 md:mt-6 inline-flex rounded-md bg-white px-4 py-2 text-xs sm:text-sm font-medium text-[#1c242a] hover:bg-gray-100 transition"
               >
                 Meet The Team
               </a>
