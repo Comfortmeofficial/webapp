@@ -303,7 +303,7 @@ function AboutPage() {
             <div
               className="rounded-3xl px-8 py-20  text-center text-white"
               style={{
-                backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(${ROOTED_BG})`,
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.55)), url(${ROOTED_BG})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

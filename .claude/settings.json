@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/tanitoluwaifegbesan/Documents/ise/BSY/src/assets/sections/cards/rooted.jpg)"
+    ]
+  }
+}
