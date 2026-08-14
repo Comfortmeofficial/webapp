@@ -16,6 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "BSY Legal",
   description: "BSY Legal — Insights, Publications, and Admin CMS.",
+  icons: {
+    icon: "/assets/main/BSY%20LEGAL%201.svg",
+    shortcut: "/assets/main/BSY%20LEGAL%201.svg",
+    apple: "/assets/main/BSY%20LEGAL%201.svg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
