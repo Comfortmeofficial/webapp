@@ -59,17 +59,13 @@ function TeamPage() {
                         alt={member.name}
                         className="mx-auto h-56 sm:h-72 md:h-[350px] w-56 sm:w-72 md:w-[350px] rounded-full object-cover object-top transition hover:opacity-90"
                       />
+                      <h2 className="mt-3 sm:mt-4 text-lg sm:text-xl font-semibold text-[#1e252a]">
+                        {member.name}
+                      </h2>
+                      <p className="mt-1 text-xs sm:text-sm leading-5 text-[#9aa0a5]">
+                        {member.role}
+                      </p>
                     </a>
-                    <h2
-                      className={`mt-3 sm:mt-4 text-lg sm:text-xl font-semibold text-[#1e252a] ${
-                        member.slug === "ebitibi-akeke" ? "uppercase" : ""
-                      }`}
-                    >
-                      {member.name}
-                    </h2>
-                    <p className="mt-1 text-xs sm:text-sm leading-5 text-[#9aa0a5]">
-                      {member.role}
-                    </p>
                   </article>
                 ))}
               </div>
