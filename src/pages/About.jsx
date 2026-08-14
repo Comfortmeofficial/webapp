@@ -364,13 +364,13 @@ function AboutPage() {
                         alt={member.name}
                         className="mx-auto h-[350px] w-[350px] rounded-full object-cover object-top opacity-100 transition hover:opacity-90"
                       />
+                      <h4 className="mt-5 text-xl font-semibold text-[#1d2429] sm:text-2xl">
+                        {member.name}
+                      </h4>
+                      <p className="mt-1 text-sm text-[#8b9196]">
+                        {member.role}
+                      </p>
                     </a>
-                    <h4 className="mt-5 text-xl font-semibold text-[#1d2429] sm:text-2xl">
-                      {member.name}
-                    </h4>
-                    <p className="mt-1 text-sm text-[#8b9196]">
-                      {member.role}
-                    </p>
                   </article>
                 );
               })}
