@@ -151,7 +151,7 @@ function ContactPage() {
                       />
                     </label>
                     <label className="block text-xs font-medium text-[#4c565d]">
-                      Preferred Contact Method
+                      Preferred Response Method
                       <select
                         name="contact_method"
                         value={form.contact_method}

@@ -82,18 +82,22 @@ function InsightsPage() {
             <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
               {filteredArticles.map((article) => (
                 <article key={article.id}>
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="h-40 w-full rounded-sm border border-[#d9dddf] object-cover"
-                  />
+                  <a href={`/insights/${article.slug}`} className="block">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="h-40 w-full rounded-sm border border-[#d9dddf] object-cover transition hover:opacity-90"
+                    />
+                  </a>
                   <p className="mt-2 text-[10px] text-[#90969c]">
                     {article.category}
                   </p>
                   <div className="mt-1 flex items-center justify-between gap-2">
-                    <h3 className="font-display text-xl leading-tight text-[#1a2127]">
-                      {article.title}
-                    </h3>
+                    <a href={`/insights/${article.slug}`} className="hover:text-[#18535b] transition">
+                      <h3 className="font-display text-xl leading-tight text-[#1a2127]">
+                        {article.title}
+                      </h3>
+                    </a>
                     {article.date && (
                       <span className="shrink-0 text-[10px] text-[#90969c]">
                         {article.date}

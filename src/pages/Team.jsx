@@ -92,11 +92,11 @@ function TeamPage() {
                         alt={member.name}
                         className="mx-auto h-[200px] w-[200px] rounded-full border border-[#d9d9d9] object-cover object-top opacity-100 transition hover:opacity-90"
                       />
+                      <h3 className="mt-2 sm:mt-3 text-sm sm:text-base font-semibold text-[#1e252a]">
+                        {shortName(member.name)}
+                      </h3>
+                      <p className="text-xs text-[#6b747b]">{member.role}</p>
                     </a>
-                    <h3 className="mt-2 sm:mt-3 text-sm sm:text-base font-semibold text-[#1e252a]">
-                      {shortName(member.name)}
-                    </h3>
-                    <p className="text-xs text-[#6b747b]">{member.role}</p>
                     <a
                       href={`/team/${member.slug}`}
                       className="mt-2 inline-flex rounded-full border border-[#d4e6df] px-2 sm:px-3 py-1 text-[10px] font-medium text-[#256169] hover:bg-[#d4e6df]/20 transition"
