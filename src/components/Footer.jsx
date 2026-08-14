@@ -153,7 +153,12 @@ function Footer() {
                 </svg>
                 <span>+234 703 867 8083</span>
               </a>
-              <div className="flex items-start gap-2">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Plot+12a%2C+Stella+Ogunleye+Street%2C+off+T.F+Kuboye+Street%2C+Oniru%2C+Lagos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 hover:text-[#1f676d] transition"
+              >
                 <svg
                   className="mt-0.5 h-3 sm:h-4 w-3 sm:w-4 shrink-0"
                   fill="currentColor"
@@ -164,7 +169,7 @@ function Footer() {
                 <span className="text-xs leading-4 sm:leading-5">
                   Plot 12a, Stella Ogunleye Street, off T.F Kuboye Street, Oniru, Lagos.
                 </span>
-              </div>
+              </a>
             </div>
           </div>
         </div>

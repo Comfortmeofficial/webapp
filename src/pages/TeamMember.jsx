@@ -120,18 +120,6 @@ function TeamMemberPage({ slug }) {
               </section>
             )}
 
-            {member.qualifications.length > 0 && (
-              <section className="mt-6 rounded-md border border-[#eceeec] bg-white p-6 sm:p-8">
-                <p className="text-sm font-semibold text-[#18535b]">
-                  Qualification
-                </p>
-                <ul className="mt-3 space-y-1 text-sm text-[#2f3a41]">
-                  {member.qualifications.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
           </div>
         </main>
       </div>

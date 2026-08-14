@@ -34,12 +34,12 @@ function About() {
             <p className="text-base sm:text-2xl md:text-[20px] leading-relaxed md:leading-[2.1rem]">
               At BSY Legal, we combine legal expertise with genuine understanding to deliver exceptional client experiences. Guided by trust, empathy, and excellence, we provide strategic legal solutions tailored to our clients' needs while building lasting relationships founded on confidence and integrity.
             </p>
-            <button
-              type="button"
-              className="mt-6 rounded-md bg-white px-4 py-2 text-xs sm:text-sm font-medium text-[#1c242a] hover:bg-gray-100 transition"
+            <a
+              href="/about"
+              className="mt-6 inline-flex rounded-md bg-white px-4 py-2 text-xs sm:text-sm font-medium text-[#1c242a] hover:bg-gray-100 transition"
             >
               Learn More About Us
-            </button>
+            </a>
           </div></div>
         </div>
 
