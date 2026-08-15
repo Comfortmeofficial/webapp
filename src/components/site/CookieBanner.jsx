@@ -1,32 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 
+const COOKIE_CONSENT_KEY = "cookieConsent:v2";
+
 export default function CookieBanner() {
+  const [mounted, setMounted] = useState(false);
   const [show, setShow] = useState(() => {
     try {
-      return !localStorage.getItem("cookieConsent");
+      return !localStorage.getItem(COOKIE_CONSENT_KEY);
     } catch {
       return true;
     }
   });
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const dismiss = (accepted) => {
     try {
-      localStorage.setItem("cookieConsent", accepted ? "accepted" : "rejected");
+      localStorage.setItem(COOKIE_CONSENT_KEY, accepted ? "accepted" : "rejected");
     } catch {}
     setShow(false);
   };
 
-  if (!show) return null;
+  if (!mounted || !show) return null;
 
-  return (
-    <aside className="fixed bottom-0 left-0 right-0 z-[9999] w-full sm:bottom-6 sm:left-auto sm:right-6 sm:w-[310px] rounded-t-2xl sm:rounded-2xl bg-white p-4 sm:p-5 text-[#273038] shadow-xl">
+  return createPortal(
+    <aside className="pointer-events-auto isolate fixed bottom-0 left-0 right-0 z-[2147483647] w-full rounded-t-2xl bg-white p-4 text-[#273038] shadow-xl sm:bottom-6 sm:left-auto sm:right-6 sm:w-[310px] sm:rounded-2xl">
       <button
         type="button"
         onClick={() => dismiss(false)}
-        className="absolute right-3 top-2 text-[#7f8990]"
+        className="absolute right-3 top-2 cursor-pointer text-[#7f8990]"
         aria-label="Close cookie banner"
       >
         ✕
@@ -49,18 +57,19 @@ export default function CookieBanner() {
         <button
           type="button"
           onClick={() => dismiss(false)}
-          className="w-full sm:w-auto rounded-md px-3 py-2 text-xs text-[#58636c]"
+          className="w-full cursor-pointer rounded-md px-3 py-2 text-xs text-[#58636c] sm:w-auto"
         >
           Reject All
         </button>
         <button
           type="button"
           onClick={() => dismiss(true)}
-          className="w-full sm:w-auto rounded-md bg-[#1a6268] px-4 py-2 text-xs font-medium text-white"
+          className="w-full cursor-pointer rounded-md bg-[#1a6268] px-4 py-2 text-xs font-medium text-white sm:w-auto"
         >
           Accept cookies
         </button>
       </div>
-    </aside>
+    </aside>,
+    document.body
   );
 }
